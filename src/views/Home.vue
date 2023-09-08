@@ -1,6 +1,8 @@
 <template>
 <v-sheet>
-    hola
+    <v-sheet class="home">
+
+    </v-sheet>
 </v-sheet>
 </template>
 
@@ -10,4 +12,8 @@
 
 <style scoped>
 
+.home{
+    min-height: 100vh;
+    background-color: #f0f1fb;
+}
 </style>
