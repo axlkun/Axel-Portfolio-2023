@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap'); */
+@import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
 :root {
 
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
   line-height: 1.8;
 
 }
@@ -24,4 +25,5 @@ azul-1: #0434e4
 azul-2: #1f4aeb
 azul-3: #2755ec
 
+0052fa
 */
