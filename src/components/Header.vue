@@ -18,7 +18,7 @@
                 <li><a @click="scrollToSection('contact')">Sobre Mi</a></li>
                 <li><a @click="scrollToSection('contact')">Proyectos</a></li>
                 <li><a @click="scrollToSection('contact')">Blog</a></li>
-                <li><a @click="scrollToSection('contact')">Contacto</a></li>
+                <li><a @click="scrollToSection('contact')" class="button">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -143,6 +143,10 @@ nav {
         position: static;
     }
 
+    .logo a{
+        display: none;
+    }
+
     .menu {
         flex-direction: column;
         background-color: #f0f1fb;
@@ -176,4 +180,17 @@ nav {
 
 
 }
+
+ul.menu li a.button {
+    background-color: #0434e4;
+    color: #f0f1fb;
+    padding: 2px 8px;
+    border-radius: 10px;
+
+    &:hover{
+        opacity: 0.9;
+        text-decoration: none;
+    }
+}
+
 </style>
