@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .home {
-    background-color: #f0f1fb;
+    background-color: var(--primary-white);
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -68,18 +68,19 @@ export default {
 }
 
 .home-encabezado p:nth-child(1) {
-    color: #0434e4;
+    /*color: #0434e4;*/
+    color: var(--primary-blue);
     /* Color para el primer párrafo */
 }
 
 .home-encabezado p:nth-child(2) {
-    color: #757575;
+    color: var(--primary-grey);
     /* Color para el segundo párrafo */
 }
 
 .home-encabezado p:nth-child(3) {
-    color: #0434e4;
-    /* Color para el segundo párrafo */
+    /*color: #0434e4;*/
+    color: var(--primary-blue);
     font-size: 35px;
     font-weight: 400;
     line-height: 1.2;
@@ -105,15 +106,15 @@ export default {
 }
 
 .button{
-    background-color: #0434e4;
-    color: #f0f1fb;
+    background-color: var(--primary-blue);
+    color: white;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .buttons-container a:nth-child(2){
-    background-color: #ac7ce4;
+    background-color: var(--primary-purple);
     color: white;
 }
 

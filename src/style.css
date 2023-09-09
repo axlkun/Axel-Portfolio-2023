@@ -1,10 +1,20 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap'); */
-@import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
+/* @import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro'); */
+/* @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal'); */
+@import url('https://fonts.cdnfonts.com/css/basic');
 :root {
 
   /* font-family: 'Lato', sans-serif; */
-  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  /* font-family: 'Neue Haas Grotesk Display Pro', sans-serif; */
+  /* font-family: 'PP Neue Montreal', sans-serif; */
+  
+  font-family: 'Basic', sans-serif;
   line-height: 1.8;
+
+  --primary-blue: #0052faff;
+  --primary-white: #edf8ffff;
+  --primary-grey: #757575;
+  --primary-purple: #ac7ce4;
 
 }
 
@@ -26,4 +36,6 @@ azul-2: #1f4aeb
 azul-3: #2755ec
 
 0052fa
+0052faff
+edf8ffff
 */

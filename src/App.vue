@@ -10,10 +10,12 @@
 
 <script>
 import MyHeader from './components/Header.vue';
+import colors from './style.css';
 
 export default{
   components : {
-    MyHeader
+    MyHeader,
+    colors
   }
 }
 

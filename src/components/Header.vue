@@ -61,7 +61,7 @@ export default {
     /*position: sticky;*/
     top: 0;
     width: 100%;
-    background-color: #f0f1fb;
+    background-color: var(--primary-white);
     z-index: 100;
 }
 
@@ -91,11 +91,11 @@ nav {
 .logo a {
     font-size: 24px;
     font-weight: bold;
-    color: #0434e4;
+    color: var(--primary-blue);
 }
 
 .logo a span {
-    color: #0b1842;
+    color: var(--primary-grey);;
 }
 
 /*
@@ -116,12 +116,12 @@ nav {
     font-size: 17px;
     font-weight: 500;
     transition: 0.2s all ease-in-out;
-    color: #0b1842;
+    color: var(--primary-grey);
     cursor: pointer;
 }
 
 .menu a:hover {
-    color: #211ee9;
+    color: var(--primary-blue);
     text-decoration: underline;
 }
 
@@ -149,7 +149,7 @@ nav {
 
     .menu {
         flex-direction: column;
-        background-color: #f0f1fb;
+        background-color: var(--primary-white);
         justify-content: space-evenly;
         align-items: center;
         position: absolute;
@@ -173,7 +173,7 @@ nav {
 
     .menu-icon {
         display: block;
-        color: #141213;
+        color: var(--primary-grey);
         font-size: 28px;
         cursor: pointer;
     }
@@ -182,8 +182,8 @@ nav {
 }
 
 ul.menu li a.button {
-    background-color: #0434e4;
-    color: #f0f1fb;
+    background-color: var(--primary-blue);
+    color: white;
     padding: 2px 8px;
     border-radius: 10px;
 
