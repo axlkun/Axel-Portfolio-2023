@@ -61,7 +61,7 @@ export default {
     /*position: sticky;*/
     top: 0;
     width: 100%;
-    background-color: var(--primary-white);
+    background-color: var(--background-grey);
     z-index: 100;
 }
 

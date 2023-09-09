@@ -11,10 +11,14 @@
   font-family: 'Basic', sans-serif;
   line-height: 1.8;
 
-  --primary-blue: #0052faff;
-  --primary-white: #edf8ffff;
+  /* --primary-blue: #0052faff; */
+  --primary-blue: #006effff;
+  /* --primary-white: #edf8ffff; */
+  --primary-white: #fff8f2ff;
+  --background-grey: #f1f1f1ff;
   --primary-grey: #757575;
   --primary-purple: #ac7ce4;
+  --font-black: #000000ff;
 
 }
 
@@ -37,5 +41,12 @@ azul-3: #2755ec
 
 0052fa
 0052faff
+edf8ffff
+
+f2f2f2ff
+
+fff8f2ff
+006effff
+
 edf8ffff
 */
