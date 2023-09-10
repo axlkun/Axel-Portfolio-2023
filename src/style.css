@@ -22,6 +22,16 @@
 
 }
 
+h1, h2 {
+  font-size: inherit; /* Tamaño de fuente heredado */
+  font-weight: inherit; /* Peso de fuente heredado */
+  margin: 0; /* Margen predeterminado eliminado */
+  padding: 0; /* Relleno predeterminado eliminado */
+  line-height: inherit; /* Altura de línea heredada */
+  color: inherit; /* Color de texto heredado */
+  /* Otras propiedades que desees restablecer */
+}
+
 /*
 palette:
 

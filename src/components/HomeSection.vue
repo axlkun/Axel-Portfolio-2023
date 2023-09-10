@@ -13,7 +13,7 @@
 
                         <v-sheet class="home-description">
                             <p>Axel Cruz</p>
-                            <p>Ingeniero en Sistemas ⋅ Programador</p>
+                            <h1>Ingeniero en Sistemas ⋅ Programador</h1>
                         </v-sheet>
                         
                     </v-sheet>
@@ -51,7 +51,7 @@ export default {
 .home {
     display: flex;
     background-color: var(--background-grey);
-    min-height: 85vh;
+    /*min-height: 85vh;*/
 }
 
 .home-container{
@@ -61,12 +61,13 @@ export default {
     /*background-color: var(--primary-white);*/
     background: transparent;
     margin: 0 auto;
+    text-align: center;
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 768px) {
         flex-direction: row;
-        max-width: 90%;
         justify-content: center;
         align-items: center;
+        text-align: start;
     }
 }
 
@@ -81,16 +82,18 @@ export default {
     line-height: 1.2;
     background: transparent;
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 768px) {
         font-size: 55px;
     }
 }
 
 .home-encabezado{
     background: transparent;
+    display: flex;
+    flex-direction: column;
 }
 
-.home-encabezado img{
+.hook img{
     margin-bottom: -10px;
 }
 
@@ -100,17 +103,17 @@ export default {
     flex-direction: column;
     gap: 5px;
     font-size: 20px;
-    margin: 15px auto;
+    margin: 15px 0;
     color: var(--primary-blue);
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 768px) {
         flex-direction: row;
         justify-content: start;
         gap: 20px;
     }
 }
 
-.home-description p:nth-child(1){
+.home-description p{
     color: var(--primary-grey);
 
 }
@@ -118,14 +121,15 @@ export default {
 .buttons-container{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     background: transparent;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    align-items: center;
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 768px) {
         flex-direction: row;
-        align-items: center;
         justify-content: start;
+        gap: 20px;
 
     }
 }
@@ -133,15 +137,22 @@ export default {
 .button{
     background-color: var(--primary-blue);
     color: white;
-    padding: 10px 25px;
-    border-radius: 10px;
+    padding: 10px 35px;
+    border-radius: 8px;
     cursor: pointer;
     text-align: center;
+    width: 85%;
+
+    @media only screen and (min-width: 768px) {
+        width: auto;
+
+    }
 }
 
 .buttons-container a:nth-child(2){
-    background-color: var(--primary-purple);
-    color: white;
+    background-color: var(--background-grey);
+    color: var(--font-black);
+    border: 1px solid var(--font-black);
 }
 
 .button:hover{
@@ -154,7 +165,7 @@ export default {
   max-width: 300px;
   margin: 0 auto;
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 768px) {
     max-width: 700px;
 
 }

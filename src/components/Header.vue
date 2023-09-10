@@ -95,7 +95,7 @@ nav {
 }
 
 .logo a span {
-    color: var(--primary-grey);;
+    color: var(--font-black);;
 }
 
 /*
@@ -116,7 +116,7 @@ nav {
     font-size: 17px;
     font-weight: 500;
     transition: 0.2s all ease-in-out;
-    color: var(--primary-grey);
+    color: var(--font-black);
     cursor: pointer;
 }
 
@@ -149,7 +149,7 @@ nav {
 
     .menu {
         flex-direction: column;
-        background-color: var(--primary-white);
+        background-color: var(--background-grey);
         justify-content: space-evenly;
         align-items: center;
         position: absolute;
@@ -173,7 +173,7 @@ nav {
 
     .menu-icon {
         display: block;
-        color: var(--primary-grey);
+        color: var(--font-black);
         font-size: 28px;
         cursor: pointer;
     }
@@ -185,7 +185,7 @@ ul.menu li a.button {
     background-color: var(--primary-blue);
     color: white;
     padding: 2px 8px;
-    border-radius: 10px;
+    border-radius: 8px;
 
     &:hover{
         opacity: 0.9;
