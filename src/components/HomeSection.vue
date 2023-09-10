@@ -51,12 +51,12 @@ export default {
 .home {
     display: flex;
     background-color: var(--background-grey);
-    /*min-height: 85vh;*/
+    min-height: 75vh;
 }
 
 .home-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     max-width: 90%;
     /*background-color: var(--primary-white);*/
     background: transparent;
@@ -77,13 +77,15 @@ export default {
 
 .hook {
     color: var(--primary-blue);
-    font-size: 35px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 700;
     line-height: 1.2;
     background: transparent;
 
     @media only screen and (min-width: 768px) {
         font-size: 55px;
+        line-height: 1.2;
+        font-weight: 400;
     }
 }
 

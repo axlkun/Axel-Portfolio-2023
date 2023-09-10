@@ -142,11 +142,11 @@ nav {
     .header {
         position: static;
     }
-
+    /*
     .logo a{
         display: none;
     }
-
+    */
     .menu {
         flex-direction: column;
         background-color: var(--background-grey);
