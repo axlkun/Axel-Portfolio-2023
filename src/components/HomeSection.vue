@@ -8,7 +8,7 @@
                         
                         <v-sheet class="hook">
                             <p> Me gusta desarrollar productos de software sólidos y escalables con una excepcional experiencia de
-                                usuario <img :src="imgHappyFace" alt="Imagen Home SVG" class="custom-sizing-img" loading="lazy" /></p>
+                                usuario <img :src="imgHappyFace" alt="Hayppy Face SVG" loading="lazy" /></p>
                         </v-sheet>
 
                         <v-sheet class="home-description">
@@ -24,7 +24,7 @@
                 </v-sheet>
     
                 <v-sheet class="img-container">
-                    <img :src="imgHome" alt="Imagen Home SVG" class="custom-sizing-img" loading="lazy" />
+                    <img :src="imgHome" alt="Imagen Home" loading="lazy" />
                 </v-sheet>
             </v-sheet>
         </v-sheet>
@@ -71,7 +71,9 @@ export default {
     }
 }
 
-.hook-container{
+.hook-container, .img-container{
+    flex-grow: 1;
+    flex-basis: 50%;
     background: transparent;
 }
 
@@ -125,7 +127,7 @@ export default {
     flex-direction: column;
     gap: 30px;
     background: transparent;
-    margin: 20px 0;
+    margin: 30px 0;
     align-items: center;
 
     @media only screen and (min-width: 768px) {
@@ -161,15 +163,11 @@ export default {
     opacity: 0.9;
 }
 
-.img-container,
+
 .img-container img {
-  background: transparent;
-  max-width: 300px;
+ 
   margin: 0 auto;
-
-  @media only screen and (min-width: 768px) {
-    max-width: 700px;
-
-}
+  width: 100%;
+    display: block;
 }
 </style>

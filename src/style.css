@@ -22,7 +22,7 @@
 
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-size: inherit; /* Tamaño de fuente heredado */
   font-weight: inherit; /* Peso de fuente heredado */
   margin: 0; /* Margen predeterminado eliminado */
