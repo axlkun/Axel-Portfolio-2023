@@ -2,7 +2,7 @@
     <v-sheet class="aboutme">
         <v-sheet class="description">
 
-            <v-sheet class="container-aboutme">
+            <v-sheet class="container-aboutme-title">
                 <h2>Sobre mi</h2>
             </v-sheet>
 
@@ -26,22 +26,165 @@
         </v-sheet>
         <v-sheet class="technologies">
 
-            <v-sheet class="container-tecnologies">
+            <v-sheet class="container-tecnologies-title">
                 <h3>He trabajado con estas tecnologías recientemente</h3>
             </v-sheet>
+
+            <v-sheet class="container-tecnologies">
+                <v-sheet v-for="item in tecnologiesContent" :key="item.id" class="tecnologie">
+                    <v-icon class="custom-size">
+                        <img :src="item.icon" :alt="item.alt" class="w-100" loading="lazy" />
+                    </v-icon>
+                    <p>{{ item.name }}</p>
+                </v-sheet>
+            </v-sheet>
+
+
         </v-sheet>
     </v-sheet>
 </template>
 
 <script>
-import imgAvatar from '../assets/avatar.png';
+
+import iconLaravel from '../assets/laravel-icon.svg';
+import iconVue from '../assets/vue-icon.svg';
+import iconVuetify from '../assets/vuetify-icon.svg';
+import iconPhp from '../assets/php-icon.svg';
+import iconMySQL from '../assets/mysql-icon.svg';
+import iconSqlServer from '../assets/sqlserver-icon.svg';
+import iconBigQuery from '../assets/bigquery-icon.svg';
+import iconStorage from '../assets/storage-icon.svg';
+import iconPython from '../assets/python-icon.svg';
+import iconJs from '../assets/js-icon.svg';
+import iconFigma from '../assets/figma-icon.svg';
+import iconGit from '../assets/git-icon.svg';
+import iconGithub from '../assets/github-icon.svg';
+import iconGitlab from '../assets/gitlab-icon.svg';
+import iconRailway from '../assets/railway-icon.svg';
+import iconNetlify from '../assets/netlify-icon.svg';
 
 export default {
 
     name: 'aboutMeSection',
 
+
     data: () => ({
-        imgAvatar
+        
+        iconLaravel,
+        iconVue,
+        iconVuetify,
+        iconPhp,
+        iconMySQL,
+        iconSqlServer,
+        iconBigQuery,
+        iconStorage,
+        iconPython,
+        iconJs,
+        iconFigma,
+        iconGit,
+        iconGithub,
+        iconGitlab,
+        iconRailway,
+        iconNetlify,
+
+        tecnologiesContent: [
+            {
+                id: 1,
+                icon: iconLaravel,
+                name: "Laravel",
+                alt: "Icono Laravel SVG"
+            },
+            {
+                id: 2,
+                icon: iconVue,
+                name: "Vue.js",
+                alt: "Icono Vue SVG"
+            },
+            {
+                id: 3,
+                icon: iconVuetify,
+                name: "Vuetify",
+                alt: "Icono Vuetify SVG"
+            },
+            {
+                id: 4,
+                icon: iconPhp,
+                name: "PHP",
+                alt: "Icono PHP SVG"
+            },
+            {
+                id: 5,
+                icon: iconMySQL,
+                name: "MySQL",
+                alt: "Icono MySQL SVG"
+            },
+            {
+                id: 6,
+                icon: iconSqlServer,
+                name: "SQLServer",
+                alt: "Icono SQLServer SVG"
+            },
+            {
+                id: 7,
+                icon: iconBigQuery,
+                name: "BigQuery",
+                alt: "Icono BigQuery SVG"
+            },
+            {
+                id: 8,
+                icon: iconStorage,
+                name: "CloudStorage",
+                alt: "Icono Cloud Storage SVG"
+            },
+            {
+                id: 9,
+                icon: iconPython,
+                name: "Python",
+                alt: "Icono Python SVG"
+            },
+            {
+                id: 10,
+                icon: iconJs,
+                name: "JavaScript",
+                alt: "Icono JavaScript SVG"
+            },
+            {
+                id: 11,
+                icon: iconFigma,
+                name: "Figma",
+                alt: "Icono Figma SVG"
+            },
+            {
+                id: 12,
+                icon: iconGit,
+                name: "Git",
+                alt: "Icono Git SVG"
+            },
+            {
+                id: 13,
+                icon: iconGithub,
+                name: "Github",
+                alt: "Icono Github SVG"
+            },
+            {
+                id: 14,
+                icon: iconGitlab,
+                name: "GitLab",
+                alt: "Icono GitLab SVG"
+            },
+            {
+                id: 15,
+                icon: iconRailway,
+                name: "Railway",
+                alt: "Icono Railway SVG"
+            },
+            {
+                id: 15,
+                icon: iconNetlify,
+                name: "Netlify",
+                alt: "Icono Netlify SVG"
+            }
+        ]
     }),
 
 }
@@ -66,14 +209,25 @@ export default {
 
 .description {
     background-color: var(--primary-blue);
+    padding: 15px 0 30px 0;
+
+
+    @media only screen and (min-width: 768px) {
+        padding: 0;
+    }
 }
 
 .technologies {
     background-color: var(--background-grey);
+    padding: 15px 0;
+
+    @media only screen and (min-width: 768px) {
+        padding: 0;
+    }
 }
 
 
-.container-aboutme {
+.container-aboutme-title {
     font-size: 35px;
     font-weight: 400;
     max-width: 80%;
@@ -89,23 +243,6 @@ export default {
     }
 }
 
-.container-tecnologies {
-    font-size: 25px;
-    font-weight: 400;
-    max-width: 80%;
-    margin: 0 auto;
-    background: transparent;
-    color: var(--primary-blue);
-    text-align: center;
-    line-height: 1.1;
-
-    @media only screen and (min-width: 768px) {
-        font-size: 35px;
-        text-align: start;
-        margin: 0 auto;
-    }
-}
-
 .container-aboutme-description {
     background: transparent;
     color: var(--background-grey);
@@ -116,13 +253,73 @@ export default {
     gap: 20px;
     font-size: 20px;
     line-height: 1.2;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--background-grey);
 
     @media only screen and (min-width: 768px) {
         line-height: 1.5;
         font-size: 25px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--background-grey);
     }
 }
 
+.container-tecnologies-title {
+    font-size: 25px;
+    font-weight: 400;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    background: transparent;
+    color: var(--primary-blue);
+    text-align: center;
+    line-height: 1.1;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 35px;
+        text-align: start;
+    }
+}
+
+.container-tecnologies {
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    background: transparent;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    max-width: 90%;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary-blue);
+        grid-row-gap: 2rem;
+        grid-column-gap: 1rem;
+    }
+}
+
+.tecnologie {
+    padding: 1rem;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tecnologie p {
+    color: var(--primary-blue);
+    font-size: 15px;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.custom-size{
+    width: 40px;
+    height: 40px;
+
+    @media only screen and (min-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
+}
 </style>
