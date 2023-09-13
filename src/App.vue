@@ -10,12 +10,11 @@
 
 <script>
 import MyHeader from './components/Header.vue';
-import colors from './style.css';
+import './style.css?inline';
 
 export default{
   components : {
     MyHeader,
-    colors
   }
 }
 

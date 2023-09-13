@@ -23,6 +23,10 @@
                 </p>
             </v-sheet>
 
+            <v-sheet class="img-container">
+                <img :src="imgAboutMe" alt="Imagen About Me" loading="lazy" />
+            </v-sheet>
+
         </v-sheet>
         <v-sheet class="technologies">
 
@@ -45,6 +49,8 @@
 </template>
 
 <script>
+
+import imgAboutMe from '../assets/img-home-light.svg';
 
 import iconLaravel from '../assets/laravel-icon.svg';
 import iconVue from '../assets/vue-icon.svg';
@@ -69,7 +75,8 @@ export default {
 
 
     data: () => ({
-        
+        imgAboutMe,
+
         iconLaravel,
         iconVue,
         iconVuetify,
@@ -196,7 +203,7 @@ export default {
     flex-direction: column;
     min-height: 100vh;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
         flex-direction: row;
     }
 }
@@ -210,33 +217,24 @@ export default {
 .description {
     background-color: var(--primary-blue);
     padding: 15px 0 30px 0;
-
-
-    @media only screen and (min-width: 768px) {
-        padding: 0;
-    }
-}
-
-.technologies {
-    background-color: var(--background-grey);
-    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
 
     @media only screen and (min-width: 768px) {
         padding: 0;
     }
 }
-
 
 .container-aboutme-title {
     font-size: 35px;
     font-weight: 400;
-    max-width: 80%;
+    min-width: 80%;
     margin: 0 auto;
     background: transparent;
     color: var(--background-grey);
     text-align: center;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
         font-size: 55px;
         font-weight: 400;
         text-align: start;
@@ -248,17 +246,26 @@ export default {
     color: var(--background-grey);
     max-width: 80%;
     margin: 0 auto;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px;*/
     font-size: 20px;
     line-height: 1.2;
 
-    @media only screen and (min-width: 768px) {
-        line-height: 1.5;
+    @media only screen and (min-width: 1024px) {
+        line-height: 1.1;
         font-size: 25px;
         padding-bottom: 10px;
         border-bottom: 1px solid var(--background-grey);
+    }
+}
+
+.technologies {
+    background-color: var(--background-grey);
+    padding: 15px 0;
+
+    @media only screen and (min-width: 768px) {
+        padding: 0;
     }
 }
 
@@ -273,7 +280,7 @@ export default {
     text-align: center;
     line-height: 1.1;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
         font-size: 35px;
         text-align: start;
     }
@@ -322,4 +329,23 @@ export default {
         height: 60px;
     }
 }
+
+.img-container{
+ 
+    background: transparent;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+
+  .img-container img{
+    
+    width: 100%;
+    height: 100%;
+
+    @media only screen and (min-width: 1024px) {
+        min-width: 400px;
+    }
+  }
+
 </style>
