@@ -8,7 +8,7 @@
 
             <v-sheet class="container-aboutme-description">
                 <p>
-                    Estoy en el mundo de la programación por qué me fascina el proceso de materializar todas mis ideas
+                    Estoy en el mundo de la programación porque me fascina el proceso de materializar todas mis ideas
                     mediante código y mucha creatividad.
                 </p>
 
