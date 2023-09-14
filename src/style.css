@@ -11,11 +11,12 @@
   font-family: 'Basic', sans-serif;
   line-height: 1.8;
 
-  /* --primary-blue: #0052faff; */
-  --primary-blue: #006effff;
+  --primary-blue: #0052faff;
+  /* --primary-blue: #006effff; */
   /* --primary-white: #edf8ffff; */
   --primary-white: #fff8f2ff;
-  --background-grey: #f1f1f1ff;
+  /* --background-grey: #f1f1f1ff; */
+  --background-grey: #edf8ffff;
   --primary-grey: #757575;
   --primary-purple: #ac7ce4;
   --font-black: #000000ff;
@@ -30,6 +31,10 @@ h1, h2, h3 {
   line-height: inherit; /* Altura de línea heredada */
   color: inherit; /* Color de texto heredado */
   /* Otras propiedades que desees restablecer */
+}
+
+ul, ol {
+  list-style: none;
 }
 
 /*
@@ -59,4 +64,6 @@ fff8f2ff
 006effff
 
 edf8ffff
+
+0052faff
 */
