@@ -6,39 +6,15 @@
         </v-sheet>
 
             <v-sheet class="container-services">
-                <v-sheet class="service">
-                    <h3>Desarrollo Frontend <span class="mdi mdi-palette"></span></h3>
-                    <!-- <p>Planeacion, diseño, desarrollo, pruebas, despliegue y mantenimiento de aplicaciones Frontend</p> -->
-                    <p>El desarrollo frontend se enfoca en la creación de interfaces de usuario de alta calidad para sitios web y aplicaciones. Se centra en la implementación de diseños atractivos y funcionales que ofrecen una experiencia de usuario excepcional. Por ejemplo:</p>
-                    <ul>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Landing Page</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Sitios web informativos</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Portafolios</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Catalogos</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Menús</li>
-                    </ul>
+                <v-sheet class="service" v-for="service in services" :key="service.title">
+                  <h3>{{ service.title }} <span :class="'mdi ' + service.icon"></span></h3>
+                  <p>{{ service.description }}</p>
+                  <ul>
+                    <li v-for="example in service.examples" :key="example"><span class="mdi mdi-arrow-right-thin"></span>{{ example }}</li>
+                  </ul>
                 </v-sheet>
-                <v-sheet class="service">
-                    <h3>Desarrollo FullStack <span class="mdi mdi-desktop-classic"></span></h3>
-                    <p>El desarrollo fullstack abarca la creación completa de aplicaciones, desde la interfaz de usuario hasta el backend. Incluye la programación de la lógica, la gestión de bases de datos y la configuración de servidores, brindando soluciones tecnológicas integrales. Por ejemplo:</p>
-                    <ul>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Software empresarial</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Sitio web con panel de administración</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Blog</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Soluciones de software a la medida</li>
-                    </ul>
-                </v-sheet>
-                <v-sheet class="service">
-                    <h3>Actualización <span class="mdi mdi-cog-refresh"></span></h3>
-                    <p> Este servicio se enfoca en mejorar y optimizar proyectos en línea existentes. Se prioriza el rendimiento y la visibilidad en línea. Por ejemplo:</p>
-                    <ul>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Incorporación de nuevas funcionalidades</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Rediseño del producto de software</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Optimización de rendimiento</li>
-                        <li><span class="mdi mdi-arrow-right-thin"></span>Implementación de estrategias SEO</li>
-                    </ul>
-                </v-sheet>
-            </v-sheet>
+              </v-sheet>
+              
     </v-sheet>
 </template>
 
@@ -48,6 +24,28 @@ export default {
 
 name: 'servicesSection',
 
+data: () => ({
+    services: [
+      {
+        title: 'Desarrollo Frontend',
+        icon: 'mdi-palette',
+        description: 'Creación de interfaces atractivas para sitios web y aplicaciones, asegurando una experiencia de usuario excepcional.',
+        examples: ['Landing Page', 'Sitios web informativos', 'Portafolios', 'Catalogos', 'Menús']
+      },
+      {
+        title: 'Desarrollo FullStack',
+        icon: 'mdi-desktop-classic',
+        description: 'Desarrollo integral de software, brindando soluciones tecnológicas completas y a la medida.',
+        examples: ['Soluciones de software a la medida', 'Software empresarial', 'Sitio web con panel de administración', 'Blog']
+      },
+      {
+        title: 'Actualización',
+        icon: 'mdi-cog-refresh',
+        description: 'Optimización y mejora de proyectos en línea existentes, enfocándonos en el rendimiento y la visibilidad.',
+        examples: ['Incorporación de nuevas funcionalidades', 'Rediseño del producto de software', 'Optimización de rendimiento', 'Implementación de estrategias SEO']
+      }
+    ]
+})
 
 }
 </script>
