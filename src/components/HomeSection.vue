@@ -88,7 +88,7 @@ export default {
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
-        line-height: 1.2;
+        line-height: 1;
         font-weight: 400;
     }
 }

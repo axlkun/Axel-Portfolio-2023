@@ -253,7 +253,6 @@ export default {
     line-height: 1.2;
 
     @media only screen and (min-width: 1024px) {
-        line-height: 1.1;
         font-size: 25px;
         padding-bottom: 10px;
         border-bottom: 1px solid var(--background-grey);
