@@ -9,7 +9,7 @@
                 <v-sheet class="service">
                     <h3>Desarrollo Frontend <span class="mdi mdi-palette"></span></h3>
                     <!-- <p>Planeacion, diseño, desarrollo, pruebas, despliegue y mantenimiento de aplicaciones Frontend</p> -->
-                    <p>El desarrollo frontend se enfoca en la creación de interfaces de usuario de alta calidad para sitios web y aplicaciones. Se centra en la implementación de diseños atractivos y funcionales que ofrecen una experiencia de usuario excepcional.</p>
+                    <p>El desarrollo frontend se enfoca en la creación de interfaces de usuario de alta calidad para sitios web y aplicaciones. Se centra en la implementación de diseños atractivos y funcionales que ofrecen una experiencia de usuario excepcional. Por ejemplo:</p>
                     <ul>
                         <li><span class="mdi mdi-arrow-right-thin"></span>Landing Page</li>
                         <li><span class="mdi mdi-arrow-right-thin"></span>Sitios web informativos</li>
@@ -20,7 +20,7 @@
                 </v-sheet>
                 <v-sheet class="service">
                     <h3>Desarrollo FullStack <span class="mdi mdi-desktop-classic"></span></h3>
-                    <p>El desarrollo fullstack abarca la creación completa de aplicaciones, desde la interfaz de usuario hasta el backend. Incluye la programación de la lógica, la gestión de bases de datos y la configuración de servidores, brindando soluciones tecnológicas integrales.</p>
+                    <p>El desarrollo fullstack abarca la creación completa de aplicaciones, desde la interfaz de usuario hasta el backend. Incluye la programación de la lógica, la gestión de bases de datos y la configuración de servidores, brindando soluciones tecnológicas integrales. Por ejemplo:</p>
                     <ul>
                         <li><span class="mdi mdi-arrow-right-thin"></span>Software empresarial</li>
                         <li><span class="mdi mdi-arrow-right-thin"></span>Sitio web con panel de administración</li>
@@ -30,7 +30,7 @@
                 </v-sheet>
                 <v-sheet class="service">
                     <h3>Actualización <span class="mdi mdi-cog-refresh"></span></h3>
-                    <p> Este servicio se enfoca en mejorar y optimizar proyectos en línea existentes. Se prioriza el rendimiento y la visibilidad en línea</p>
+                    <p> Este servicio se enfoca en mejorar y optimizar proyectos en línea existentes. Se prioriza el rendimiento y la visibilidad en línea. Por ejemplo:</p>
                     <ul>
                         <li><span class="mdi mdi-arrow-right-thin"></span>Incorporación de nuevas funcionalidades</li>
                         <li><span class="mdi mdi-arrow-right-thin"></span>Rediseño del producto de software</li>
@@ -127,7 +127,7 @@ name: 'servicesSection',
     }
 }
 
-.service:nth-child(1) {
+.service:nth-child(1), .service:nth-child(3)  {
     
 
     @media only screen and (min-width: 1024px) {
