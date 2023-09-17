@@ -142,15 +142,6 @@ data: () => ({
     }
   }
 
-  .service:nth-child(3) {
-    margin-bottom: 30px;
-
-    @media only screen and (min-width: 1024px) {
-        margin-bottom: 0;
-    }
-  }
-
-
 .service h3{
     font-size: 25px;
     text-align: center;
