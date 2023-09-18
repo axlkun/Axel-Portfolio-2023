@@ -228,7 +228,7 @@ export default {
 .container-aboutme-title {
     font-size: 35px;
     font-weight: 400;
-    min-width: 80%;
+    min-width: 90%;
     margin: 0 auto;
     background: transparent;
     color: var(--background-grey);
@@ -238,13 +238,14 @@ export default {
         font-size: 55px;
         font-weight: 400;
         text-align: start;
+        min-width: 80%;
     }
 }
 
 .container-aboutme-description {
     background: transparent;
     color: var(--background-grey);
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     /*display: flex;
     flex-direction: column;
@@ -254,8 +255,9 @@ export default {
 
     @media only screen and (min-width: 1024px) {
         font-size: 25px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--background-grey);
+        max-width: 80%;
+        /*padding-bottom: 10px;
+        border-bottom: 1px solid var(--background-grey);*/
     }
 }
 
@@ -271,7 +273,7 @@ export default {
 .container-tecnologies-title {
     font-size: 25px;
     font-weight: 400;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     margin-bottom: 15px;
     background: transparent;
@@ -282,6 +284,7 @@ export default {
     @media only screen and (min-width: 1024px) {
         font-size: 35px;
         text-align: start;
+        max-width: 80%;
     }
 }
 
@@ -295,9 +298,9 @@ export default {
 
     @media only screen and (min-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--primary-blue);
-        grid-row-gap: 2rem;
+        /*padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary-blue);*/
+        grid-row-gap: 2.5rem;
         grid-column-gap: 1rem;
     }
 }

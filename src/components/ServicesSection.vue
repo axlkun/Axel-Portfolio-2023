@@ -2,7 +2,7 @@
     <v-sheet class="services">
         <v-sheet class="title-container">
             <h2>Servicios</h2>
-            <p>Descubre como una solución de software puede transformar tu negocio</p>
+            <!-- <p>Descubre como una solución de software puede transformar tu negocio</p> -->
         </v-sheet>
 
             <v-sheet class="container-services">
@@ -139,6 +139,13 @@ data: () => ({
 
     @media only screen and (min-width: 1024px) {
         margin-top: 60px;
+    }
+  }
+
+  .service:nth-child(3)  {
+    margin-bottom: 30px;
+    @media only screen and (min-width: 1024px) {
+        margin-bottom: 0;
     }
   }
 

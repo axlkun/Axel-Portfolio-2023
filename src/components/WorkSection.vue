@@ -2,46 +2,36 @@
     <v-sheet class="works">
         <v-sheet class="title-container">
             <h2>Proyectos</h2>
-            <p>Cada proyecto es una oportunidad para adquirir nuevos conocimientos en una gran variedad de campos.</p>
         </v-sheet>
 
         <v-sheet class="work-container">
-            <v-sheet class="work">
-                <v-sheet class="img-container">
-                    <img :src="imgUnfollowers" alt="Imagen Home" loading="lazy" />
-                </v-sheet>
-                <v-sheet class="work-title">
-                    <h3>Unfollowers Tracker</h3>
-                    <p>Herramienta web para descurbrir quien no te sigue en Instagram</p>
-                </v-sheet>
-            </v-sheet>
-            <v-sheet class="work">
-                <v-sheet class="img-container">
-                    <img :src="imgCargaDatastageGral" alt="Imagen Home" loading="lazy" />
-                </v-sheet>
-                <v-sheet class="work-title">
-                    <h3>Carga Datastage General</h3>
-                    <p>Herramienta web para cargar el Datastage a BigQuery</p>
-                </v-sheet>
-            </v-sheet>
-            <v-sheet class="work">
-                <v-sheet class="img-container">
-                    <img :src="imgUnfollowers" alt="Imagen Home" loading="lazy" />
-                </v-sheet>
-                <v-sheet class="work-title">
-                    <h3>Unfollowers Tracker</h3>
-                    <p>Herramienta web para descurbrir quien no te sigue en Instagram</p>
-                </v-sheet>
-            </v-sheet>
-            <v-sheet class="work">
-                <v-sheet class="img-container">
-                    <img :src="imgUnfollowers" alt="Imagen Home" loading="lazy" />
-                </v-sheet>
-                <v-sheet class="work-title">
-                    <h3>Unfollowers Tracker</h3>
-                    <p>Herramienta web para descurbrir quien no te sigue en Instagram</p>
-                </v-sheet>
-            </v-sheet>
+            
+            <v-card v-for="project in projects" :key="project.name" color="#0052faff" variant="text">
+                <v-img :src="project.image" cover :aspect-ratio="16 / 8">
+                </v-img>
+                <v-card-title class="flex-column align-start">
+                    <div class="text-subtitle-1">
+                        {{ project.name }}
+                    </div>
+                    <div class="text-subtitle-1 text-grey text-visible">
+                        {{ project.description }}
+                    </div>
+                    <div class="d-flex align-center">
+                        <v-icon :class="project.icon" contain></v-icon>
+
+                        <span class="text-body-2 text-grey ml-1">{{ project.type }}</span>
+                    </div>
+                </v-card-title>
+
+                <v-divider class="mx-4"></v-divider>
+
+                <v-card-text class="d-flex flex-wrap justify-start">
+                    <v-chip v-for="stack in project.stack" class="mr-2 mb-2">
+                        {{ stack }}
+                    </v-chip>
+                </v-card-text>
+            </v-card>
+
         </v-sheet>
     </v-sheet>
 </template>
@@ -49,6 +39,9 @@
 <script>
 import imgUnfollowers from '../assets/UnfollowersTracker.png';
 import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png';
+import imgCargaDatastageWldx from '../assets/CargaDatastageWelldex.png';
+import imgAutorizacionCheques from '../assets/AutorizacionCheques.png';
+import imgValidacionExpedientes from '../assets/welldex-logo.jpeg';
 
 export default {
 
@@ -56,7 +49,46 @@ export default {
 
     data: () => ({
         imgUnfollowers,
-        imgCargaDatastageGral
+        imgCargaDatastageGral,
+        imgCargaDatastageWldx,
+        imgAutorizacionCheques,
+        imgValidacionExpedientes,
+
+        projects: [
+            {
+                name: "Unfollowers Tracker",
+                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
+                type: "Proyecto propio",
+                stack: ["Vue","Vuetify","Laravel","MySQL"],
+                image: imgUnfollowers,
+                icon: "mdi mdi-folder-heart-outline"
+            },
+            {
+                name: "API Validación de Expedientes",
+                description: "API para validar y verificar expedientes de operaciones aduaneras",
+                type: "Welldex Internacional",
+                stack: ["PHP","Python","MySQL","SQLServer","CloudStorage"],
+                image: imgValidacionExpedientes,
+                icon: "mdi mdi-domain"
+            },
+            {
+                name: "Carga Datastage General",
+                description: "Módulo que permite subir el Datastage nacional a BigQuery",
+                type: "Welldex Internacional",
+                stack: ["Vue","Vuetify","PHP","MySQL","BigQuery"],
+                image: imgCargaDatastageGral,
+                icon: "mdi mdi-domain"
+            },
+            {
+                name: "Carga Datastage Welldex",
+                description: "Módulo que permite subir el Datastage de la empresa a BigQuery",
+                type: "Welldex Internacional",
+                stack: ["Vue","Vuetify","PHP","MySQL","BigQuery"],
+                image: imgCargaDatastageWldx,
+                icon: "mdi mdi-domain"
+            }
+            
+        ]
     }),
 
 }
@@ -115,63 +147,13 @@ export default {
         grid-template-columns: repeat(2, 1fr);
         /* Cambia a dos columnas en pantallas más grandes */
         grid-row-gap: 4rem;
-        grid-column-gap: 1rem;
+        grid-column-gap: 2rem;
     }
 }
 
-.work {
-    background: transparent;
-    /*background-color: #ffffffff;*/
-    /*border: 1px solid rgb(131, 130, 158);*/
-    border-radius: 8px;
+.text-visible {
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
 }
-
-.work-title {
-    background: transparent;
-    margin: 0 auto;
-}
-
-.img-container {
-
-    background: transparent;
-    margin: 0 auto;
-    max-width: 85%;
-}
-
-.img-container img {
-
-    width: 100%;
-    height: 100%;
-
-    @media only screen and (min-width: 1024px) {
-        min-width: 400px;
-    }
-}
-
-.work h3 {
-    font-size: 25px;
-    max-width: 80%;
-    margin: 0 auto;
-    color: var(--primary-blue);
-    text-align: start;
-    line-height: 1.1;
-
-    @media only screen and (min-width: 1024px) {
-        font-size: 25px;
-        
-    }
-}
-
-.work p {
-    font-size: 20px;
-    font-weight: 400;
-    max-width: 80%;
-    margin: 0 auto;
-    color: var(--primary-grey);
-    text-align: start;
-    line-height: 1.1;
-
-    @media only screen and (min-width: 1024px) {
-        text-align: start;
-    }
-}</style>
+</style>
