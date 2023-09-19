@@ -5,7 +5,7 @@
         </v-sheet>
 
         <v-sheet class="work-container">
-            
+
             <v-card v-for="project in projects" :key="project.name" color="#0052faff" variant="text">
                 <v-img :src="project.image" cover :aspect-ratio="16 / 8">
                 </v-img>
@@ -33,6 +33,10 @@
             </v-card>
 
         </v-sheet>
+
+        <v-sheet class="button-container">
+            <a class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
+        </v-sheet>
     </v-sheet>
 </template>
 
@@ -59,7 +63,7 @@ export default {
                 name: "Unfollowers Tracker",
                 description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
                 type: "Proyecto propio",
-                stack: ["Vue","Vuetify","Laravel","MySQL"],
+                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
                 image: imgUnfollowers,
                 icon: "mdi mdi-folder-heart-outline"
             },
@@ -67,7 +71,7 @@ export default {
                 name: "API Validación de Expedientes",
                 description: "API para validar y verificar expedientes de operaciones aduaneras",
                 type: "Welldex Internacional",
-                stack: ["PHP","Python","MySQL","SQLServer","CloudStorage"],
+                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
                 image: imgValidacionExpedientes,
                 icon: "mdi mdi-domain"
             },
@@ -75,7 +79,7 @@ export default {
                 name: "Carga Datastage General",
                 description: "Módulo que permite subir el Datastage nacional a BigQuery",
                 type: "Welldex Internacional",
-                stack: ["Vue","Vuetify","PHP","MySQL","BigQuery"],
+                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
                 image: imgCargaDatastageGral,
                 icon: "mdi mdi-domain"
             },
@@ -83,11 +87,11 @@ export default {
                 name: "Carga Datastage Welldex",
                 description: "Módulo que permite subir el Datastage de la empresa a BigQuery",
                 type: "Welldex Internacional",
-                stack: ["Vue","Vuetify","PHP","MySQL","BigQuery"],
+                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
                 image: imgCargaDatastageWldx,
                 icon: "mdi mdi-domain"
             }
-            
+
         ]
     }),
 
@@ -98,18 +102,21 @@ export default {
 .works {
     /*min-height: 100vh;*/
     background-color: var(--background-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title-container {
     font-size: 35px;
-    max-width: 80%;
+    width: 80%;
     margin: 0 auto;
     color: var(--primary-blue);
     background: transparent;
     text-align: center;
 
     @media only screen and (min-width: 1024px) {
-        max-width: 90%;
+        width: 90%;
         text-align: start;
     }
 }
@@ -136,7 +143,7 @@ export default {
 
 .work-container {
     margin: 30px auto;
-    max-width: 90%;
+    width: 90%;
     display: grid;
     gap: 2rem;
     background: transparent;
@@ -155,5 +162,35 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     white-space: initial;
+}
+
+.button-container{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+    @media only screen and (min-width: 1024px) {
+        width: auto;
+    }
+}
+
+.button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 85%;
+
+    @media only screen and (min-width: 1024px) {
+        width: auto;
+    }
+}
+
+.button:hover {
+    opacity: 0.9;
 }
 </style>
