@@ -30,7 +30,7 @@ data: () => ({
         title: 'Desarrollo Frontend',
         icon: 'mdi-palette',
         description: 'Creación de interfaces atractivas para sitios web y aplicaciones, asegurando una experiencia de usuario excepcional.',
-        examples: ['Landing Page', 'Sitios web informativos', 'Portafolios', 'Catalogos', 'Menús']
+        examples: ['Landing Page', 'Sitios web informativos', 'Portafolios', 'Catálogos', 'Menús']
       },
       {
         title: 'Desarrollo FullStack',
