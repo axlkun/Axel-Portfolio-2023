@@ -14,7 +14,7 @@
 
                         <v-sheet class="home-description">
                             <p>Axel Cruz</p>
-                            <h1>Ingeniero en Sistemas ⋅ Programador</h1>
+                            <h1>Ingeniero en Sistemas Computacionales ⋅ Programador</h1>
                         </v-sheet>
 
                     </v-sheet>
@@ -108,13 +108,14 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 20px;
+    font-size: 15px;
     margin: 15px 0;
     color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
         justify-content: start;
+        font-size: 20px;
         gap: 20px;
     }
 }
