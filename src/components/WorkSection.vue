@@ -6,7 +6,7 @@
 
         <v-sheet class="work-container">
 
-            <v-card v-for="project in projects" :key="project.name" color="#0052faff" variant="text">
+            <v-card v-for="project in projects" :key="project.name" color="#0052faff" variant="text" class="custom-card">
                 <v-img :src="project.image" cover :aspect-ratio="16 / 8">
                 </v-img>
                 <v-card-title class="flex-column align-start">
@@ -164,7 +164,7 @@ export default {
     white-space: initial;
 }
 
-.button-container{
+.button-container {
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -185,12 +185,24 @@ export default {
     text-align: center;
     min-width: 85%;
 
+    &:hover{
+        opacity: 0.9;
+    }
+
     @media only screen and (min-width: 1024px) {
         width: auto;
     }
 }
 
-.button:hover {
-    opacity: 0.9;
+.custom-card {
+    transition: transform 0.3s, filter 0.3s;
+
+    &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+        filter: brightness(0.8);
+    }
+
 }
+
 </style>
