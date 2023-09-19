@@ -14,10 +14,11 @@
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <ul class="menu">
-                <li><a @click="scrollToSection('steps')">Inicio</a></li>
-                <li><a @click="scrollToSection('contact')">Sobre Mi</a></li>
-                <li><a @click="scrollToSection('contact')">Proyectos</a></li>
-                <li><a @click="scrollToSection('contact')">Blog</a></li>
+                <li><a @click="scrollToSection('home')">Inicio</a></li>
+                <li><a @click="scrollToSection('aboutme')">Sobre Mi</a></li>
+                <li><a @click="scrollToSection('services')">Servicios</a></li>
+                <li><a @click="scrollToSection('projects')">Proyectos</a></li>
+                <li><a @click="scrollToSection('blog')">Blog</a></li>
                 <li><a @click="scrollToSection('contact')" class="button">Contacto</a></li>
             </ul>
         </nav>
