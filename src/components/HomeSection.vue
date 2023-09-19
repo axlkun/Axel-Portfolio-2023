@@ -1,6 +1,6 @@
 <template>
     <v-sheet>
-        <v-sheet class="home">
+        <v-sheet class="home" id="home">
 
             <v-sheet class="home-container">
                 <v-sheet class="hook-container">

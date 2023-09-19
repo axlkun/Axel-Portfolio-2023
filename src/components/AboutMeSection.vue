@@ -1,5 +1,5 @@
 <template>
-    <v-sheet class="aboutme">
+    <v-sheet class="aboutme" id="aboutme">
         <v-sheet class="description">
 
             <v-sheet class="container-aboutme-title">
