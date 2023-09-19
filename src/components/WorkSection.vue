@@ -23,13 +23,13 @@
                     </div>
                 </v-card-title>
 
-                <v-divider class="mx-4"></v-divider>
+                <!-- <v-divider class="mx-4"></v-divider>
 
                 <v-card-text class="d-flex flex-wrap justify-start">
                     <v-chip v-for="stack in project.stack" class="mr-2 mb-2">
                         {{ stack }}
                     </v-chip>
-                </v-card-text>
+                </v-card-text> -->
             </v-card>
 
         </v-sheet>
@@ -170,9 +170,12 @@ export default {
     flex-direction: column;
     align-items: center;
     width: 90%;
+    background: transparent;
 
     @media only screen and (min-width: 1024px) {
-        width: auto;
+        width: 90%;
+        flex-direction: row;
+        justify-content: flex-end;
     }
 }
 
@@ -183,7 +186,7 @@ export default {
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
-    min-width: 85%;
+    width: 85%;
 
     &:hover{
         opacity: 0.9;
