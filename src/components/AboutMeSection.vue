@@ -245,19 +245,17 @@ export default {
 .container-aboutme-description {
     background: transparent;
     color: var(--background-grey);
-    max-width: 90%;
-    margin: 0 auto;
-    /*display: flex;
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
     flex-direction: column;
-    gap: 20px;*/
+    gap: 20px;
     font-size: 20px;
     line-height: 1.2;
 
     @media only screen and (min-width: 1024px) {
-        font-size: 25px;
-        max-width: 80%;
-        /*padding-bottom: 10px;
-        border-bottom: 1px solid var(--background-grey);*/
+        
+        width: 80%;
     }
 }
 
