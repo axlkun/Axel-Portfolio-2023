@@ -8,8 +8,9 @@
             </v-sheet>
 
             <v-sheet class="container-aboutme-description">
-                <p>Explora una amplia variedad de temas informativos en este espacio donde encontrarás una diversidad de tópicos que te mantendrán actualizado en temas de programación, tecnología, startups y más.</p>
-                <p>Estos son los artículos mas recientes <span class="mdi mdi-arrow-right-thin"></span></p>
+                <p>Explora una amplia variedad de temas informativos en este espacio donde encontrarás una diversidad de
+                    tópicos que te mantendrán actualizado en temas de programación, tecnología, startups y más.</p>
+                <p>Estos son los artículos mas recientes <span class="mdi mdi-arrow-down-right"></span></p>
             </v-sheet>
 
         </v-sheet>
@@ -90,21 +91,16 @@ export default {
     flex-direction: column;
 
     @media only screen and (min-width: 1024px) {
-        flex-direction: row;
         min-height: 100vh;
     }
 }
 
 .description {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-black);
     padding: 15px 0 30px 0;
     display: flex;
     flex-direction: column;
 
-    @media only screen and (min-width: 768px) {
-        padding: 0;
-        flex: 30%;
-    }
 }
 
 .container-aboutme-title {
@@ -120,7 +116,6 @@ export default {
         font-size: 55px;
         font-weight: 400;
         text-align: start;
-        min-width: 65%;
     }
 }
 
@@ -137,8 +132,7 @@ export default {
 
     @media only screen and (min-width: 1024px) {
 
-        width: 65%;
-    font-size: 20px;
+        font-size: 20px;
     }
 }
 
@@ -146,30 +140,26 @@ export default {
     background-color: var(--background-grey);
     padding: 15px 0;
     width: 100%;
-
-    @media only screen and (min-width: 768px) {
-        padding: 0;
-        border-top: 1px solid var(--primary-black);
-        flex: 70%;
-       
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .article-entry {
     width: 90%;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--primary-black);
     display: flex;
     flex-direction: column;
-    margin: 15px auto;
-    padding-bottom: 15px;
+    margin: 0 auto;
     background: transparent;
-    line-height: 1;
+    line-height: 1.2;
     transition: transform 0.3s, filter 0.3s;
 
     @media only screen and (min-width: 768px) {
-        width: 85%;
         flex-direction: row;
         justify-content: space-between;
+        border-bottom: none;
     }
 
     &:hover {
@@ -192,13 +182,16 @@ export default {
     }
 }
 
-.article-title p {
-    color: var(--primary-blue);
+.article-entry p {
     font-size: 16px;
 
     @media only screen and (min-width: 1024px) {
         font-size: 20px;
     }
+}
+
+.article-title p {
+    color: var(--primary-blue);
 }
 
 .tags {
@@ -217,7 +210,7 @@ export default {
 
 .button-container {
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,7 +220,6 @@ export default {
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
         justify-content: flex-end;
-        width: 85%;
     }
 }
 
@@ -240,7 +232,7 @@ export default {
     text-align: center;
     width: 85%;
 
-    &:hover{
+    &:hover {
         opacity: 0.9;
     }
 
