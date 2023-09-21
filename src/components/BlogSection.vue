@@ -149,7 +149,7 @@ export default {
 
     @media only screen and (min-width: 768px) {
         padding: 0;
-        border-top: 1px solid black;
+        border-top: 1px solid var(--primary-black);
         flex: 70%;
        
     }
@@ -157,7 +157,7 @@ export default {
 
 .article-entry {
     width: 90%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--primary-black);
     display: flex;
     flex-direction: column;
     margin: 15px auto;
@@ -210,7 +210,7 @@ export default {
 }
 
 .tags p {
-    border: 1px solid black;
+    border: 1px solid var(--primary-black);
     border-radius: 10px;
     padding: 1px 5px;
 }

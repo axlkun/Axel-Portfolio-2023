@@ -5,6 +5,7 @@
         <servicesSection></servicesSection>
         <workSection></workSection>
         <blogSection></blogSection>
+        <contactSection></contactSection>
     </v-sheet>
 </template>
 
@@ -14,6 +15,7 @@ import aboutMeSection from '../components/AboutMeSection.vue';
 import servicesSection from '../components/ServicesSection.vue';
 import workSection from '../components/WorkSection.vue';
 import blogSection from '../components/BlogSection.vue';
+import contactSection from '../components/ContactSection.vue';
 
 export default {
 
@@ -22,7 +24,8 @@ export default {
     aboutMeSection,
     servicesSection,
     workSection,
-    blogSection
+    blogSection,
+    contactSection
 }
 
 }

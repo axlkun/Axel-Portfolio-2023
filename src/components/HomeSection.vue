@@ -84,8 +84,7 @@ export default {
 }
 
 .hook {
-    color: var(--primary-blue);
-    color: black;
+    color: var(--primary-black);
     font-size: 25px;
     font-weight: 700;
     line-height: 1.2;
@@ -165,8 +164,8 @@ export default {
 
 .buttons-container a:nth-child(2) {
     background-color: var(--background-grey);
-    color: var(--font-black);
-    border: 1px solid var(--font-black);
+    color: var(--primary-black);
+    border: 1px solid var(--primary-black);
 }
 
 .button:hover {

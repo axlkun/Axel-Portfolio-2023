@@ -310,8 +310,7 @@ export default {
 }
 
 .tecnologie p {
-    color: var(--primary-blue);
-    color: black;
+    color: var(--primary-black);
     font-size: 16px;
 
     @media only screen and (min-width: 768px) {

@@ -96,7 +96,7 @@ nav {
 }
 
 .logo a span {
-    color: var(--font-black);;
+    color: var(--primary-black);;
 }
 
 /*
@@ -117,7 +117,7 @@ nav {
     font-size: 17px;
     font-weight: 500;
     transition: 0.2s all ease-in-out;
-    color: var(--font-black);
+    color: var(--primary-black);
     cursor: pointer;
 }
 
@@ -174,7 +174,7 @@ nav {
 
     .menu-icon {
         display: block;
-        color: var(--font-black);
+        color: var(--primary-black);
         font-size: 28px;
         cursor: pointer;
     }
