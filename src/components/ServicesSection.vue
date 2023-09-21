@@ -41,7 +41,7 @@ data: () => ({
       {
         title: 'Actualización',
         icon: 'mdi-cog-refresh',
-        description: 'Optimización y mejora de proyectos en línea existentes, enfocándonos en el rendimiento y la visibilidad.',
+        description: 'Optimización y mejora de proyectos en línea existentes, priorizando el rendimiento y la visibilidad.',
         examples: ['Incorporación de nuevas funcionalidades', 'Rediseño del producto de software', 'Optimización de rendimiento', 'Implementación de estrategias SEO']
       }
     ]
