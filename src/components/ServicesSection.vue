@@ -144,14 +144,20 @@ data: () => ({
 
     @media only screen and (min-width: 1024px) {
        
-        font-size: 36px;
+        font-size: 35px;
        
     }
 }
 
 .service p, li{
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 16px;
+    line-height: 1.5;
+
+    @media only screen and (min-width: 1024px) {
+       
+        font-size: 20px;
+       
+    }
 }
 
 li{

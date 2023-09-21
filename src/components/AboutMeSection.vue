@@ -250,12 +250,12 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 16px;
+    line-height: 1.5;
 
     @media only screen and (min-width: 1024px) {
-        
         width: 80%;
+        font-size: 20px;
     }
 }
 
@@ -296,8 +296,6 @@ export default {
 
     @media only screen and (min-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        /*padding-bottom: 10px;
-        border-bottom: 2px solid var(--primary-blue);*/
         grid-row-gap: 2.5rem;
         grid-column-gap: 1rem;
     }
@@ -313,7 +311,7 @@ export default {
 
 .tecnologie p {
     color: var(--primary-blue);
-    font-size: 15px;
+    font-size: 16px;
 
     @media only screen and (min-width: 768px) {
         font-size: 20px;

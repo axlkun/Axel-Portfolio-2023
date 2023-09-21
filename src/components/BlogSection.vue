@@ -1,5 +1,5 @@
 <template>
-    <v-sheet class="blog">
+    <v-sheet class="blog" id="blog">
 
         <v-sheet class="description">
 
@@ -8,7 +8,8 @@
             </v-sheet>
 
             <v-sheet class="container-aboutme-description">
-                <p>Lee sobre programación, tecnología, startups y mucho más.</p>
+                <p>Explora una amplia variedad de temas informativos en este espacio digital donde encontrarás una diversidad de tópicos que te mantendrán actualizado en temas de programación, tecnología, startups y más.</p>
+                <p>Estos son los artículos mas recientes <span class="mdi mdi-arrow-right-thin"></span></p>
             </v-sheet>
 
         </v-sheet>
@@ -105,6 +106,7 @@ export default {
 
     @media only screen and (min-width: 768px) {
         padding: 0;
+        flex: 30%;
     }
 }
 
@@ -121,7 +123,7 @@ export default {
         font-size: 55px;
         font-weight: 400;
         text-align: start;
-        min-width: 80%;
+        min-width: 65%;
     }
 }
 
@@ -133,12 +135,13 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.2;
 
     @media only screen and (min-width: 1024px) {
 
-        width: 80%;
+        width: 65%;
+    font-size: 20px;
     }
 }
 
@@ -150,6 +153,8 @@ export default {
     @media only screen and (min-width: 768px) {
         padding: 0;
         border-top: 1px solid black;
+        flex: 70%;
+       
     }
 }
 
@@ -174,9 +179,8 @@ export default {
     background: inherit;
 }
 
-.article-title h3,
-.article-title p {
-    font-size: 25px;
+.article-title h3 {
+    font-size: 20px;
     text-align: start;
 
     @media only screen and (min-width: 1024px) {
@@ -186,6 +190,11 @@ export default {
 
 .article-title p {
     color: var(--primary-blue);
+    font-size: 16px;
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 20px;
+    }
 }
 
 .tags {
@@ -199,6 +208,6 @@ export default {
 .tags p {
     border: 1px solid black;
     border-radius: 10px;
-    padding: 1px 3px;
+    padding: 1px 5px;
 }
 </style>

@@ -81,15 +81,18 @@ export default {
 
 .hook {
     color: var(--primary-blue);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 1.2;
     background: transparent;
+    max-width: 90%;
+    margin: 0 auto;
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
         line-height: 1;
         font-weight: 400;
+        max-width: none;
     }
 }
 
@@ -108,7 +111,8 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.5;
     margin: 15px 0;
     color: var(--primary-blue);
 
