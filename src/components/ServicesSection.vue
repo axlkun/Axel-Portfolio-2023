@@ -107,11 +107,11 @@ data: () => ({
     gap: 10px;
     flex: 1;
     height: 500px;
-    transition: transform 0.3s ease;
+    /*transition: transform 0.3s ease;
 
     &:hover{
         transform: scale(1.01);
-    }
+    }*/
 }
 
 .service:nth-child(1), .service:nth-child(3)  {

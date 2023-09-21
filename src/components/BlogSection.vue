@@ -8,7 +8,7 @@
             </v-sheet>
 
             <v-sheet class="container-aboutme-description">
-                <p>Explora una amplia variedad de temas informativos en este espacio digital donde encontrarás una diversidad de tópicos que te mantendrán actualizado en temas de programación, tecnología, startups y más.</p>
+                <p>Explora una amplia variedad de temas informativos en este espacio donde encontrarás una diversidad de tópicos que te mantendrán actualizado en temas de programación, tecnología, startups y más.</p>
                 <p>Estos son los artículos mas recientes <span class="mdi mdi-arrow-right-thin"></span></p>
             </v-sheet>
 
@@ -32,6 +32,10 @@
 
             </v-sheet>
 
+            <v-sheet class="button-container">
+                <a class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
+            </v-sheet>
+
         </v-sheet>
 
     </v-sheet>
@@ -45,32 +49,32 @@ export default {
     data: () => ({
         blogEntry: [
             {
-                title: "VITRA",
-                description: "INTERIOR ARCHITECT WORKPLACE",
+                title: "Cómo hacer un portafolio",
+                description: "Conoce los puntos clave para crear un excelente portafolio web",
                 tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
                 lectureTime: 5
             },
             {
-                title: "construyendo Unfollowers Tracker",
+                title: "Construyendo Unfollowers Tracker",
                 description: "Como es construir una aplicacion web para monetizar",
                 tags: ["Startup", "Adsense", "Web", "Other", "MidLevel"],
                 lectureTime: 5
             },
             {
-                title: "Aprender Vue",
-                description: "INTERIOR ARCHITECT WORKPLACE",
+                title: "Proyectos para aprender Vue",
+                description: "Conoce 10 proyectos reales para prácticar tus conocimientos en Vue",
                 tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
                 lectureTime: 5
             },
             {
-                title: "Aprender Vue",
-                description: "INTERIOR ARCHITECT WORKPLACE",
+                title: "Hablemos sobre ChatGPT",
+                description: "Como sacarle el máximo provecho a esta herramienta IA",
                 tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
                 lectureTime: 5
             },
             {
-                title: "Aprender Vue",
-                description: "INTERIOR ARCHITECT WORKPLACE",
+                title: "¿Cual framework para frontend debo aprender?",
+                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
                 tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
                 lectureTime: 5
             }
@@ -90,13 +94,6 @@ export default {
         min-height: 100vh;
     }
 }
-
-/*
-.description,
-.articles {
-    flex-grow: 1;
-    flex-basis: 50%;
-}*/
 
 .description {
     background-color: var(--primary-blue);
@@ -167,11 +164,18 @@ export default {
     padding-bottom: 15px;
     background: transparent;
     line-height: 1;
+    transition: transform 0.3s, filter 0.3s;
 
     @media only screen and (min-width: 768px) {
         width: 85%;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+        filter: brightness(0.8);
     }
 }
 
@@ -209,5 +213,39 @@ export default {
     border: 1px solid black;
     border-radius: 10px;
     padding: 1px 5px;
+}
+
+.button-container {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    background: transparent;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 85%;
+    }
+}
+
+.button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    width: 85%;
+
+    &:hover{
+        opacity: 0.9;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        width: auto;
+    }
 }
 </style>

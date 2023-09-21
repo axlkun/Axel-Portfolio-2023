@@ -182,9 +182,10 @@ export default {
     transition: transform 0.3s, filter 0.3s;
 
     &:hover {
-        transform: scale(1.01);
+        
         cursor: pointer;
-        filter: brightness(0.8);
+        transform: scale(1.01);
+        filter: brightness(0.9);
     }
 
 }

@@ -7,9 +7,7 @@
                     <v-sheet class="home-encabezado">
 
                         <v-sheet class="hook">
-                            <p> Me gusta desarrollar productos de software sólidos y escalables con una excepcional
-                                experiencia de
-                                usuario <img :src="imgHappyFace" alt="Hayppy Face SVG" loading="lazy" /></p>
+                            <p> Me gusta desarrollar productos de software <span>sólidos</span> y <span>escalables</span> con una excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" alt="Hayppy Face SVG" loading="lazy" /></p>
                         </v-sheet>
 
                         <v-sheet class="home-description">
@@ -72,6 +70,12 @@ export default {
     }
 }
 
+.home-encabezado {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
 .hook-container,
 .img-container {
     flex-grow: 1;
@@ -81,6 +85,7 @@ export default {
 
 .hook {
     color: var(--primary-blue);
+    color: black;
     font-size: 25px;
     font-weight: 700;
     line-height: 1.2;
@@ -96,14 +101,12 @@ export default {
     }
 }
 
-.home-encabezado {
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-}
-
 .hook img {
     margin-bottom: -10px;
+}
+
+.hook span{
+    color: var(--primary-blue);
 }
 
 .home-description {
