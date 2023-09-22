@@ -47,40 +47,7 @@ export default {
 
     name: 'blogSection',
 
-    data: () => ({
-        blogEntry: [
-            {
-                title: "Cómo hacer un portafolio",
-                description: "Conoce los puntos clave para crear un excelente portafolio web",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                lectureTime: 5
-            },
-            {
-                title: "Construyendo Unfollowers Tracker",
-                description: "Como es construir una aplicacion web para monetizar",
-                tags: ["Startup", "Adsense", "Web", "Other", "MidLevel"],
-                lectureTime: 5
-            },
-            {
-                title: "Proyectos para aprender Vue",
-                description: "Conoce 10 proyectos reales para prácticar tus conocimientos en Vue",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                lectureTime: 5
-            },
-            {
-                title: "Hablemos sobre ChatGPT",
-                description: "Como sacarle el máximo provecho a esta herramienta IA",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                lectureTime: 5
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                lectureTime: 5
-            }
-        ]
-    })
+    props: ['blogEntry'],
 
 }
 </script>

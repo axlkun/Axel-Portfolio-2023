@@ -4,7 +4,7 @@
         <aboutMeSection></aboutMeSection>
         <servicesSection></servicesSection>
         <workSection></workSection>
-        <blogSection></blogSection>
+        <blogSection :blogEntry="blogEntry"></blogSection>
         <contactSection></contactSection>
     </v-sheet>
 </template>
@@ -26,7 +26,9 @@ export default {
     workSection,
     blogSection,
     contactSection
-}
+},
+
+props: ['blogEntry'],
 
 }
 </script>
