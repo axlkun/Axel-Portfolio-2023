@@ -1,26 +1,24 @@
 <template>
   <v-app id="app">
 
-    <MyHeader></MyHeader>
+    <myHeader></myHeader>
     <main>
       <router-view :blogEntry="blogEntry"></router-view>
     </main>
-    <MyFooter :blogEntry="blogEntry"></MyFooter>
+    <myFooter :blogEntry="blogEntry"></myFooter>
   </v-app>
 </template>
 
 <script>
-import MyHeader from './components/Header.vue';
-import BlogSection from './components/BlogSection.vue';
-import MyFooter from './components/Footer.vue';
+import myHeader from './components/Header.vue';
+import myFooter from './components/Footer.vue';
 import './style.css?inline';
 
 export default{
   
   components : {
-    MyHeader,
-    MyFooter,
-    BlogSection,
+    myHeader,
+    myFooter
   },
 
   data: () => ({
