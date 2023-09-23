@@ -111,7 +111,7 @@ export default {
 }
 
 .articles {
-    background-color: var(--background-grey);
+    /*background-color: var(--background-grey);*/
     padding: 30px 0;
     width: 90%;
     margin: 0 auto;
@@ -138,10 +138,6 @@ export default {
     background: transparent;
     line-height: 1.2;
     transition: transform 0.3s, filter 0.3s;
-
-    @media only screen and (min-width: 768px) {
-        border-bottom: none;
-    }
 
     &:hover {
         transform: scale(1.01);
