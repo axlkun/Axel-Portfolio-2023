@@ -25,7 +25,6 @@ export default {
     servicesSection,
     workSection,
     blogSection,
-    blogSection2,
     contactSection
 },
 
