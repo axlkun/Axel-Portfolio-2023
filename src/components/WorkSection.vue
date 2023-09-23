@@ -35,7 +35,7 @@
         </v-sheet>
 
         <v-sheet class="button-container">
-            <a class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
+            <a href="/work" class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
         </v-sheet>
     </v-sheet>
 </template>
