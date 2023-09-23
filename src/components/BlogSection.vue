@@ -16,6 +16,11 @@
         </v-sheet>
         <v-sheet class="articles">
             <v-sheet v-for="article in blogEntry" class="article-entry">
+                <v-sheet class="img-container">
+                    <v-img class="img" :src="imgBlog"></v-img>
+                    <p>17/01/2023</p>
+                </v-sheet>
+                
                 <v-sheet>
                     <v-sheet class="article-title">
                         <h3>{{ article.title }}</h3>
@@ -27,27 +32,29 @@
                     </v-sheet>
                 </v-sheet>
 
-                <v-sheet>
-                    <p>Tiempo de lectura: 5min</p>
-                </v-sheet>
-
             </v-sheet>
 
-            <v-sheet class="button-container">
-                <a class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
-            </v-sheet>
+        </v-sheet>
 
+        <v-sheet class="button-container">
+            <a class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
         </v-sheet>
 
     </v-sheet>
 </template>
 
 <script>
+import imgBlog from '../assets/logo-axel.svg';
+
 export default {
 
     name: 'blogSection',
 
     props: ['blogEntry'],
+
+    data: () => ({
+        imgBlog
+    })
 
 }
 </script>
@@ -105,15 +112,24 @@ export default {
 
 .articles {
     background-color: var(--background-grey);
-    padding: 15px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    padding: 30px 0;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    background: transparent;
+    grid-template-columns: 1fr;
+    /* Establece una columna por defecto */
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        /* Cambia a dos columnas en pantallas más grandes */
+        grid-row-gap: 2rem;
+        grid-column-gap: 4rem;
+    }
 }
 
 .article-entry {
-    width: 90%;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--primary-black);
     display: flex;
@@ -124,15 +140,12 @@ export default {
     transition: transform 0.3s, filter 0.3s;
 
     @media only screen and (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
         border-bottom: none;
     }
 
     &:hover {
         transform: scale(1.01);
         cursor: pointer;
-        filter: brightness(0.8);
     }
 }
 
@@ -140,12 +153,26 @@ export default {
     background: inherit;
 }
 
+.img-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  .img{
+    max-width: 50px;
+  }
+
 .article-title h3 {
-    font-size: 20px;
+    font-size: 16px;
     text-align: start;
+    margin-bottom: 15px;
+    font-weight: bold;
 
     @media only screen and (min-width: 1024px) {
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
@@ -159,6 +186,15 @@ export default {
 
 .article-title p {
     color: var(--primary-blue);
+    color: grey;
+}
+
+.img-container p {
+    font-size: 14px;
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 16px;
+    }
 }
 
 .tags {
