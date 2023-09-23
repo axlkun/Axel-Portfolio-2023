@@ -18,7 +18,7 @@
             <v-sheet v-for="article in blogEntry" class="article-entry">
                 <v-sheet class="img-container">
                     <v-img class="img" :src="imgBlog"></v-img>
-                    <p>17/01/2023</p>
+                    <p>{{article.date}}</p>
                 </v-sheet>
                 
                 <v-sheet>
@@ -166,6 +166,7 @@ export default {
     text-align: start;
     margin-bottom: 15px;
     font-weight: bold;
+    color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {
         font-size: 20px;
@@ -181,7 +182,6 @@ export default {
 }
 
 .article-title p {
-    color: var(--primary-blue);
     color: grey;
 }
 
