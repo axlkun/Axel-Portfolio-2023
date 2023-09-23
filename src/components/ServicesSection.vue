@@ -58,11 +58,11 @@ data: () => ({
 
 .title-container {
    
-    max-width: 80%;
     margin: 0 auto;
     color: var(--background-grey);
     background: transparent;
     text-align: center;
+    font-weight: bold;
 
     @media only screen and (min-width: 1024px) {
         max-width: 90%;

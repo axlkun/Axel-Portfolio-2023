@@ -109,16 +109,16 @@ export default {
 
 .title-container {
     font-size: 35px;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     color: var(--primary-blue);
     background: transparent;
+    font-weight: bold;
     text-align: center;
-
-    @media only screen and (min-width: 1024px) {
-        width: 90%;
-        text-align: start;
+    
+    @media only screen and (min-width: 1024px) {        
         font-size: 55px;
+        text-align: start;
     }
 }
 

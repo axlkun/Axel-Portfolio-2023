@@ -227,7 +227,7 @@ export default {
 
 .container-aboutme-title {
     font-size: 35px;
-    font-weight: 400;
+    font-weight: bold;
     min-width: 90%;
     margin: 0 auto;
     background: transparent;
@@ -236,7 +236,6 @@ export default {
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
-        font-weight: 400;
         text-align: start;
         min-width: 80%;
     }
@@ -270,7 +269,6 @@ export default {
 
 .container-tecnologies-title {
     font-size: 25px;
-    font-weight: 400;
     max-width: 90%;
     margin: 0 auto;
     margin-bottom: 15px;

@@ -27,9 +27,14 @@
                         <p>{{ article.description }}</p>
                     </v-sheet>
 
-                    <v-sheet class="tags">
+                    <!-- <v-sheet class="tags">
                         <p v-for="tag in article.tags">{{ tag }}</p>
-                    </v-sheet>
+                    </v-sheet> -->
+                    <v-card-text class="d-flex flex-wrap pa-0">
+                        <v-chip v-for="tag in article.tags" class="mr-2 mb-2">
+                            {{ tag }}
+                        </v-chip>
+                    </v-card-text>
                 </v-sheet>
 
             </v-sheet>
@@ -63,6 +68,7 @@ export default {
 .blog {
     display: flex;
     flex-direction: column;
+    background-color: var(--background-grey);
 
     @media only screen and (min-width: 1024px) {
         min-height: 100vh;
@@ -70,7 +76,7 @@ export default {
 }
 
 .description {
-    background-color: var(--primary-black);
+    background-color: var(--primary-blue);
     padding: 15px 0 30px 0;
     display: flex;
     flex-direction: column;
@@ -79,7 +85,7 @@ export default {
 
 .container-aboutme-title {
     font-size: 35px;
-    font-weight: 400;
+    font-weight: bold;
     min-width: 90%;
     margin: 0 auto;
     background: transparent;
@@ -88,7 +94,6 @@ export default {
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
-        font-weight: 400;
         text-align: start;
     }
 }
@@ -159,6 +164,10 @@ export default {
 
   .img{
     max-width: 50px;
+  }
+
+  .article-title{
+    margin-bottom: 15px;
   }
 
 .article-title h3 {
