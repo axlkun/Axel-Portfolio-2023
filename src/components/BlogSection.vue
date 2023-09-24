@@ -14,7 +14,7 @@
             </v-sheet>
 
         </v-sheet>
-        <v-sheet class="articles">
+        <!-- <v-sheet class="articles">
             <v-sheet v-for="article in blogEntry" class="article-entry">
                 <v-sheet class="img-container">
                     <v-img class="img" :src="imgBlog"></v-img>
@@ -27,9 +27,6 @@
                         <p>{{ article.description }}</p>
                     </v-sheet>
 
-                    <!-- <v-sheet class="tags">
-                        <p v-for="tag in article.tags">{{ tag }}</p>
-                    </v-sheet> -->
                     <v-card-text class="d-flex flex-wrap pa-0">
                         <v-chip v-for="tag in article.tags" class="mr-2 mb-2">
                             {{ tag }}
@@ -39,17 +36,21 @@
 
             </v-sheet>
 
-        </v-sheet>
+        </v-sheet> -->
+        <articlestList :blogEntry="blogEntry"></articlestList>
+
 
         <v-sheet class="button-container">
-            <a class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
+            <a href="/blog" class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
         </v-sheet>
 
     </v-sheet>
 </template>
 
 <script>
-import imgBlog from '../assets/logo-axel.svg';
+// import imgBlog from '../assets/logo-axel.svg';
+import articlestList from './ArticlesList.vue';
+
 
 export default {
 
@@ -57,9 +58,9 @@ export default {
 
     props: ['blogEntry'],
 
-    data: () => ({
-        imgBlog
-    })
+    components: {
+        articlestList
+    }
 
 }
 </script>

@@ -57,7 +57,28 @@ export default{
                 description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
                 tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
                 date: "10/10/2023"
-            }
+            },
+            {
+                title: "¿Cual framework para frontend debo aprender?",
+                link: "/blog/cual-framework-para-frontend-debo-aprender",
+                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
+                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
+                date: "10/10/2023"
+            },
+            {
+                title: "¿Cual framework para frontend debo aprender?",
+                link: "/blog/cual-framework-para-frontend-debo-aprender",
+                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
+                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
+                date: "10/10/2023"
+            },
+            {
+                title: "¿Cual framework para frontend debo aprender?",
+                link: "/blog/cual-framework-para-frontend-debo-aprender",
+                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
+                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
+                date: "10/10/2023"
+            },
         ]
     })
 }
