@@ -1,7 +1,7 @@
 <template>
     <v-footer class="d-flex flex-column" color="#232325">
 
-        <div class="d-flex flex-sm-row flex-column justify-space-between pt-5 pb-5 footer-section">
+        <div class="d-flex flex-sm-row flex-column justify-space-between footer-section">
   
           <div class="section">
             <p>Navegación</p>
@@ -70,11 +70,14 @@ export default {
 
 <style scoped>
 .footer-section{
-    
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     border-bottom: 1px solid var(--background-grey);
     color: var(--background-grey);
+
+    @media only screen and (min-width: 1024px) {
+      width: 90%;
+  }
   }
   
   .footer-section{

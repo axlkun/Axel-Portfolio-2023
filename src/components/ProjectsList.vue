@@ -1,42 +1,36 @@
 <template>
-    <v-sheet class="projects">
-        <v-sheet class="container">
-            <v-sheet class="title">
-                <h1>Proyectos</h1>
-            </v-sheet>
+    <v-sheet class="container">
 
-            <v-sheet class="work-container">
+        <v-sheet class="work-container">
 
-                <v-card v-for="project in projects" :key="project.name" color="#0052faff" variant="text"
-                    class="custom-card">
-                    <v-img :src="project.image" cover :aspect-ratio="16 / 8">
-                    </v-img>
-                    <v-card-title class="flex-column align-start">
-                        <div class="project-name">
-                            {{ project.name }}
-                        </div>
-                        <div class="text-grey mt-1 mb-1 project-description text-visible">
-                            {{ project.description }}
-                        </div>
-                        <div class="d-flex align-center">
-                            <v-icon :class="project.icon" contain></v-icon>
-    
-                            <span class="text-grey ml-1 project-type">{{ project.type }}</span>
-                        </div>
-                    </v-card-title>
+            <v-card v-for="project in visibleProjects" :key="project.name" color="#0052faff" variant="text"
+                class="custom-card">
+                <v-img :src="project.image" cover :aspect-ratio="16 / 8">
+                </v-img>
+                <v-card-title class="flex-column align-start">
+                    <div class="project-name">
+                        {{ project.name }}
+                    </div>
+                    <div class="text-grey mt-1 mb-1 project-description text-visible">
+                        {{ project.description }}
+                    </div>
+                    <div class="d-flex align-center">
+                        <v-icon :class="project.icon" contain></v-icon>
 
-                    <v-divider class="mx-4"></v-divider>
+                        <span class="text-grey ml-1 project-type">{{ project.type }}</span>
+                    </div>
+                </v-card-title>
 
-                    <v-card-text class="d-flex flex-wrap justify-start">
-                        <v-chip v-for="stack in project.stack" class="mr-2 mb-2">
-                            {{ stack }}
-                        </v-chip>
-                    </v-card-text>
-                </v-card>
+                <v-divider class="mx-4"></v-divider>
 
-            </v-sheet>
+                <v-card-text class="d-flex flex-wrap justify-start">
+                    <v-chip v-for="stack in project.stack" class="mr-2 mb-2">
+                        {{ stack }}
+                    </v-chip>
+                </v-card-text>
+            </v-card>
+
         </v-sheet>
-        <contactSection></contactSection>
     </v-sheet>
 </template>
 
@@ -51,12 +45,21 @@ import imgInventarioAyuntamiento from '../assets/InventarioAyuntamiento.png';
 import imgBienesRaices from '../assets/BienesRaices.png';
 import imgReportePNC from '../assets/ReportePNC.png';
 
-import contactSection from '../components/ContactSection.vue';
-
 export default {
 
-    components: {
-        contactSection
+    props: {
+        maxProjects: Number
+    },
+
+    computed: {
+        visibleProjects() {
+            if (this.maxProjects === -1) {
+                return this.projects;
+            }
+            // Limita la cantidad de proyectos que se muestran según maxProjects
+            return this.projects.slice(0, this.maxProjects);
+            
+        },
     },
 
     data: () => ({
@@ -152,31 +155,10 @@ export default {
 </script>
 
 <style scoped>
-.projects {
-    min-height: 100vh;
-    background-color: var(--background-grey);
-}
-
 .container {
     max-width: 90%;
     background: transparent;
     margin: 0 auto;
-}
-
-.title {
-    font-size: 35px;
-    font-weight: 400;
-    margin: 0 auto;
-    background: transparent;
-    color: var(--primary-blue);
-    text-align: center;
-
-    @media only screen and (min-width: 1024px) {
-        font-size: 55px;
-        font-weight: 400;
-        text-align: start;
-    }
-
 }
 
 .work-container {
@@ -207,7 +189,7 @@ export default {
 
 }
 
-.project-name{
+.project-name {
     font-size: 16px;
     font-weight: bold;
 
@@ -215,7 +197,8 @@ export default {
         font-size: 20px;
     }
 }
-.project-description{
+
+.project-description {
     font-size: 16px;
     line-height: 1.2;
 
@@ -223,7 +206,8 @@ export default {
         font-size: 20px;
     }
 }
-.project-type{
+
+.project-type {
     font-size: 14px;
     line-height: 1.2;
 

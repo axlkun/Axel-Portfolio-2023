@@ -82,7 +82,7 @@ export default{
 }
 
 .contact-description{
-    background-color: var(--background-grey);
+    background-color: var(--primary-black);
 }
 
 .contact-description-container{
@@ -99,7 +99,7 @@ export default{
 .container-description-title,
 .container-description-description {
     background: transparent;
-    color: var(--primary-blue);
+    color: var(--background-grey);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -136,8 +136,8 @@ export default{
 }
 
 .tags p {
-    color: var(--primary-blue);
-    border: 1px solid var(--primary-blue);
+    color: var(--background-grey);
+    border: 1px solid var(--background-grey);
     border-radius: 10px;
     padding: 1px 5px;
 }

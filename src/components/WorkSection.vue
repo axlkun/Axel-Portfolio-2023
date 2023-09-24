@@ -4,35 +4,7 @@
             <h2>Proyectos</h2>
         </v-sheet>
 
-        <v-sheet class="work-container">
-
-            <v-card v-for="project in projects" :key="project.name" color="#0052faff" variant="text" class="custom-card">
-                <v-img :src="project.image" cover :aspect-ratio="16 / 8">
-                </v-img>
-                <v-card-title class="flex-column align-start">
-                    <div class="project-name">
-                        {{ project.name }}
-                    </div>
-                    <div class="text-grey mt-1 mb-1 project-description text-visible">
-                        {{ project.description }}
-                    </div>
-                    <div class="d-flex align-center">
-                        <v-icon :class="project.icon" contain></v-icon>
-
-                        <span class="text-grey ml-1 project-type">{{ project.type }}</span>
-                    </div>
-                </v-card-title>
-
-                <v-divider class="mx-4"></v-divider>
-
-                <v-card-text class="d-flex flex-wrap justify-start">
-                    <v-chip v-for="stack in project.stack" class="mr-2 mb-2">
-                        {{ stack }}
-                    </v-chip>
-                </v-card-text>
-            </v-card>
-
-        </v-sheet>
+        <project-list :max-projects="4"></project-list>
 
         <v-sheet class="button-container">
             <a href="/work" class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
@@ -41,66 +13,22 @@
 </template>
 
 <script>
-import imgUnfollowers from '../assets/UnfollowersTracker.png';
-import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png';
-import imgCargaDatastageWldx from '../assets/CargaDatastageWelldex.png';
-import imgAutorizacionCheques from '../assets/AutorizacionCheques.png';
-import imgValidacionExpedientes from '../assets/welldex-logo.jpeg';
+
+import projectList from './ProjectsList.vue';
 
 export default {
 
     name: 'workSection',
 
-    data: () => ({
-        imgUnfollowers,
-        imgCargaDatastageGral,
-        imgCargaDatastageWldx,
-        imgAutorizacionCheques,
-        imgValidacionExpedientes,
-
-        projects: [
-            {
-                name: "Unfollowers Tracker",
-                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
-                type: "Proyecto propio",
-                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
-                image: imgUnfollowers,
-                icon: "mdi mdi-folder-heart-outline"
-            },
-            {
-                name: "API Validación de Expedientes",
-                description: "API para validar y verificar expedientes de operaciones aduaneras",
-                type: "Welldex Internacional",
-                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
-                image: imgValidacionExpedientes,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage General",
-                description: "Módulo que permite subir el Datastage nacional a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageGral,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage Welldex",
-                description: "Módulo que permite subir el Datastage de la empresa a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageWldx,
-                icon: "mdi mdi-domain"
-            }
-
-        ]
-    }),
+    components: {
+        projectList
+    }
 
 }
 </script>
 
 <style scoped>
 .works {
-    /*min-height: 100vh;*/
     background-color: var(--background-grey);
     display: flex;
     flex-direction: column;
@@ -115,8 +43,8 @@ export default {
     background: transparent;
     font-weight: bold;
     text-align: center;
-    
-    @media only screen and (min-width: 1024px) {        
+
+    @media only screen and (min-width: 1024px) {
         font-size: 55px;
         text-align: start;
     }
@@ -139,7 +67,7 @@ export default {
     }
 }
 
-.project-name{
+.project-name {
     font-size: 16px;
     font-weight: bold;
 
@@ -147,7 +75,8 @@ export default {
         font-size: 20px;
     }
 }
-.project-description{
+
+.project-description {
     font-size: 16px;
     line-height: 1.2;
 
@@ -155,7 +84,8 @@ export default {
         font-size: 20px;
     }
 }
-.project-type{
+
+.project-type {
     font-size: 14px;
     line-height: 1.2;
 
@@ -194,7 +124,7 @@ export default {
     text-align: center;
     width: 85%;
 
-    &:hover{
+    &:hover {
         opacity: 0.9;
     }
 
@@ -207,12 +137,11 @@ export default {
     transition: transform 0.3s, filter 0.3s;
 
     &:hover {
-        
+
         cursor: pointer;
         transform: scale(1.01);
         filter: brightness(0.9);
     }
 
 }
-
 </style>
