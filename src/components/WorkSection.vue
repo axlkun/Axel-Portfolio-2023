@@ -4,7 +4,7 @@
             <h2>Proyectos</h2>
         </v-sheet>
 
-        <project-list :max-projects="4"></project-list>
+        <project-list :projectsList="projects"></project-list>
 
         <v-sheet class="button-container">
             <a href="/work" class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
@@ -16,13 +16,61 @@
 
 import projectList from './ProjectsList.vue';
 
+import imgUnfollowers from '../assets/UnfollowersTracker.png';
+import imgValidacionExpedientes from '../assets/welldex-logo.jpeg';
+import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png';
+import imgCargaDatastageWldx from '../assets/CargaDatastageWelldex.png';
+
 export default {
 
     name: 'workSection',
 
     components: {
         projectList
-    }
+    },
+
+    data: () => ({
+
+        imgUnfollowers,
+        imgCargaDatastageGral,
+        imgCargaDatastageWldx,
+        imgValidacionExpedientes,
+
+        projects: [
+            {
+                name: "Unfollowers Tracker",
+                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
+                type: "Proyecto propio",
+                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
+                image: imgUnfollowers,
+                icon: "mdi mdi-folder-heart-outline"
+            },
+            {
+                name: "API Validación de Expedientes",
+                description: "API para validar y verificar expedientes de operaciones aduaneras",
+                type: "Welldex Internacional",
+                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
+                image: imgValidacionExpedientes,
+                icon: "mdi mdi-domain"
+            },
+            {
+                name: "Carga Datastage General",
+                description: "Módulo que permite subir el Datastage nacional a BigQuery",
+                type: "Welldex Internacional",
+                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
+                image: imgCargaDatastageGral,
+                icon: "mdi mdi-domain"
+            },
+            {
+                name: "Carga Datastage Welldex",
+                description: "Módulo que permite subir el Datastage de la empresa a BigQuery",
+                type: "Welldex Internacional",
+                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
+                image: imgCargaDatastageWldx,
+                icon: "mdi mdi-domain"
+            }
+        ]
+    })
 
 }
 </script>
