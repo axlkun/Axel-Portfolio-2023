@@ -192,7 +192,7 @@ export default{
 
     &:hover{
         transform: scale(1.01);
-        filter: brightness(0.9);
+        color: var(--primary-grey);
     }
 }
 

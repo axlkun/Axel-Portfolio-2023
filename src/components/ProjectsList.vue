@@ -3,7 +3,7 @@
 
         <v-sheet class="work-container">
 
-            <v-card v-for="project in projectsList" :key="project.name" color="#0052faff" variant="text"
+            <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text"
                 class="custom-card">
                 <v-img :src="project.image" cover :aspect-ratio="16 / 8">
                 </v-img>
@@ -66,6 +66,7 @@ export default {
     }
 }
 
+
 .custom-card {
     transition: transform 0.3s, filter 0.3s;
 
@@ -81,6 +82,7 @@ export default {
 .project-name {
     font-size: 16px;
     font-weight: bold;
+    color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {
         font-size: 20px;
