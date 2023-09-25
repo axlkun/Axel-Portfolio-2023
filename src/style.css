@@ -12,11 +12,7 @@
   line-height: 1.8; */
 
   --primary-blue: #0052faff;
-  /* --primary-blue: #006effff; */
-  /* --primary-white: #edf8ffff; */
-  --primary-white: #fff8f2ff;
-  /* --background-grey: #f1f1f1ff; */
-  --background-grey: #edf8ffff;
+  --primary-background: #edf8ffff;
   --primary-grey: #757575;
   --primary-purple: #ac7ce4;
   --primary-black: #232325;
@@ -43,31 +39,7 @@ a {
 
 /*
 palette:
+azul: #023baf
+background: #ece5d0
 
-blanco: #f0f1fb
-morado: #ac7ce4
-
-azul claros:
-azul-1: #8bacfb
-azul-2: #718ffb
-azul-3: #4b75f3
-
-
-azul scuros:
-azul-1: #0434e4
-azul-2: #1f4aeb
-azul-3: #2755ec
-
-0052fa
-0052faff
-edf8ffff
-
-f2f2f2ff
-
-fff8f2ff
-006effff
-
-edf8ffff
-
-0052faff
 */

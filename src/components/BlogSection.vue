@@ -45,7 +45,7 @@ export default {
 .blog {
     display: flex;
     flex-direction: column;
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
 
     @media only screen and (min-width: 1024px) {
         min-height: 100vh;
@@ -66,7 +66,7 @@ export default {
     min-width: 90%;
     margin: 0 auto;
     background: transparent;
-    color: var(--background-grey);
+    color: var(--primary-background);
     text-align: center;
 
     @media only screen and (min-width: 1024px) {
@@ -77,7 +77,7 @@ export default {
 
 .container-aboutme-description {
     background: transparent;
-    color: var(--background-grey);
+    color: var(--primary-background);
     width: 90%;
     margin: 15px auto;
     display: flex;

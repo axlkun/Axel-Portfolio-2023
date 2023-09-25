@@ -128,7 +128,7 @@ export default {
 
 <style scoped>
 .projects {
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
 }
 
 .container {

@@ -62,7 +62,7 @@ export default {
     /*position: sticky;*/
     top: 0;
     width: 100%;
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
     z-index: 100;
 }
 
@@ -150,7 +150,7 @@ nav {
     */
     .menu {
         flex-direction: column;
-        background-color: var(--background-grey);
+        background-color: var(--primary-background);
         justify-content: space-evenly;
         align-items: center;
         position: absolute;

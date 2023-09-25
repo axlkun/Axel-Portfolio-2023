@@ -99,7 +99,7 @@ export default{
 .container-description-title,
 .container-description-description {
     background: transparent;
-    color: var(--background-grey);
+    color: var(--primary-background);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -136,8 +136,8 @@ export default{
 }
 
 .tags p {
-    color: var(--background-grey);
-    border: 1px solid var(--background-grey);
+    color: var(--primary-background);
+    border: 1px solid var(--primary-background);
     border-radius: 10px;
     padding: 1px 5px;
 }
@@ -164,12 +164,12 @@ export default{
 
 .follow{
     background: transparent;
-    border-top: 1px solid var(--background-grey);
+    border-top: 1px solid var(--primary-background);
 }
 
 .direct-contact{
     background: transparent;
-    border-top: 1px solid var(--background-grey);
+    border-top: 1px solid var(--primary-background);
     
 
 }
@@ -177,7 +177,7 @@ export default{
 .contact-link-container h3{
     font-size: 25px;
     text-align: center;
-    color: var(--background-grey);
+    color: var(--primary-background);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

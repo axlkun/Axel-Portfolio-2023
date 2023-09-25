@@ -59,7 +59,7 @@ data: () => ({
 .title-container {
    
     margin: 0 auto;
-    color: var(--background-grey);
+    color: var(--primary-background);
     background: transparent;
     text-align: center;
     font-weight: bold;
@@ -97,10 +97,10 @@ data: () => ({
 
 .service{
     background: transparent;
-    border: 1px solid var(--background-grey);
+    border: 1px solid var(--primary-background);
     border-radius: 10px;
     padding: 15px;
-    color: var(--background-grey);
+    color: var(--primary-background);
     line-height: 2;
     display: flex;
     flex-direction: column;
@@ -123,7 +123,7 @@ data: () => ({
   }
 .service:nth-child(2) {
     
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
     color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {

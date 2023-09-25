@@ -77,7 +77,7 @@ export default {
 
 <style scoped>
 .works {
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
     display: flex;
     flex-direction: column;
     align-items: center;

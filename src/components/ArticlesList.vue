@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .articles {
-    /*background-color: var(--background-grey);*/
+    /*background-color: var(--primary-background);*/
     padding: 30px 0;
     width: 90%;
     margin: 0 auto;

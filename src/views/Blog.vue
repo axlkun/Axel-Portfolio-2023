@@ -105,7 +105,7 @@ export default {
 <style scoped>
 .projects {
     min-height: 100vh;
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
 }
 
 .container {

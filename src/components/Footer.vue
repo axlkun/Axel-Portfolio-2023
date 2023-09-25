@@ -72,8 +72,8 @@ export default {
 .footer-section{
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid var(--background-grey);
-    color: var(--background-grey);
+    border-bottom: 1px solid var(--primary-background);
+    color: var(--primary-background);
 
     @media only screen and (min-width: 1024px) {
       width: 90%;
@@ -98,7 +98,7 @@ export default {
   }
 
   .section a{
-    color: var(--background-grey);
+    color: var(--primary-background);
 
     &:hover{
         color: var(--primary-blue);

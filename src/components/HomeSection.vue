@@ -49,7 +49,7 @@ export default {
 <style scoped>
 .home {
     display: flex;
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
     min-height: 75vh;
 }
 
@@ -57,7 +57,6 @@ export default {
     display: flex;
     flex-direction: column-reverse;
     max-width: 90%;
-    /*background-color: var(--primary-white);*/
     background: transparent;
     margin: 0 auto;
     text-align: center;
@@ -163,7 +162,7 @@ export default {
 }
 
 .buttons-container a:nth-child(2) {
-    background-color: var(--background-grey);
+    background-color: var(--primary-background);
     color: var(--primary-black);
     border: 1px solid var(--primary-black);
 }
