@@ -4,7 +4,7 @@
             <h2>Proyectos</h2>
         </v-sheet>
 
-        <project-list :projectsList="projects"></project-list>
+        <projectList :projectsList="projects"></projectList>
 
         <v-sheet class="button-container">
             <a href="/work" class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>

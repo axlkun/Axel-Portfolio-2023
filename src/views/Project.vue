@@ -14,7 +14,7 @@
                             <h1>Unfollowers Tracker</h1>
                         </v-sheet>
 
-                        <v-sheet class="d-flex flex-wrap justify-start custom-chips">
+                        <v-sheet class="d-flex flex-wrap justify-start mt-2 mb-2">
                             <v-chip class="mr-2 mb-2" color="#0801ff">
                                 Vue
                             </v-chip>
@@ -73,23 +73,57 @@
 
         </v-sheet>
 
+        <relatedProjects :projectsList="projects"></relatedProjects>
+
         <contactSection></contactSection>
     </v-sheet>
 </template>
 
 <script>
+import relatedProjects from '../components/RelatedProjects.vue';
 import contactSection from '../components/ContactSection.vue';
 
 import imgUnfollowersTracker from '../assets/UnfollowersTracker.png'
+import imgValidacionExpedientes from '../assets/welldex-logo.jpeg'
+import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png'
 
 export default {
 
     components: {
+        relatedProjects,
         contactSection
     },
 
     data: () => ({
-        imgUnfollowersTracker
+
+        imgUnfollowersTracker,
+    
+        projects: [
+            {
+                name: "Unfollowers Tracker",
+                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
+                type: "Proyecto propio",
+                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
+                image: imgUnfollowersTracker,
+                icon: "mdi mdi-folder-heart-outline"
+            },
+            {
+                name: "API Validación de Expedientes",
+                description: "API para validar y verificar expedientes de operaciones aduaneras",
+                type: "Welldex Internacional",
+                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
+                image: imgValidacionExpedientes,
+                icon: "mdi mdi-domain"
+            },
+            {
+                name: "Carga Datastage General",
+                description: "Módulo que permite subir el Datastage nacional a BigQuery",
+                type: "Welldex Internacional",
+                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
+                image: imgCargaDatastageGral,
+                icon: "mdi mdi-domain"
+            }
+        ]
     }),
 
 }
@@ -121,13 +155,12 @@ export default {
 
 .title {
     font-size: 35px;
-    font-weight: 400;
+    font-weight: bold;
     color: var(--primary-blue);
     text-align: start;
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
-        font-weight: 400;
 
     }
 
