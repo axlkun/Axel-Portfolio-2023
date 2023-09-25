@@ -126,7 +126,7 @@ export default {
 }
 
 .home-description p {
-    color: var(--primary-grey);
+    color: var(--primary-black);
 
 }
 
