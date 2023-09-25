@@ -2,6 +2,8 @@
 /* @import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro'); */
 /* @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal'); */
 /* @import url('https://fonts.cdnfonts.com/css/basic'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&display=swap'); */
+
 :root {
 
   /* font-family: 'Lato', sans-serif; */
@@ -11,9 +13,21 @@
   /* font-family: 'Basic', sans-serif;
   line-height: 1.8; */
 
-  --primary-blue: #0052faff;
-  --primary-background: #edf8ffff;
-  --primary-grey: #757575;
+  /* font-family: 'Inter', sans-serif; */
+
+  /* --primary-blue: #0052faff; 
+  --primary-background: #edf8ffff; */
+
+   /* --primary-blue: #023baf; */
+ /* --primary-background: #ece5d0;  */
+  
+  /* --primary-blue: #0f72e6;
+  --primary-background: #ddd8ce; */
+
+  --primary-blue: #0801ff;
+  --primary-background: #f5f1f1;
+
+  --primary-grey: #dfdede;
   --primary-purple: #ac7ce4;
   --primary-black: #232325;
 
@@ -41,5 +55,8 @@ a {
 palette:
 azul: #023baf
 background: #ece5d0
+
+azul: #0f72e6
+background: #ddd8ce
 
 */
