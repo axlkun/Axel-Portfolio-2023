@@ -11,13 +11,13 @@
                     <div class="project-name">
                         {{ project.name }}
                     </div>
-                    <div class="text-grey mt-1 mb-1 project-description text-visible">
+                    <div class="mt-1 mb-1 project-description text-visible">
                         {{ project.description }}
                     </div>
                     <div class="d-flex align-center">
                         <v-icon :class="project.icon" contain></v-icon>
 
-                        <span class="text-grey ml-1 project-type">{{ project.type }}</span>
+                        <span class="ml-1 project-type">{{ project.type }}</span>
                     </div>
                 </v-card-title>
 
@@ -74,7 +74,7 @@ export default {
 
         cursor: pointer;
         transform: scale(1.01);
-        filter: brightness(0.9);
+        
     }
 
 }
@@ -92,6 +92,7 @@ export default {
 .project-description {
     font-size: 16px;
     line-height: 1.2;
+    color: grey;
 
     @media only screen and (min-width: 1024px) {
         font-size: 20px;
@@ -101,6 +102,7 @@ export default {
 .project-type {
     font-size: 14px;
     line-height: 1.2;
+    color: grey;
 
     @media only screen and (min-width: 1024px) {
         font-size: 16px;
