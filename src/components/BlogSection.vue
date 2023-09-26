@@ -46,10 +46,6 @@ export default {
     display: flex;
     flex-direction: column;
     background-color: var(--primary-background);
-
-    @media only screen and (min-width: 1024px) {
-        min-height: 100vh;
-    }
 }
 
 .description {

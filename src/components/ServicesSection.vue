@@ -1,20 +1,21 @@
 <template>
     <v-sheet class="services" id="services">
-        <v-sheet class="title-container">
-            <h2>Servicios</h2>
-            <!-- <p>Descubre como una solución de software puede transformar tu negocio</p> -->
-        </v-sheet>
-
-            <v-sheet class="container-services">
-                <v-sheet class="service" v-for="service in services" :key="service.title">
-                  <h3>{{ service.title }} <span :class="'mdi ' + service.icon"></span></h3>
-                  <p>{{ service.description }}</p>
-                  <ul>
-                    <li v-for="example in service.examples" :key="example"><span class="mdi mdi-arrow-right-thin"></span>{{ example }}</li>
-                  </ul>
-                </v-sheet>
-              </v-sheet>
-              
+        <v-sheet class="container-service">
+            <v-sheet class="title-container">
+                <h2>Servicios</h2>
+                <!-- <p>Descubre como una solución de software puede transformar tu negocio</p> -->
+            </v-sheet>
+    
+                <v-sheet class="container-services">
+                    <v-sheet class="service" v-for="service in services" :key="service.title">
+                      <h3>{{ service.title }} <span :class="'mdi ' + service.icon"></span></h3>
+                      <p>{{ service.description }}</p>
+                      <ul>
+                        <li v-for="example in service.examples" :key="example"><span class="mdi mdi-arrow-right-thin"></span>{{ example }}</li>
+                      </ul>
+                    </v-sheet>
+                  </v-sheet>
+        </v-sheet>     
     </v-sheet>
 </template>
 
@@ -54,6 +55,14 @@ data: () => ({
 .services{
     min-height: 100vh;
     background-color: var(--primary-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-service{
+    background: transparent;
 }
 
 .title-container {
@@ -107,11 +116,7 @@ data: () => ({
     gap: 10px;
     flex: 1;
     height: 500px;
-    /*transition: transform 0.3s ease;
-
-    &:hover{
-        transform: scale(1.01);
-    }*/
+    width: 100%;
 }
 
 .service:nth-child(1), .service:nth-child(3)  {

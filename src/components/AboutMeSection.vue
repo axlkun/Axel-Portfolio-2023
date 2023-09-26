@@ -201,7 +201,6 @@ export default {
 .aboutme {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;

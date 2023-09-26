@@ -55,12 +55,15 @@ export default{
 
 <style scoped>
 .contact {
-    min-height: 100vh;
     background-color: var(--primary-background);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (min-width: 1024px) {
+        min-height: 100vh;
+    }
 }
 
 .contact-container {
