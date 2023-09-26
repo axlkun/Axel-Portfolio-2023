@@ -76,8 +76,13 @@ export default {
     color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {
+      border-top: 1px solid var(--primary-blue);
       width: 90%;
   }
+  }
+
+  .section{
+    margin-top: 15px;
   }
   
   .footer-section{
@@ -87,25 +92,18 @@ export default {
   .footer-section p{
     font-size: 20px;
     font-weight: 600;
+    color: var(--primary-black);
   }
 
-  .section p{
-    color: var(--primary-blue);
-  }
-  
   ul, ol {
     list-style: none;
   }
 
-  .section{
-    margin-top: 15px;
-  }
-
   .section a{
-    color: var(--primary-blue);
+    color: var(--primary-black);
 
     &:hover{
-        color: var(--primary-black);
+        color: var(--primary-blue);
         cursor: pointer;
     }
   }
