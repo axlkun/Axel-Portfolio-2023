@@ -1,5 +1,5 @@
 <template>
-    <v-footer class="d-flex flex-column" color="#232325">
+    <v-footer class="d-flex flex-column" color="#f5f1f1">
 
         <div class="d-flex flex-sm-row flex-column justify-space-between footer-section">
   
@@ -38,10 +38,10 @@
           
         </div>
         
-        <div class="d-flex flex-row justify-center pt-5 pb-5 w-100">
+        <div class="d-flex flex-row justify-center pt-5 pb-5 w-100 section">
           <p class="ma-1">
             {{ new Date().getFullYear() }} — Todos los derechos reservados © Portafolio  By
-            <a class="reset-style" href="https://www.instagram.com/axlkun/" target="_blank">
+            <a href="https://www.instagram.com/axlkun/" target="_blank">
               <strong>@axlkun</strong>
             </a>
             
@@ -72,8 +72,8 @@ export default {
 .footer-section{
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid var(--primary-background);
-    color: var(--primary-background);
+    border-bottom: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {
       width: 90%;
@@ -88,6 +88,10 @@ export default {
     font-size: 20px;
     font-weight: 600;
   }
+
+  .section p{
+    color: var(--primary-blue);
+  }
   
   ul, ol {
     list-style: none;
@@ -98,10 +102,10 @@ export default {
   }
 
   .section a{
-    color: var(--primary-background);
+    color: var(--primary-blue);
 
     &:hover{
-        color: var(--primary-blue);
+        color: var(--primary-black);
         cursor: pointer;
     }
   }
