@@ -69,6 +69,7 @@ export default {
     background: transparent;
     line-height: 1.2;
     transition: transform 0.3s, filter 0.3s;
+    width: 100%;
 
     &:hover {
         transform: scale(1.01);
