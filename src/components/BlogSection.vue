@@ -56,22 +56,31 @@ export default {
     background-color: var(--primary-blue);
     padding: 15px 0 30px 0;
     display: flex;
+    width: 100%;
     flex-direction: column;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 1024px) {
+        width: 90%;
+        margin-top: 60px;
+    }
 
 }
 
 .container-aboutme-title {
     font-size: 35px;
     font-weight: bold;
-    min-width: 90%;
+    width: 90%;
     margin: 0 auto;
     background: transparent;
     color: var(--primary-background);
     text-align: center;
 
+
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
         text-align: start;
+        width: 93%;
     }
 }
 
@@ -89,6 +98,7 @@ export default {
     @media only screen and (min-width: 1024px) {
 
         font-size: 20px;
+        width: 93%;
     }
 }
 
