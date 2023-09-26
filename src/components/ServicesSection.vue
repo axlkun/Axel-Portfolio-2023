@@ -53,13 +53,13 @@ data: () => ({
 <style scoped>
 .services{
     min-height: 100vh;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-background);
 }
 
 .title-container {
    
     margin: 0 auto;
-    color: var(--primary-background);
+    color: var(--primary-blue);
     background: transparent;
     text-align: center;
     font-weight: bold;
@@ -97,7 +97,7 @@ data: () => ({
 
 .service{
     background: transparent;
-    border: 1px solid var(--primary-background);
+    border: 1px solid var(--primary-blue);
     border-radius: 10px;
     padding: 15px;
     color: var(--primary-background);
@@ -116,7 +116,7 @@ data: () => ({
 
 .service:nth-child(1), .service:nth-child(3)  {
     
-
+    background-color: var(--primary-blue);
     @media only screen and (min-width: 1024px) {
         margin-top: -60px;
     }
