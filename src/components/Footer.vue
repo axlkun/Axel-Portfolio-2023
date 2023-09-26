@@ -1,5 +1,5 @@
 <template>
-    <v-footer class="d-flex flex-column" color="#f5f1f1">
+    <v-footer class="d-flex flex-column" color="#dfdede">
 
         <div class="d-flex flex-sm-row flex-column justify-space-between footer-section">
   
@@ -72,11 +72,10 @@ export default {
 .footer-section{
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid var(--primary-blue);
+    border-bottom: 1px solid var(--primary-black);
     color: var(--primary-blue);
 
     @media only screen and (min-width: 1024px) {
-      border-top: 1px solid var(--primary-blue);
       width: 90%;
   }
   }
