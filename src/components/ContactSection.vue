@@ -56,7 +56,7 @@ export default{
 <style scoped>
 .contact {
     min-height: 100vh;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-background);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,13 +65,14 @@ export default{
 
 .contact-container {
     background-color: var(--primary-blue);
-    min-width: 90%;
-    min-height: 90%;
+    width: 100%;
+    
     display: flex;
     flex-direction: column;
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
+        width: 90%;
     }
 }
 
@@ -82,7 +83,7 @@ export default{
 }
 
 .contact-description{
-    background-color: var(--primary-black);
+    background-color: var(--primary-blue);
 }
 
 .contact-description-container{
@@ -164,7 +165,6 @@ export default{
 
 .follow{
     background: transparent;
-    border-top: 1px solid var(--primary-background);
 }
 
 .direct-contact{
