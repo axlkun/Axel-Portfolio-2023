@@ -50,7 +50,7 @@ export default {
 .home {
     display: flex;
     background-color: var(--primary-background);
-    min-height: 75vh;
+    min-height: 80vh;
 }
 
 .home-container {
