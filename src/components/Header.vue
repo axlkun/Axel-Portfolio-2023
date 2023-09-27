@@ -1,8 +1,8 @@
 <template>
-    <header class="header">
-        <nav :class="{ 'fixed-logo': menuOpen }">
+    <header class="header" :class="{ 'stick': menuOpen }">
+        <nav>
 
-            <div class="nav-container">
+            <div class="container-bar">
                 <div class="logo" @click="redirectToHome">
                     <div>
                         <img :src="logo" alt="Icono" loading="lazy" />
@@ -13,18 +13,24 @@
     
                 </div>
     
-                <label for="menu-toggle" class="menu-icon">&#9776;</label>
-                <input type="checkbox" id="menu-toggle" @click="toggleMenu">
-                
-    
-                <ul class="menu">
+                <div class="hide-icon">
+                    <v-icon :icon="menuOpen ? 'mdi mdi-close-box' : 'mdi mdi-menu'" @click="toggleMenu"></v-icon>
+                </div>
+            </div>
+            
+            <div class="container-menu" :class="{ 'hide': !menuOpen }">
+                <ul class="menu desktop-menu">
                     <li><a @click="scrollToSection('home')">Inicio</a></li>
-                    <li><a @click="scrollToSection('aboutme')">Sobre Mi</a></li>
+                    <li><a @click="scrollToSection('aboutme')">Sobre mi</a></li>
                     <li><a @click="scrollToSection('services')">Servicios</a></li>
                     <li><a @click="scrollToSection('projects')">Proyectos</a></li>
                     <li><a @click="scrollToSection('blog')">Blog</a></li>
                     <li><a @click="scrollToSection('contact')" class="button">Contacto</a></li>
                 </ul>
+    
+                <div class="hide-icon">
+                    <p>axelcruz.dev@gmail.com</p>
+                </div>
             </div>
             
         </nav>
@@ -65,29 +71,30 @@ export default {
 </script>
   
 <style scoped>
-
 .header {
-    /*position: sticky;*/
-    top: 0;
     width: 100%;
+    max-height: 100vh;
     background-color: var(--primary-background);
 }
 
-nav {
-    width: 100%;
-    background-color: var(--primary-background);
+.stick{
+    position: fixed;
+    z-index: 100;
+    height: 100vh;
 }
 
-.nav-container{
+nav{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+    flex-direction: column;
     width: 90%;
-    max-width: 120rem;
     margin: 0 auto;
-    background-color: var(--primary-background);
-    transition: 0.2s all ease-in-out;
+    padding: 10px 0;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .logo {
@@ -96,104 +103,73 @@ nav {
     cursor: pointer;
 }
 
-.fixed-logo {
-    position: fixed;
-    height: 100vh;
-    z-index: 100;
-    position: fixed;
-    /* Otros estilos si es necesario */
-  }
-
 .logo img {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
 }
 
 .logo a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--primary-blue);
 }
 
 .logo a span {
     color: var(--primary-black);
-    ;
 }
 
-.menu {
+.hide-icon{
+    @media only screen and (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.container-bar{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-menu{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (min-width: 1024px) {
+        height: auto;
+    }
+}
+
+.menu{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-background);
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        height: auto;
+        gap: 15px;
+    }
 }
 
 .menu a {
-    display: block;
-    padding: 7px 15px;
-    font-size: 17px;
-    font-weight: 500;
-    
-    color: var(--primary-black);
+    font-size: 43px;
+    line-height: 1.2;
     cursor: pointer;
-}
 
-.menu a:hover {
-    color: var(--primary-blue);
-    text-decoration: underline;
-}
-
-.menu-icon {
-    display: none;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-#menu-toggle:checked~.menu {
-    transform: scale(1, 1);
-}
-
-@media only screen and (max-width: 950px) {
-
-    .header {
-        position: static;
+    @media only screen and (min-width: 1024px) {
+        font-size: 20px;
     }
 
-    .menu {
-        flex-direction: column;
-        background-color: var(--primary-background);
-        justify-content: space-evenly;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: 90%;
-        transform: scale(1, 0);
-        transform-origin: top;
-        transition: transform 0.3s ease-in-out;
+    &:hover{
+        color: var(--primary-blue);
+        text-decoration: underline;
     }
-
-    .menu a {
-        margin-left: 12px;
-        font-size: 35px;
-    }
-
-    .menu li {
-        margin-bottom: 10px;
-        border-bottom: 1px solid var(--primary-grey);
-        width: 90%;
-        
-    }
-
-    .menu-icon {
-        display: block;
-        color: var(--primary-black);
-        font-size: 28px;
-        cursor: pointer;
-    }
-
-
 }
 
 ul.menu li a.button {
@@ -201,10 +177,21 @@ ul.menu li a.button {
     color: white;
     padding: 2px 8px;
     border-radius: 8px;
+}
 
-    &:hover {
-        opacity: 0.9;
-        text-decoration: none;
+ul.menu li a.button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+    color: var(--primary-background);
+}
+
+/* */
+.hide{
+    display: none;
+
+    @media only screen and (min-width: 1024px) {
+        display: block;
     }
 }
+
 </style>
