@@ -51,7 +51,7 @@
 
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
-                            <h3>Company</h3>
+                            <h3>Compañía / Cliente</h3>
                             <p>Proyecto propio</p>
                         </v-sheet>
                         <v-sheet class="link-container">
