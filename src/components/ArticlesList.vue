@@ -1,6 +1,6 @@
 <template>
     <v-sheet class="articles">
-        <v-sheet v-for="article in blogEntry" class="article-entry" @click="redirectToArticle">
+        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle" :elevated="0" variant="text">
             <v-sheet class="img-container">
                 <v-img class="img" :src="imgBlog"></v-img>
                 <p>{{ article.date }}</p>
@@ -19,7 +19,7 @@
                 </v-card-text>
             </v-sheet>
 
-        </v-sheet>
+        </v-card>
 
     </v-sheet>
 </template>
@@ -77,6 +77,10 @@ export default {
     line-height: 1.2;
     transition: transform 0.3s, filter 0.3s;
     width: 100%;
+
+    @media only screen and (min-width: 768px) {
+        padding: 15px;
+    }
 
     &:hover {
         transform: scale(1.01);
