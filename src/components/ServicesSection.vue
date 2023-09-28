@@ -7,7 +7,7 @@
             </v-sheet>
     
                 <v-sheet class="container-services">
-                    <v-sheet class="service" v-for="service in services" :key="service.title">
+                    <v-sheet class="service" v-for="service in services" :key="service.title" v-motion-slide-visible-once-bottom>
                       <h3>{{ service.title }} <span :class="'mdi ' + service.icon"></span></h3>
                       <p>{{ service.description }}</p>
                       <ul>

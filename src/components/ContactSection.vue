@@ -1,6 +1,6 @@
 <template>
 <v-sheet class="contact" id="contact">
-    <v-sheet class="contact-container">
+    <v-sheet class="contact-container" v-motion-slide-visible-once-bottom>
         <v-sheet class="contact-description">
             <v-sheet class="contact-description-container">
                 <v-sheet class="container-description-title">
