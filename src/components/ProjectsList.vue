@@ -3,8 +3,8 @@
 
         <v-sheet class="work-container">
 
-            <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text"
-                class="custom-card">
+            <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text" class="custom-card"
+                @click="redirectToProject">
                 <v-img :src="project.image" cover :aspect-ratio="16 / 8">
                 </v-img>
                 <v-card-title class="flex-column align-start">
@@ -28,6 +28,7 @@
                         {{ stack }}
                     </v-chip>
                 </v-card-text>
+
             </v-card>
 
         </v-sheet>
@@ -38,7 +39,15 @@
 
 export default {
 
-    props: ['projectsList']
+    props: ['projectsList'],
+
+    methods: {
+        redirectToProject() {
+            // Redirige a la página "/work/project"
+            this.$router.push('/work/project');
+            window.scrollTo(0, 0);
+        }
+    }
 }
 
 </script>
@@ -74,7 +83,7 @@ export default {
 
         cursor: pointer;
         transform: scale(1.01);
-        
+
     }
 
 }

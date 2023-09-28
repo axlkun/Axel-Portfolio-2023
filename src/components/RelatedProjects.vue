@@ -7,7 +7,7 @@
         <v-sheet class="work-container">
 
             <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text"
-                class="custom-card">
+                class="custom-card" @click="redirectToProject">
                 <v-img :src="project.image" cover :aspect-ratio="16 / 8">
                 </v-img>
                 <v-card-title class="flex-column align-start">
@@ -41,7 +41,14 @@
 
 export default {
 
-    props: ['projectsList']
+    props: ['projectsList'],
+
+    methods: {
+        redirectToProject() {
+            this.$router.push('/work/project');
+            window.scrollTo(0, 0);
+        }
+    }
 }
 
 </script>
