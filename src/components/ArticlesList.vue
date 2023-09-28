@@ -1,6 +1,6 @@
 <template>
     <v-sheet class="articles">
-        <v-sheet v-for="article in blogEntry" class="article-entry">
+        <v-sheet v-for="article in blogEntry" class="article-entry" @click="redirectToArticle">
             <v-sheet class="img-container">
                 <v-img class="img" :src="imgBlog"></v-img>
                 <p>{{ article.date }}</p>
@@ -36,6 +36,13 @@ export default {
     data: () => ({
         imgBlog
     }),
+
+    methods: {
+        redirectToArticle() {
+            this.$router.push('/blog/article');
+            window.scrollTo(0, 0);
+        }
+    }
 
 }
 </script>
