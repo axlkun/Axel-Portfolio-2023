@@ -3,15 +3,16 @@
 
         <v-sheet class="container">
 
-            <v-sheet class="img-container">
-                <img :src="imgUnfollowersTracker" alt="Imagen About Me" loading="lazy" />
-            </v-sheet>
-
             <v-sheet class="description-container">
                 <v-sheet class="project-data">
                     <v-sheet class="project-description">
                         <v-sheet class="title">
-                            <h1>Unfollowers Tracker</h1>
+                            <h1>Experimental playground: Ee Venn's journey in design, code, and continuous exploration</h1>
+                        </v-sheet>
+
+                        <v-sheet class="description">
+                            <p>A lightweight alternative to Pi-hole and AdGuard Home written in Go that can be deployed in
+                                Docker or wherever you want</p>
                         </v-sheet>
 
                         <v-sheet class="d-flex flex-wrap justify-start mt-2 mb-2">
@@ -29,101 +30,104 @@
                             </v-chip>
                         </v-sheet>
 
-                        <v-sheet class="description">
-                            <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                                site
-                                features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                                profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                                directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                                general visual language. I also designed the microsite in its entirety, as well produced all
-                                the
-                                various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                            <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                                site
-                                features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                                profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                                directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                                general visual language. I also designed the microsite in its entirety, as well produced all
-                                the
-                                various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                        </v-sheet>
                     </v-sheet>
 
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
-                            <h3>Company</h3>
-                            <p>Proyecto propio</p>
+                            <h3>Autor</h3>
+                            <p class="link">AxelCruz</p>
                         </v-sheet>
                         <v-sheet class="link-container">
-                            <h3>Rol</h3>
-                            <p>Fullstack Developer</p>
+                            <h3>Fecha</h3>
+                            <p>10/10/2023</p>
                         </v-sheet>
                         <v-sheet class="link-container">
-                            <h3>Ver código</h3>
-                            <p class="link">codigo.com</p>
-                        </v-sheet>
-                        <v-sheet class="link-container">
-                            <h3>Visitar el sitio</h3>
-                            <p class="link">unfollowerstracker.com</p>
+                            <h3>Tiempo de lectura</h3>
+                            <p>5min</p>
                         </v-sheet>
                     </v-sheet>
+                </v-sheet>
+            </v-sheet>
+
+            <v-sheet class="img-container">
+                <img :src="imgUnfollowersTracker" alt="Imagen About Me" loading="lazy" />
+            </v-sheet>
+
+            <v-sheet class="article-content">
+
+                <v-sheet>
+                    <h2>Introducción</h2>
+                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
+                        site
+                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
+                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
+                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
+                        general visual language. I also designed the microsite in its entirety, as well produced all
+                        the
+                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
+                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
+                        site
+                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
+                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
+                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
+                        general visual language. I also designed the microsite in its entirety, as well produced all
+                        the
+                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
+                </v-sheet>
+                <v-sheet>
+                    <h2>Proceso</h2>
+                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
+                        site
+                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
+                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
+                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
+                        general visual language. I also designed the microsite in its entirety, as well produced all
+                        the
+                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
+                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
+                        site
+                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
+                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
+                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
+                        general visual language. I also designed the microsite in its entirety, as well produced all
+                        the
+                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
                 </v-sheet>
             </v-sheet>
 
 
         </v-sheet>
 
-        <relatedProjects :projectsList="projects"></relatedProjects>
+        <v-sheet class="title-container">
+            <h2>Artículos relacionados</h2>
+        </v-sheet>
+
+        <articlesList :blogEntry="blogEntry.slice(0, 3)"></articlesList>
 
         <contactSection></contactSection>
+
     </v-sheet>
 </template>
 
 <script>
-import relatedProjects from '../components/RelatedProjects.vue';
+import articlesList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
 
-import imgUnfollowersTracker from '../assets/UnfollowersTracker.png'
-import imgValidacionExpedientes from '../assets/welldex-logo.jpeg'
-import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png'
+import imgUnfollowersTracker from '../assets/UnfollowersTracker.png';
 
 export default {
 
+    props: ['blogEntry'],
+
     components: {
-        relatedProjects,
+        articlesList,
         contactSection
     },
 
     data: () => ({
 
-        imgUnfollowersTracker,
-    
-        projects: [
-            {
-                name: "Unfollowers Tracker",
-                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
-                type: "Proyecto propio",
-                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
-                image: imgUnfollowersTracker,
-                icon: "mdi mdi-folder-heart-outline"
-            },
-            {
-                name: "API Validación de Expedientes",
-                description: "API para validar y verificar expedientes de operaciones aduaneras",
-                type: "Welldex Internacional",
-                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
-                image: imgValidacionExpedientes,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage General",
-                description: "Módulo que permite subir el Datastage nacional a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageGral,
-                icon: "mdi mdi-domain"
-            }
-        ]
+        imgUnfollowersTracker
+
     }),
 
 }
@@ -140,12 +144,10 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
 
     @media only screen and (min-width: 1024px) {
         max-width: 90%;
-        flex-direction: column-reverse;
     }
 }
 
@@ -158,6 +160,7 @@ export default {
     font-weight: bold;
     color: var(--primary-blue);
     text-align: start;
+    line-height: 1.1;
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
@@ -166,29 +169,28 @@ export default {
 
 }
 
+.description {
+    margin: 15px 0;
+    color: var(--primary-blue);
+}
+
 .img-container {
 
     width: 100%;
-    background-color: var(--primary-grey);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     @media only screen and (min-width: 1024px) {
-        margin-bottom: 60px;
-        min-height: 90vh;
-
+        margin-bottom: 30px;
+        width: 70%;
     }
 }
 
 .img-container img {
     width: 100%;
     height: 100%;
-
-    @media only screen and (min-width: 1024px) {
-        width: 80%;
-    }
 }
 
 .description-container {
@@ -196,10 +198,10 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
+    margin-bottom: 15px;
 
     @media only screen and (min-width: 1024px) {
-        margin-top: 30px;
+        margin: 30px 0;
     }
 
 }
@@ -207,8 +209,7 @@ export default {
 .project-data {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
-    gap: 30px;
+    font-size: 16px;
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
@@ -244,5 +245,42 @@ export default {
 
 .link {
     text-decoration: underline;
+}
+
+.article-content {
+    font-size: 16px;
+    margin-bottom: 60px;
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 20px;
+        width: 70%;
+    }
+}
+
+.article-content h2 {
+    color: var(--primary-blue);
+    font-size: 25px;
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 35px;
+    }
+}
+
+.article-content p {
+    margin-bottom: 15px;
+}
+
+.title-container {
+    width: 90%;
+    font-size: 25px;
+    margin: 0 auto;
+    color: var(--primary-blue);
+    background: transparent;
+    text-align: start;
+    border-top: 1px solid var(--primary-black);
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 35px;
+    }
 }
 </style>
