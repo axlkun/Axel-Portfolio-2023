@@ -158,6 +158,7 @@ export default {
     font-weight: bold;
     color: var(--primary-blue);
     text-align: start;
+    line-height: 1.2;
 
     @media only screen and (min-width: 1024px) {
         font-size: 55px;
