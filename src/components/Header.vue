@@ -10,29 +10,29 @@
                     <div>
                         <a><span>Axel</span>Cruz</a>
                     </div>
-    
+
                 </div>
-    
+
                 <div class="hide-icon">
                     <v-icon :icon="menuOpen ? 'mdi mdi-close-box' : 'mdi mdi-menu'" @click="toggleMenu"></v-icon>
                 </div>
             </div>
-            
+
             <div class="container-menu" :class="{ 'hide': !menuOpen }">
                 <ul class="menu desktop-menu">
-                    <li><a @click="scrollToSection('home')">Inicio</a></li>
-                    <li><a @click="scrollToSection('aboutme')">Sobre mi</a></li>
-                    <li><a @click="scrollToSection('services')">Servicios</a></li>
-                    <li><a @click="scrollToSection('projects')">Proyectos</a></li>
-                    <li><a @click="scrollToSection('blog')">Blog</a></li>
-                    <li><a @click="scrollToSection('contact')" class="button">Contacto</a></li>
+                    <li><a @click="redirectSection('home')">Inicio</a></li>
+                    <li><a @click="redirectSection('aboutme')">Sobre mi</a></li>
+                    <li><a @click="redirectSection('services')">Servicios</a></li>
+                    <li><a @click="redirectSection('projects')">Proyectos</a></li>
+                    <li><a @click="redirectSection('blog')">Blog</a></li>
+                    <li><a @click="redirectSection('contact')" class="button">Contacto</a></li>
                 </ul>
-    
+
                 <div class="hide-icon">
                     <p>axelcruz.dev@gmail.com</p>
                 </div>
             </div>
-            
+
         </nav>
     </header>
 </template>
@@ -64,6 +64,19 @@ export default {
             if (!this.menuOpen) {
                 window.scrollTo(0, 0);
             }
+        },
+
+        redirectSection(sectionName) {
+
+            const windowWidth = window.innerWidth;
+
+            if (windowWidth <= 1024) {
+                
+                this.menuOpen = !this.menuOpen;
+            }
+            
+
+            this.scrollToSection(sectionName);
         }
     },
 
@@ -77,13 +90,13 @@ export default {
     background-color: var(--primary-background);
 }
 
-.stick{
+.stick {
     position: fixed;
     z-index: 100;
     height: 100vh;
 }
 
-nav{
+nav {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -118,20 +131,20 @@ nav{
     color: var(--primary-black);
 }
 
-.hide-icon{
+.hide-icon {
     @media only screen and (min-width: 1024px) {
         display: none;
     }
 }
 
-.container-bar{
+.container-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.container-menu{
+.container-menu {
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -143,7 +156,7 @@ nav{
     }
 }
 
-.menu{
+.menu {
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -166,7 +179,7 @@ nav{
         font-size: 20px;
     }
 
-    &:hover{
+    &:hover {
         color: var(--primary-blue);
         text-decoration: underline;
     }
@@ -186,12 +199,11 @@ ul.menu li a.button:hover {
 }
 
 /* */
-.hide{
+.hide {
     display: none;
 
     @media only screen and (min-width: 1024px) {
         display: block;
     }
 }
-
 </style>
