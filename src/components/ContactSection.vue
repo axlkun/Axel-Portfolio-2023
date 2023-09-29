@@ -28,16 +28,18 @@
         <v-sheet class="contact-links">
             <v-sheet class="contact-link-container">
                 <v-sheet class="follow">
-                
-                    <h3 class="button">Linkdln <span class="mdi mdi-arrow-right-thin"></span></h3>
-                    <h3 class="button">GitHub <span class="mdi mdi-arrow-right-thin"></span></h3>
-                    <h3 class="button">Twitter <span class="mdi mdi-arrow-right-thin"></span></h3>
-                    <h3 class="button">Instagram <span class="mdi mdi-arrow-right-thin"></span></h3>
+
+                    <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">Linkdln <span class="mdi mdi-arrow-right-thin"></span></a></h3>
+
+                    <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">GitHub <span class="mdi mdi-arrow-right-thin"></span></a></h3>
+
+                    <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">Twitter <span class="mdi mdi-arrow-right-thin"></span></a></h3>
                 
             </v-sheet>
 
             <v-sheet class="direct-contact">
-                <h3 class="button">Email <span class="mdi mdi-arrow-right-thin"></span></h3>
+
+                <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">Email <span class="mdi mdi-arrow-right-thin"></span></a></h3>
             </v-sheet>
             </v-sheet>
             
@@ -177,7 +179,7 @@ export default{
 
 }
 
-.contact-link-container h3{
+.contact-link-container a{
     font-size: 25px;
     text-align: center;
     color: var(--primary-background);
