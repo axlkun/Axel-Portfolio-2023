@@ -81,6 +81,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import relatedProjects from '../components/RelatedProjects.vue';
 import contactSection from '../components/ContactSection.vue';
 
@@ -89,6 +91,10 @@ import imgValidacionExpedientes from '../assets/welldex-logo.jpeg'
 import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png'
 
 export default {
+
+    name: 'project',
+
+    props: ['slug'],
 
     components: {
         relatedProjects,
@@ -99,6 +105,7 @@ export default {
 
         imgUnfollowersTracker,
     
+        project: [],
         projects: [
             {
                 name: "Unfollowers Tracker",
@@ -126,6 +133,23 @@ export default {
             }
         ]
     }),
+
+    methods: {
+        getProject() {
+            axios.get(`http://127.0.0.1:8000/api/projects/${this.slug}`)
+                .then(response => {
+                    this.project = response.data.data;
+                    console.log(this.project);
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud GET:', error);
+                });
+        }
+    },
+
+    mounted(){
+        this.getProject();
+    }
 
 }
 </script>
