@@ -13,13 +13,9 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 import projectList from './ProjectsList.vue';
-
-import imgUnfollowers from '../assets/UnfollowersTracker.png';
-import imgValidacionExpedientes from '../assets/welldex-logo.jpeg';
-import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png';
-import imgCargaDatastageWldx from '../assets/CargaDatastageWelldex.png';
 
 export default {
 
@@ -31,46 +27,24 @@ export default {
 
     data: () => ({
 
-        imgUnfollowers,
-        imgCargaDatastageGral,
-        imgCargaDatastageWldx,
-        imgValidacionExpedientes,
+        projects: []
+    }),
 
-        projects: [
-            {
-                name: "Unfollowers Tracker",
-                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
-                type: "Proyecto propio",
-                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
-                image: imgUnfollowers,
-                icon: "mdi mdi-folder-heart-outline"
-            },
-            {
-                name: "API Validación de Expedientes",
-                description: "API para validar y verificar expedientes de operaciones aduaneras",
-                type: "Welldex Internacional",
-                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
-                image: imgValidacionExpedientes,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage General",
-                description: "Módulo que permite subir el Datastage nacional a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageGral,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage Welldex",
-                description: "Módulo que permite subir el Datastage de la empresa a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageWldx,
-                icon: "mdi mdi-domain"
-            }
-        ]
-    })
+    methods: {
+        getProjects() {
+            axios.get('http://127.0.0.1:8000/api/projects?limit=4')
+                .then(response => {
+                    this.projects = response.data.data;
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud GET:', error);
+                });
+        }
+    },
+
+    mounted() {
+        this.getProjects();
+    }
 
 }
 </script>
