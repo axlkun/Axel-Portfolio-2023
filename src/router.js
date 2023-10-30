@@ -9,9 +9,8 @@ const routes = [
   { path: '/', component: Home },
   { path: '/work', component: Work },
   { path: '/blog', component: Blog },
-  { path: '/work/project', component: Project },
   { path: '/blog/article', component: Article },
-  
+  { path: '/work/:slug',name: 'project', component: Project, props: true, },
 ];
 
 const router = createRouter({
