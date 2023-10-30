@@ -4,7 +4,7 @@
         <v-sheet class="work-container">
 
             <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text" class="custom-card"
-                @click="redirectToProject">
+                @click="redirectToProject(project.slug)">
                 <v-img :src="`http://127.0.0.1:8000${project.imageUrl}`" cover :aspect-ratio="16 / 8">
                 </v-img>
                 <v-card-title class="flex-column align-start">
@@ -42,9 +42,8 @@ export default {
     props: ['projectsList'],
 
     methods: {
-        redirectToProject() {
-            // Redirige a la página "/work/project"
-            this.$router.push('/work/project');
+        redirectToProject(slug) {
+            this.$router.push({ name: 'project', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
     }
