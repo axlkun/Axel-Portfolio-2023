@@ -11,7 +11,7 @@
                 <v-sheet class="project-data">
                     <v-sheet class="project-description">
                         <v-sheet class="title">
-                            <h1> {{ project.title}}</h1>
+                            <h1> {{ project.title }}</h1>
                         </v-sheet>
 
                         <v-sheet class="d-flex flex-wrap justify-start mt-2 mb-2">
@@ -26,7 +26,7 @@
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
                             <h3>Compañía / Cliente</h3>
-                            <p> {{ project.company}}</p>
+                            <p> {{ project.company }}</p>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Rol</h3>
@@ -34,12 +34,15 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Ver código</h3>
-                            <p class="link">codigo.com</p>
-                            <p class="link">codigo2.com</p>
+                            <a>
+                                {{ project.repo_link ? project.repo_link : 'Repositorio privado' }}
+                            </a>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Visitar el sitio</h3>
-                            <p class="link">unfollowerstracker.com</p>
+                            <a>
+                                {{ project.website_link ? project.website_link : 'Despliegue no disponible' }}
+                            </a>
                         </v-sheet>
                     </v-sheet>
                 </v-sheet>
@@ -59,10 +62,6 @@ import axios from 'axios';
 
 import relatedProjects from '../components/RelatedProjects.vue';
 import contactSection from '../components/ContactSection.vue';
-
-import imgUnfollowersTracker from '../assets/UnfollowersTracker.png'
-import imgValidacionExpedientes from '../assets/welldex-logo.jpeg'
-import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png'
 
 export default {
 
@@ -93,7 +92,7 @@ export default {
         }
     },
 
-    mounted(){
+    mounted() {
         this.getProject();
     }
 
