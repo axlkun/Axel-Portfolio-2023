@@ -4,55 +4,29 @@
         <v-sheet class="container">
 
             <v-sheet class="img-container">
-                <img :src="imgUnfollowersTracker" alt="Imagen About Me" loading="lazy" />
+                <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" loading="lazy" />
             </v-sheet>
 
             <v-sheet class="description-container">
                 <v-sheet class="project-data">
                     <v-sheet class="project-description">
                         <v-sheet class="title">
-                            <h1>Unfollowers Tracker</h1>
+                            <h1> {{ project.title}}</h1>
                         </v-sheet>
 
                         <v-sheet class="d-flex flex-wrap justify-start mt-2 mb-2">
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Vue
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Vuetify
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Laravel
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                MySQL
+                            <v-chip v-for="technologie in project.technologies" class="mr-2 mb-2" color="#0801ff">
+                                {{ technologie }}
                             </v-chip>
                         </v-sheet>
 
-                        <v-sheet class="description">
-                            <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                                site
-                                features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                                profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                                directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                                general visual language. I also designed the microsite in its entirety, as well produced all
-                                the
-                                various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                            <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                                site
-                                features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                                profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                                directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                                general visual language. I also designed the microsite in its entirety, as well produced all
-                                the
-                                various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                        </v-sheet>
+                        <v-sheet class="description" v-html="project.description"></v-sheet>
                     </v-sheet>
 
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
                             <h3>Compañía / Cliente</h3>
-                            <p>Proyecto propio</p>
+                            <p> {{ project.company}}</p>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Rol</h3>
@@ -103,35 +77,7 @@ export default {
 
     data: () => ({
 
-        imgUnfollowersTracker,
-    
-        project: [],
-        projects: [
-            {
-                name: "Unfollowers Tracker",
-                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
-                type: "Proyecto propio",
-                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
-                image: imgUnfollowersTracker,
-                icon: "mdi mdi-folder-heart-outline"
-            },
-            {
-                name: "API Validación de Expedientes",
-                description: "API para validar y verificar expedientes de operaciones aduaneras",
-                type: "Welldex Internacional",
-                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
-                image: imgValidacionExpedientes,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage General",
-                description: "Módulo que permite subir el Datastage nacional a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageGral,
-                icon: "mdi mdi-domain"
-            }
-        ]
+        project: []
     }),
 
     methods: {
