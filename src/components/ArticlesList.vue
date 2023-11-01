@@ -1,6 +1,6 @@
 <template>
     <v-sheet class="articles">
-        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle" :elevated="0" variant="text">
+        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle(article.slug)" :elevated="0" variant="text">
             <v-sheet class="img-container">
                 <v-img class="img" :src="imgBlog"></v-img>
                 <p>{{ article.created_date }}</p>
@@ -38,8 +38,8 @@ export default {
     }),
 
     methods: {
-        redirectToArticle() {
-            this.$router.push('/blog/article');
+        redirectToArticle(slug) {
+            this.$router.push({ name: 'article', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
     }
