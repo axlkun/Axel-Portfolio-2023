@@ -52,7 +52,7 @@
             <h2>Artículos relacionados</h2>
         </v-sheet>
 
-        <articlesList :blogEntry="blogEntry.slice(0, 3)"></articlesList>
+        <articlesList :blogEntry="articles"></articlesList>
 
         <contactSection></contactSection>
 
@@ -64,8 +64,6 @@ import axios from 'axios';
 
 import articlesList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
-
-import imgUnfollowersTracker from '../assets/UnfollowersTracker.png';
 
 export default {
 
@@ -80,9 +78,8 @@ export default {
 
     data: () => ({
 
-        imgUnfollowersTracker,
-
-        article: []
+        article: [],
+        articles: []
     }),
 
     methods: {
@@ -95,10 +92,21 @@ export default {
                     console.error('Error al hacer la solicitud GET:', error);
                 });
         },
+
+        getRelatedArticles() {
+            axios.get(`http://127.0.0.1:8000/api/related-articles/${this.slug}`)
+                .then(response => {
+                    this.articles = response.data.data;
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud GET:', error);
+                });
+        },
     },
 
     mounted(){
         this.getArticle();
+        this.getRelatedArticles();
     }
 
 }
