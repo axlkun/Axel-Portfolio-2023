@@ -67,7 +67,7 @@ import contactSection from '../components/ContactSection.vue';
 
 export default {
 
-    name: 'article',
+    name: 'articleDetail',
 
     props: ['slug'],
 

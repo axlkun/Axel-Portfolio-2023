@@ -9,7 +9,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/work', component: Work },
   { path: '/blog', component: Blog },
-  { path: '/blog/:slug',name: 'article', component: Article, props: true, },
+  { path: '/blog/:slug',name: 'articleDetail', component: Article, props: true, },
   { path: '/work/:slug',name: 'project', component: Project, props: true, },
 ];
 
