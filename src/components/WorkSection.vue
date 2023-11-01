@@ -14,6 +14,7 @@
 
 <script>
 import axios from 'axios';
+import api from '../api';
 
 import projectList from './ProjectsList.vue';
 
@@ -32,7 +33,7 @@ export default {
 
     methods: {
         getProjects() {
-            axios.get('http://127.0.0.1:8000/api/projects?limit=4')
+            api.get('/api/projects?limit=4')
                 .then(response => {
                     this.projects = response.data.data;
                 })
