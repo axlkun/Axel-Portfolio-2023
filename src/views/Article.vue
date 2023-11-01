@@ -69,7 +69,7 @@ export default {
 
     name: 'article',
 
-    props: ['slug','blogEntry'],
+    props: ['slug'],
 
     components: {
         articlesList,
