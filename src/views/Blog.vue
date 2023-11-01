@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api';
 
 import articlestList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
@@ -31,7 +31,7 @@ export default {
 
     methods: {
         getArticles() {
-            axios.get('http://127.0.0.1:8000/api/articles')
+            api.get('/api/articles')
                 .then(response => {
                     this.blogEntry = response.data.data;
                 })
