@@ -39,7 +39,7 @@ export default {
 
     methods: {
         redirectToArticle(slug) {
-            this.$router.push({ name: 'article', params: { slug: slug } });
+            this.$router.push({ name: 'articleDetail', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
     }
