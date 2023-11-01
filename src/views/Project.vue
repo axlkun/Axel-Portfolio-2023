@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api';
 
 import relatedProjects from '../components/RelatedProjects.vue';
 import contactSection from '../components/ContactSection.vue';
@@ -82,7 +82,7 @@ export default {
 
     methods: {
         getProject() {
-            axios.get(`http://127.0.0.1:8000/api/projects/${this.slug}`)
+            api.get(`/api/projects/${this.slug}`)
                 .then(response => {
                     this.project = response.data.data;
                 })
@@ -92,7 +92,7 @@ export default {
         },
 
         getRelatedProjects(){
-            axios.get(`http://127.0.0.1:8000/api/related-projects/${this.slug}`)
+            api.get(`/api/related-projects/${this.slug}`)
                 .then(response => {
                     this.projects = response.data.data;
                 })
