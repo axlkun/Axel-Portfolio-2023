@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from './api';
 
 import myHeader from './components/Header.vue';
 import myFooter from './components/Footer.vue';
@@ -29,7 +29,7 @@ export default {
 
   methods: {
     getArticles() {
-      axios.get('http://127.0.0.1:8000/api/articles?limit=6')
+      api.get('/api/articles?limit=6')
         .then(response => {
           this.blogEntry = response.data.data;
         })
