@@ -7,26 +7,16 @@
                 <v-sheet class="project-data">
                     <v-sheet class="project-description">
                         <v-sheet class="title">
-                            <h1>Experimental playground: Ee Venn's journey in design, code, and continuous exploration</h1>
+                            <h1> {{ article.title }}</h1>
                         </v-sheet>
 
                         <v-sheet class="description">
-                            <p>A lightweight alternative to Pi-hole and AdGuard Home written in Go that can be deployed in
-                                Docker or wherever you want</p>
+                            <p> {{ article.summary }} </p>
                         </v-sheet>
 
                         <v-sheet class="d-flex flex-wrap justify-start mt-2 mb-2">
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Vue
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Vuetify
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Laravel
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                MySQL
+                            <v-chip v-for="category in article.categories" class="mr-2 mb-2" color="#0801ff">
+                                {{ category.name }}
                             </v-chip>
                         </v-sheet>
 
@@ -39,7 +29,7 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Fecha</h3>
-                            <p>10/10/2023</p>
+                            <p> {{ article.created_date}} </p>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Tiempo de lectura</h3>
@@ -50,50 +40,10 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <img :src="imgUnfollowersTracker" alt="Imagen About Me" loading="lazy" />
+                <img :src="`http://127.0.0.1:8000${article.imageUrl}`" alt="Imagen About Me" loading="lazy" />
             </v-sheet>
 
-            <v-sheet class="article-content">
-
-                <v-sheet>
-                    <h2>Introducción</h2>
-                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                        site
-                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                        general visual language. I also designed the microsite in its entirety, as well produced all
-                        the
-                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                        site
-                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                        general visual language. I also designed the microsite in its entirety, as well produced all
-                        the
-                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                </v-sheet>
-                <v-sheet>
-                    <h2>Proceso</h2>
-                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                        site
-                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                        general visual language. I also designed the microsite in its entirety, as well produced all
-                        the
-                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                    <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                        site
-                        features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                        profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                        directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                        general visual language. I also designed the microsite in its entirety, as well produced all
-                        the
-                        various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                </v-sheet>
-            </v-sheet>
+            <v-sheet class="article-content" v-html="article.description"></v-sheet>
 
 
         </v-sheet>
@@ -110,6 +60,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import articlesList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
 
@@ -117,7 +69,9 @@ import imgUnfollowersTracker from '../assets/UnfollowersTracker.png';
 
 export default {
 
-    props: ['blogEntry'],
+    name: 'article',
+
+    props: ['slug','blogEntry'],
 
     components: {
         articlesList,
@@ -126,9 +80,26 @@ export default {
 
     data: () => ({
 
-        imgUnfollowersTracker
+        imgUnfollowersTracker,
 
+        article: []
     }),
+
+    methods: {
+        getArticle() {
+            axios.get(`http://127.0.0.1:8000/api/articles/${this.slug}`)
+                .then(response => {
+                    this.article = response.data.data;
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud GET:', error);
+                });
+        },
+    },
+
+    mounted(){
+        this.getArticle();
+    }
 
 }
 </script>
