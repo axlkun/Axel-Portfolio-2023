@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api';
 
 import projectList from '../components/ProjectsList.vue';
 import contactSection from '../components/ContactSection.vue';
@@ -32,7 +32,7 @@ export default {
 
     methods: {
         getProjects() {
-            axios.get('http://127.0.0.1:8000/api/projects')
+            api.get('/api/projects')
                 .then(response => {
                     this.projects = response.data.data;
                 })
