@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../api';
 
 import articlesList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
@@ -84,7 +84,7 @@ export default {
 
     methods: {
         getArticle() {
-            axios.get(`http://127.0.0.1:8000/api/articles/${this.slug}`)
+            api.get(`/api/articles/${this.slug}`)
                 .then(response => {
                     this.article = response.data.data;
                 })
@@ -94,7 +94,7 @@ export default {
         },
 
         getRelatedArticles() {
-            axios.get(`http://127.0.0.1:8000/api/related-articles/${this.slug}`)
+            api.get(`/api/related-articles/${this.slug}`)
                 .then(response => {
                     this.articles = response.data.data;
                 })
