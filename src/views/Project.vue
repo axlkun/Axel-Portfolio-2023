@@ -76,7 +76,8 @@ export default {
 
     data: () => ({
 
-        project: []
+        project: [],
+        projects: []
     }),
 
     methods: {
@@ -84,7 +85,16 @@ export default {
             axios.get(`http://127.0.0.1:8000/api/projects/${this.slug}`)
                 .then(response => {
                     this.project = response.data.data;
-                    console.log(this.project);
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud GET:', error);
+                });
+        },
+
+        getRelatedProjects(){
+            axios.get(`http://127.0.0.1:8000/api/related-projects/${this.slug}`)
+                .then(response => {
+                    this.projects = response.data.data;
                 })
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
@@ -94,6 +104,7 @@ export default {
 
     mounted() {
         this.getProject();
+        this.getRelatedProjects();
     }
 
 }
