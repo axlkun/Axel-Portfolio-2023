@@ -7,7 +7,7 @@
                     <v-sheet class="home-encabezado">
 
                         <v-sheet class="hook">
-                            <p> Me gusta desarrollar productos de software <span>sólidos</span> y <span>escalables</span> con una excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" alt="Hayppy Face SVG" loading="lazy" /></p>
+                            <p> Me gusta desarrollar productos de software <span>sólidos</span> y <span>escalables</span> con una excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" alt="Hayppy Face SVG" v-lazy/></p>
                         </v-sheet>
 
                         <v-sheet class="home-description">
@@ -23,7 +23,7 @@
                 </v-sheet>
 
                 <v-sheet class="img-container">
-                    <img :src="imgHome" alt="Imagen Home" loading="lazy" />
+                    <img :src="imgHome" alt="Imagen Home" v-lazy/>
                 </v-sheet>
             </v-sheet>
         </v-sheet>

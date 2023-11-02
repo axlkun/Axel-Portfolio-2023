@@ -4,7 +4,7 @@
         <v-sheet class="container">
 
             <v-sheet class="img-container">
-                <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" loading="lazy" />
+                <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" v-lazy/>
             </v-sheet>
 
             <v-sheet class="description-container">

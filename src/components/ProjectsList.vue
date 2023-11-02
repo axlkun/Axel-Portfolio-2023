@@ -5,7 +5,7 @@
 
             <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text" class="custom-card"
                 @click="redirectToProject(project.slug)">
-                <v-img :src="`http://127.0.0.1:8000${project.imageUrl}`" cover :aspect-ratio="16 / 8">
+                <v-img :src="`http://127.0.0.1:8000${project.imageUrl}`" cover :aspect-ratio="16 / 8" v-lazy>
                 </v-img>
                 <v-card-title class="flex-column align-start">
                     <div class="project-name">

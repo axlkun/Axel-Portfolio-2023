@@ -24,7 +24,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <img :src="imgAboutMe" alt="Imagen About Me" loading="lazy" />
+                <v-img class="myImg" :src="imgAboutMe" alt="Imagen About Me" v-lazy></v-img>
             </v-sheet>
 
         </v-sheet>
@@ -37,7 +37,7 @@
             <v-sheet class="container-tecnologies">
                 <v-sheet v-for="item in tecnologiesContent" :key="item.id" class="tecnologie">
                     <v-icon class="custom-size">
-                        <img :src="item.icon" :alt="item.alt" class="w-100" loading="lazy" />
+                        <img :src="item.icon" :alt="item.alt" class="w-100" v-lazy/>
                     </v-icon>
                     <p>{{ item.name }}</p>
                 </v-sheet>
@@ -333,7 +333,7 @@ export default {
     margin-top: 15px;
   }
 
-  .img-container img{
+  .img-container .myImg{
     
     width: 100%;
     height: 100%;

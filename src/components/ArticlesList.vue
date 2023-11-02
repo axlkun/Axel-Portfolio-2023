@@ -2,7 +2,7 @@
     <v-sheet class="articles">
         <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle(article.slug)" :elevated="0" variant="text">
             <v-sheet class="img-container">
-                <v-img class="img" :src="imgBlog"></v-img>
+                <v-img class="img" :src="imgBlog" v-lazy></v-img>
                 <p>{{ article.created_date }}</p>
             </v-sheet>
 
