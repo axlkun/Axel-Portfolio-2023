@@ -5,7 +5,7 @@
             <div class="container-bar">
                 <div class="logo" @click="redirectToHome">
                     <div>
-                        <img :src="logo" alt="Icono" v-lazy/>
+                        <img :src="logo" alt="Icono"/>
                     </div>
                     <div>
                         <a><span>Axel</span>Cruz</a>

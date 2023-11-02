@@ -24,7 +24,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <v-img class="myImg" :src="imgAboutMe" alt="Imagen About Me" v-lazy></v-img>
+                <v-lazy><v-img class="myImg" :src="imgAboutMe" alt="Imagen About Me"></v-img></v-lazy>
             </v-sheet>
 
         </v-sheet>
@@ -36,9 +36,9 @@
 
             <v-sheet class="container-tecnologies">
                 <v-sheet v-for="item in tecnologiesContent" :key="item.id" class="tecnologie">
-                    <v-icon class="custom-size">
-                        <img :src="item.icon" :alt="item.alt" class="w-100" v-lazy/>
-                    </v-icon>
+                    <v-lazy><v-icon class="custom-size">
+                        <img :src="item.icon" :alt="item.alt" class="w-100"/>
+                    </v-icon></v-lazy>
                     <p>{{ item.name }}</p>
                 </v-sheet>
             </v-sheet>
