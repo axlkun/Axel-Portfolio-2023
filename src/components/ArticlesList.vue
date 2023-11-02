@@ -1,8 +1,12 @@
 <template>
     <v-sheet class="articles">
-        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle(article.slug)" :elevated="0" variant="text">
+        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle(article.slug)" :elevated="0"
+            variant="text">
+            <v-img :src="`http://127.0.0.1:8000${article.imageUrl}`" cover :aspect-ratio="16 / 9">
+            </v-img>
+
             <v-sheet class="img-container">
-                <v-lazy><v-img class="img" :src="imgBlog"></v-img></v-lazy>
+                <v-img class="img" :src="imgBlog"></v-img>
                 <p>{{ article.created_date }}</p>
             </v-sheet>
 
