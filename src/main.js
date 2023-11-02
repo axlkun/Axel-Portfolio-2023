@@ -7,20 +7,31 @@ import { MotionPlugin } from '@vueuse/motion';
 // Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+import { VApp, VSheet, VIcon, VImg, VCard, VCardTitle, VCardText, VChip, VFooter, VDivider } from 'vuetify/components'
+// import * as directives from 'vuetify/directives'
 import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css';
 import colors from 'vuetify/lib/util/colors'
 
 const vuetify = createVuetify({
-    components,
-    directives,
-    colors
-  })
-  
-  const app = createApp(App)
-  app.use(router)
-  app.use(vuetify)
-  app.use(MotionPlugin)
-  app.mount('#app')
+  components: {
+    VApp,
+    VSheet,
+    VIcon,
+    VImg,
+    VCard,
+    VCardTitle,
+    VCardText,
+    VChip,
+    VFooter,
+    VDivider
+  },
+  // directives,
+  colors
+})
+
+const app = createApp(App)
+app.use(router)
+app.use(vuetify)
+app.use(MotionPlugin)
+app.mount('#app')
