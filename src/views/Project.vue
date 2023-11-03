@@ -4,7 +4,7 @@
         <v-sheet class="container">
 
             <v-sheet class="img-container">
-                <v-lazy><img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me"/></v-lazy>
+                <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" />
             </v-sheet>
 
             <v-sheet class="description-container">
@@ -80,8 +80,15 @@ export default {
         projects: []
     }),
 
+    watch: {
+        slug: 'loadData' // Llama a la función loadData cuando la prop slug cambia
+    },
+
     methods: {
-        getProject() {
+        loadData() {
+            this.project = [];
+            this.projects = [];
+
             api.get(`/api/projects/${this.slug}`)
                 .then(response => {
                     this.project = response.data.data;
@@ -89,9 +96,7 @@ export default {
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
                 });
-        },
 
-        getRelatedProjects(){
             api.get(`/api/related-projects/${this.slug}`)
                 .then(response => {
                     this.projects = response.data.data;
@@ -101,12 +106,9 @@ export default {
                 });
         }
     },
-
-    mounted() {
-        this.getProject();
-        this.getRelatedProjects();
+    created() {
+        this.loadData(); // Carga los datos al crear el componente
     }
-
 }
 </script>
 
@@ -116,7 +118,8 @@ export default {
 }
 
 .container {
-    max-width: 90%;
+    width: 90%;
+    max-width: 120rem;
     background: transparent;
     margin: 0 auto;
     display: flex;
@@ -191,20 +194,21 @@ export default {
     flex-direction: column;
     margin-bottom: 30px;
     gap: 30px;
-
+   
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
         font-size: 20px;
-
     }
 }
 
 .project-description {
-    flex: 70%;
+    /*flex: 70%;*/
+    flex-grow: 7;
 }
 
 .project-info {
-    flex: 30%;
+    /*flex: 30%;*/
+    flex-grow: 3;
     display: flex;
     flex-direction: column;
     text-align: start;
