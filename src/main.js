@@ -1,13 +1,14 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
 import router from './router.js';
 import { MotionPlugin } from '@vueuse/motion';
 
 // Vuetify
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import { VApp, VLazy, VSheet, VIcon, VImg, VCard, VCardTitle, VCardText, VChip, VFooter, VDivider } from 'vuetify/components'
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import { VApp, VLazy, VSheet, VIcon, VImg, VCard, VCardTitle, VCardText, VChip, VFooter, VDivider } from 'vuetify/components';
+import { VSkeletonLoader } from 'vuetify/labs/VSkeletonLoader';
 // import * as directives from 'vuetify/directives'
 import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css';
@@ -25,7 +26,8 @@ const vuetify = createVuetify({
     VCardText,
     VChip,
     VFooter,
-    VDivider
+    VDivider,
+    VSkeletonLoader
   },
   // directives,
   colors
