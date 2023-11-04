@@ -7,7 +7,7 @@ import { MotionPlugin } from '@vueuse/motion';
 // Vuetify
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
-import { VApp, VLazy, VSheet, VIcon, VImg, VCard, VCardTitle, VCardText, VChip, VFooter, VDivider } from 'vuetify/components';
+import { VApp, VLazy, VSheet, VIcon, VImg, VCard, VCardTitle, VCardText, VChip, VFooter, VDivider, VCol, VRow } from 'vuetify/components';
 import { VSkeletonLoader } from 'vuetify/labs/VSkeletonLoader';
 // import * as directives from 'vuetify/directives'
 import 'vuetify/dist/vuetify.min.css'
@@ -27,7 +27,9 @@ const vuetify = createVuetify({
     VChip,
     VFooter,
     VDivider,
-    VSkeletonLoader
+    VSkeletonLoader,
+    VCol,
+    VRow
   },
   // directives,
   colors
