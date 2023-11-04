@@ -1,7 +1,39 @@
 <template>
     <v-sheet class="project">
 
-        <v-sheet class="container">
+        <v-sheet v-if="loading" class="skeleton">
+            <!-- Contenedor principal -->
+            <v-sheet color="#f5f1f1" class="d-flex flex-column-reverse flex-md-column">
+                <v-sheet color="#f5f1f1">
+                    <v-row justify-center>
+                        <!-- Contenedor 70% -->
+                        <v-col cols="12" md="9" class="pt-12">
+                            <v-skeleton-loader type="heading" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="subtitle" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="chip" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                        </v-col>
+                        <!-- Contenedor 30% -->
+                        <v-col cols="12" md="3" class="pt-12">
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                        </v-col>
+                    </v-row>
+                </v-sheet>
+
+                <v-sheet color="#f5f1f1">
+                    <!-- Skeleton de la imagen -->
+                    <v-skeleton-loader type="image" color="#f5f1f1" class="pt-md-12 pb-md-12"></v-skeleton-loader>
+                </v-sheet>
+            </v-sheet>
+
+        </v-sheet>
+
+        <v-sheet class="container" v-else>
 
             <v-sheet class="img-container">
                 <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" />
@@ -22,7 +54,6 @@
 
                         <v-sheet class="description" v-html="project.description"></v-sheet>
                     </v-sheet>
-
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
                             <h3>Compañía / Cliente</h3>
@@ -54,6 +85,7 @@
         <relatedProjects :projectsList="projects"></relatedProjects>
 
         <contactSection></contactSection>
+
     </v-sheet>
 </template>
 
@@ -77,7 +109,8 @@ export default {
     data: () => ({
 
         project: [],
-        projects: []
+        projects: [],
+        loading: true
     }),
 
     watch: {
@@ -88,10 +121,12 @@ export default {
         loadData() {
             this.project = [];
             this.projects = [];
+            this.loading = true;
 
             api.get(`/api/projects/${this.slug}`)
                 .then(response => {
                     this.project = response.data.data;
+                    this.loading = false;
                 })
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
@@ -115,6 +150,13 @@ export default {
 <style scoped>
 .project {
     background-color: var(--primary-background);
+}
+
+.skeleton {
+    background-color: var(--primary-background);
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .container {
@@ -194,7 +236,7 @@ export default {
     flex-direction: column;
     margin-bottom: 30px;
     gap: 30px;
-   
+
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
         font-size: 20px;
@@ -202,13 +244,13 @@ export default {
 }
 
 .project-description {
-    /*flex: 70%;*/
-    flex-grow: 7;
+    flex: 70%;
+    /*flex-grow: 7;*/
 }
 
 .project-info {
-    /*flex: 30%;*/
-    flex-grow: 3;
+    flex: 30%;
+    /*flex-grow: 3;*/
     display: flex;
     flex-direction: column;
     text-align: start;
