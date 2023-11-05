@@ -78,22 +78,30 @@ export default {
 
     data: () => ({
 
-        article: [],
-        articles: []
+        article: null,
+        articles: null,
+        loading: true
     }),
 
+    watch: {
+        slug: 'loadData' // Llama a la función loadData cuando la prop slug cambia
+    },
+
     methods: {
-        getArticle() {
+        loadData() {
+            this.article = [];
+            this.articles = [];
+            this.loading = true;
+
             api.get(`/api/articles/${this.slug}`)
                 .then(response => {
                     this.article = response.data.data;
+                    this.loading = false;
                 })
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
                 });
-        },
 
-        getRelatedArticles() {
             api.get(`/api/related-articles/${this.slug}`)
                 .then(response => {
                     this.articles = response.data.data;
@@ -101,12 +109,10 @@ export default {
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
                 });
-        },
+        }
     },
-
-    mounted(){
-        this.getArticle();
-        this.getRelatedArticles();
+    created() {
+        this.loadData(); // Carga los datos al crear el componente
     }
 
 }
