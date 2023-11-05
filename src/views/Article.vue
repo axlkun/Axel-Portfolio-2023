@@ -13,8 +13,8 @@
                             <v-skeleton-loader type="chip" color="#f5f1f1"></v-skeleton-loader>
                             <v-skeleton-loader type="image" color="#f5f1f1" class="pt-md-12 pb-md-12"></v-skeleton-loader>
                             <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
-                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>  
-                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>  
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
                         </v-col>
                         <!-- Contenedor 30% -->
                         <v-col cols="12" md="3" class="pt-12">
@@ -57,7 +57,7 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Fecha</h3>
-                            <p> {{ article.created_date}} </p>
+                            <p> {{ article.created_date }} </p>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Tiempo de lectura</h3>
@@ -68,7 +68,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <v-lazy><img :src="`http://127.0.0.1:8000${article.imageUrl}`" alt="Imagen About Me"/></v-lazy>
+                <v-lazy><img :src="`http://127.0.0.1:8000${article.imageUrl}`" alt="Imagen About Me" /></v-lazy>
             </v-sheet>
 
             <v-sheet class="article-content" v-html="article.description"></v-sheet>
@@ -116,32 +116,48 @@ export default {
     },
 
     methods: {
-        loadData() {
-            this.article = [];
-            this.articles = [];
+        async loadData() {
             this.loading = true;
 
-            api.get(`/api/articles/${this.slug}`)
-                .then(response => {
-                    this.article = response.data.data;
-                    this.loading = false;
-                })
-                .catch(error => {
-                    console.error('Error al hacer la solicitud GET:', error);
-                });
+            try {
+                const articleResponse = await this.loadArticle();
+                if (articleResponse.status === 200) {
+                    this.article = articleResponse.data.data;
+                } else {
+                    // Redirige al índice en caso de respuesta no exitosa
+                    this.$router.push('/'); 
+                }
+            } catch (error) {
+                this.handleError(error);
+            }
+            finally {
+                this.loading = false; 
+            }
 
-            api.get(`/api/related-articles/${this.slug}`)
-                .then(response => {
-                    this.articles = response.data.data;
-                })
-                .catch(error => {
-                    console.error('Error al hacer la solicitud GET:', error);
-                });
+            // Realiza la otra petición en segundo plano
+            this.loadRelatedArticles();
+        },
+
+        async loadArticle() {
+            return await api.get(`/api/articles/${this.slug}`);
+        },
+
+        async loadRelatedArticles() {
+            try {
+                const relatedArticlesResponse = await api.get(`/api/related-articles/${this.slug}`);
+                this.articles = relatedArticlesResponse.data.data;
+            } catch (error) {
+                console.error('Error al obtener artículos relacionados:', error);
+            }
+        },
+
+        handleError(error) {
+            console.error('Error al hacer la solicitud GET:', error);
         }
     },
     created() {
-        this.loadData(); // Carga los datos al crear el componente
-    }
+        this.loadData();
+    },
 
 }
 </script>
