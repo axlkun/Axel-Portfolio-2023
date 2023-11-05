@@ -1,7 +1,35 @@
 <template>
     <v-sheet class="project">
 
-        <v-sheet class="container">
+        <v-sheet v-if="loading" class="skeleton">
+            <!-- Contenedor principal -->
+            <v-sheet color="#f5f1f1">
+                <v-sheet color="#f5f1f1">
+                    <v-row justify-center>
+                        <!-- Contenedor 70% -->
+                        <v-col cols="12" md="9" class="pt-12">
+                            <v-skeleton-loader type="heading" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="subtitle" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="chip" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="image" color="#f5f1f1" class="pt-md-12 pb-md-12"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>  
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>  
+                        </v-col>
+                        <!-- Contenedor 30% -->
+                        <v-col cols="12" md="3" class="pt-12">
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                        </v-col>
+                    </v-row>
+                </v-sheet>
+            </v-sheet>
+
+        </v-sheet>
+
+        <v-sheet class="container" v-else>
 
             <v-sheet class="description-container">
                 <v-sheet class="project-data">
@@ -121,6 +149,13 @@ export default {
 <style scoped>
 .project {
     background-color: var(--primary-background);
+}
+
+.skeleton {
+    background-color: var(--primary-background);
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .container {
