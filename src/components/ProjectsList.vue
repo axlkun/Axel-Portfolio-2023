@@ -43,6 +43,10 @@ export default {
 
     props: ['projectsList'],
 
+    data: () => ({
+        loading: true
+    }),
+
     methods: {
         redirectToProject(slug) {
             this.$router.push({ name: 'project', params: { slug: slug } });
