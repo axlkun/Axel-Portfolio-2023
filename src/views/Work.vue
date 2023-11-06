@@ -6,7 +6,26 @@
             </v-sheet>
         </v-sheet>
 
-        <project-list :projectsList="projects"></project-list>
+        <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading">
+            <v-row class="pt-md-6">
+                <v-col cols="12" md="6">
+                    <v-skeleton-loader height="500" type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <v-skeleton-loader height="500" type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-skeleton-loader height="350" type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <v-skeleton-loader height="350" type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+            </v-row>
+        </v-sheet>
+
+        <project-list :projectsList="projects" v-else></project-list>
 
         <contactSection></contactSection>
     </v-sheet>
@@ -27,7 +46,8 @@ export default {
 
     data: () => ({
 
-        projects: []
+        projects: [],
+        loading: true
     }),
 
     methods: {
@@ -38,6 +58,9 @@ export default {
                 })
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
+                })
+                .finally(() => {
+                    this.loading = false; // Desactiva el estado de carga después de la solicitud
                 });
         }
     },
@@ -52,6 +75,13 @@ export default {
 <style scoped>
 .projects {
     background-color: var(--primary-background);
+}
+
+.skeleton {
+    background-color: var(--primary-background);
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .container {
