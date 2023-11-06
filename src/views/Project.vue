@@ -118,27 +118,43 @@ export default {
     },
 
     methods: {
-        loadData() {
-            this.project = [];
-            this.projects = [];
+        async loadData() {
             this.loading = true;
 
-            api.get(`/api/projects/${this.slug}`)
-                .then(response => {
-                    this.project = response.data.data;
-                    this.loading = false;
-                })
-                .catch(error => {
-                    console.error('Error al hacer la solicitud GET:', error);
-                });
+            try {
+                const projectResponse = await this.loadProject();
+                if (projectResponse.status === 200) {
+                    this.project = projectResponse.data.data;
+                } else {
+                    // Redirige al índice en caso de respuesta no exitosa
+                    this.$router.push('/'); 
+                }
+            } catch (error) {
+                this.handleError(error);
+            }
+            finally {
+                this.loading = false; 
+            }
 
-            api.get(`/api/related-projects/${this.slug}`)
-                .then(response => {
-                    this.projects = response.data.data;
-                })
-                .catch(error => {
-                    console.error('Error al hacer la solicitud GET:', error);
-                });
+            // Realiza la otra petición en segundo plano
+            this.loadRelatedProjects();
+        },
+
+        async loadProject() {
+            return await api.get(`/api/projects/${this.slug}`);
+        },
+
+        async loadRelatedProjects() {
+            try {
+                const relatedProjectResponse = await api.get(`/api/related-projects/${this.slug}`);
+                this.projects = relatedProjectResponse.data.data;
+            } catch (error) {
+                console.error('Error al obtener proyectos relacionados:', error);
+            }
+        },
+
+        handleError(error) {
+            console.error('Error al hacer la solicitud GET:', error);
         }
     },
     created() {
