@@ -7,22 +7,15 @@
         </v-sheet>
 
         <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading">
-            <v-row class="pt-md-6">
-                <v-col cols="12" md="6">
-                    <v-skeleton-loader height="500" type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-                <v-col cols="12" md="6">
-                    <v-skeleton-loader height="500" type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-            </v-row>
-            <v-row>
-                <v-col cols="12" md="6">
-                    <v-skeleton-loader height="350" type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-                <v-col cols="12" md="6">
-                    <v-skeleton-loader height="350" type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-            </v-row>
+            <template v-for="rowIndex in 2">
+                <v-row :class="rowIndex === 1 ? 'pt-md-6' : ''" class="pb-md-6">
+                  <template v-for="colIndex in 2">
+                    <v-col cols="12" md="6">
+                      <v-skeleton-loader :height="rowIndex == 1 ? 510 : 350" type="image, article, chip"></v-skeleton-loader>
+                    </v-col>
+                  </template>
+                </v-row>
+              </template>
         </v-sheet>
 
         <project-list :projectsList="projects" v-else></project-list>
