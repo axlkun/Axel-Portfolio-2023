@@ -52,7 +52,7 @@
                             </v-chip>
                         </v-sheet>
 
-                        <v-sheet class="description" v-html="project.description"></v-sheet>
+                        <v-sheet class="project-content" v-html="project.description"></v-sheet>
                     </v-sheet>
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">

@@ -286,19 +286,6 @@ export default {
     }
 }
 
-.article-content h2 {
-    color: var(--primary-blue);
-    font-size: 25px;
-
-    @media only screen and (min-width: 1024px) {
-        font-size: 35px;
-    }
-}
-
-.article-content p {
-    margin-bottom: 15px;
-}
-
 .title-container {
     width: 90%;
     font-size: 25px;
