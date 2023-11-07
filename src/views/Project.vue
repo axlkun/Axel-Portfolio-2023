@@ -168,13 +168,6 @@ export default {
     background-color: var(--primary-background);
 }
 
-.skeleton {
-    background-color: var(--primary-background);
-    width: 90%;
-    max-width: 120rem;
-    margin: 0 auto;
-}
-
 .container {
     width: 90%;
     max-width: 120rem;

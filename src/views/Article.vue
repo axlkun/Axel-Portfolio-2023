@@ -125,13 +125,13 @@ export default {
                     this.article = articleResponse.data.data;
                 } else {
                     // Redirige al índice en caso de respuesta no exitosa
-                    this.$router.push('/'); 
+                    this.$router.push('/');
                 }
             } catch (error) {
                 this.handleError(error);
             }
             finally {
-                this.loading = false; 
+                this.loading = false;
             }
 
             // Realiza la otra petición en segundo plano
@@ -165,13 +165,6 @@ export default {
 <style scoped>
 .project {
     background-color: var(--primary-background);
-}
-
-.skeleton {
-    background-color: var(--primary-background);
-    width: 90%;
-    max-width: 120rem;
-    margin: 0 auto;
 }
 
 .container {

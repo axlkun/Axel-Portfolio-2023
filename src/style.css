@@ -53,6 +53,13 @@ a {
   text-decoration: none; /* Elimina el subrayado */
 }
 
+.skeleton {
+  background-color: var(--primary-background);
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
 /*
 palette:
 azul: #023baf

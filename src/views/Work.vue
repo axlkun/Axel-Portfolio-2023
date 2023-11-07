@@ -6,12 +6,12 @@
             </v-sheet>
         </v-sheet>
 
-        <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading">
+        <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading" color="#f5f1f1">
             <template v-for="rowIndex in 2">
                 <v-row :class="rowIndex === 1 ? 'pt-md-6' : ''" class="pb-md-6">
                   <template v-for="colIndex in 2">
                     <v-col cols="12" md="6">
-                      <v-skeleton-loader :height="rowIndex == 1 ? 510 : 350" type="image, article, chip"></v-skeleton-loader>
+                      <v-skeleton-loader :height="rowIndex == 1 ? 510 : 350" type="image, article, chip" color="#f5f1f1"></v-skeleton-loader>
                     </v-col>
                   </template>
                 </v-row>
@@ -68,13 +68,6 @@ export default {
 <style scoped>
 .projects {
     background-color: var(--primary-background);
-}
-
-.skeleton {
-    background-color: var(--primary-background);
-    width: 90%;
-    max-width: 120rem;
-    margin: 0 auto;
 }
 
 .container {
