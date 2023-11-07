@@ -6,30 +6,17 @@
             </v-sheet>
         </v-sheet>
 
-        <v-sheet class="skeleton" v-if="loading">
-            <v-row class="pt-md-10">
-                <v-col cols="12" md="4">
-                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-            </v-row>
-            <v-row>
-                <v-col cols="12" md="4">
-                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
-                </v-col>
-            </v-row>
-        </v-sheet>
+        <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading">
+            <template v-for="rowIndex in 2">
+              <v-row :class="rowIndex === 1 ? 'pt-md-10' : ''">
+                <template v-for="colIndex in 3">
+                  <v-col cols="12" md="4">
+                    <v-skeleton-loader :height="rowIndex == 1 ? 500 : 400" type="image, article, chip"></v-skeleton-loader>
+                  </v-col>
+                </template>
+              </v-row>
+            </template>
+          </v-sheet>
 
         <articlestList :blogEntry="blogEntry" v-else></articlestList>
 
