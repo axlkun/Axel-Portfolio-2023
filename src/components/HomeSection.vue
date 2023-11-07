@@ -17,7 +17,7 @@
 
                     </v-sheet>
                     <v-sheet class="buttons-container">
-                        <a class="button">Contacto</a>
+                        <a class="button" href="mailto:axelcruz.dev@gmail.com">Contacto</a>
                         <a class="button">Resume / CV</a>
                     </v-sheet>
                 </v-sheet>
