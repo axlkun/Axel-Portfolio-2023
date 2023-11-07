@@ -1,7 +1,7 @@
 <template>
     <v-sheet class="blog" id="blog">
 
-        <v-sheet class="description" v-motion-slide-visible-once-bottom>
+        <v-sheet class="description">
 
             <v-sheet class="container-aboutme-title">
                 <h2>Blog</h2>
