@@ -6,7 +6,32 @@
             </v-sheet>
         </v-sheet>
 
-        <articlestList :blogEntry="blogEntry"></articlestList>
+        <v-sheet class="skeleton" v-if="loading">
+            <v-row class="pt-md-10">
+                <v-col cols="12" md="4">
+                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+                <v-col cols="12" md="4">
+                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+                <v-col cols="12" md="4">
+                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="4">
+                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+                <v-col cols="12" md="4">
+                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+                <v-col cols="12" md="4">
+                    <v-skeleton-loader type="image, article, chip"></v-skeleton-loader>
+                </v-col>
+            </v-row>
+        </v-sheet>
+
+        <articlestList :blogEntry="blogEntry" v-else></articlestList>
 
         <contactSection></contactSection>
     </v-sheet>
@@ -26,7 +51,8 @@ export default {
     },
 
     data: () => ({
-        blogEntry: []
+        blogEntry: [],
+        loading: true
     }),
 
     methods: {
@@ -37,6 +63,9 @@ export default {
                 })
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
+                })
+                .finally(() => {
+                    this.loading = false; // Desactiva el estado de carga después de la solicitud
                 });
         }
     },
@@ -51,6 +80,13 @@ export default {
 <style scoped>
 .projects {
     background-color: var(--primary-background);
+}
+
+.skeleton {
+    background-color: var(--primary-background);
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .container {
