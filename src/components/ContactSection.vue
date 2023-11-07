@@ -31,15 +31,15 @@
 
                     <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">Linkdln <span class="mdi mdi-arrow-right-thin"></span></a></h3>
 
-                    <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">GitHub <span class="mdi mdi-arrow-right-thin"></span></a></h3>
+                    <h3 ><a class="button" href="https://github.com/axlkun" target="_blank">GitHub <span class="mdi mdi-arrow-right-thin"></span></a></h3>
 
-                    <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">Twitter <span class="mdi mdi-arrow-right-thin"></span></a></h3>
+                    <h3 ><a class="button" href="https://twitter.com/Axlkun" target="_blank">Twitter <span class="mdi mdi-arrow-right-thin"></span></a></h3>
                 
             </v-sheet>
 
             <v-sheet class="direct-contact">
 
-                <h3 ><a class="button" href="https://www.linkedin.com/in/axel-andres-cruz-cordova/" target="_blank">Email <span class="mdi mdi-arrow-right-thin"></span></a></h3>
+                <h3 ><a class="button" href="mailto:axelcruz.dev@gmail.com">Email <span class="mdi mdi-arrow-right-thin"></span></a></h3>
             </v-sheet>
             </v-sheet>
             
