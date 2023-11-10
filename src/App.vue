@@ -29,7 +29,7 @@ export default {
 
   methods: {
     getArticles() {
-      api.get('/api/articles?limit=6', { withCredentials: true })
+      api.get('/api/articles?limit=6')
         .then(response => {
           this.blogEntry = response.data.data;
         })
