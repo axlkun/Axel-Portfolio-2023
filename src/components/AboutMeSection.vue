@@ -24,7 +24,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <v-img class="myImg" :src="imgAboutMe" alt="Imagen About Me"></v-img>
+                <img class="myImg" :src="imgAboutMe" alt="Imagen About Me"/>
             </v-sheet>
 
         </v-sheet>
