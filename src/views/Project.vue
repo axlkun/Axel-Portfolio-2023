@@ -1,58 +1,63 @@
 <template>
     <v-sheet class="project">
 
-        <v-sheet class="container">
+        <v-sheet v-if="loading" class="skeleton">
+            <!-- Contenedor principal -->
+            <v-sheet color="#f5f1f1" class="d-flex flex-column-reverse flex-md-column">
+                <v-sheet color="#f5f1f1">
+                    <v-row justify-center>
+                        <!-- Contenedor 70% -->
+                        <v-col cols="12" md="9" class="pt-12">
+                            <v-skeleton-loader type="heading" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="subtitle" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="chip" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="paragraph" color="#f5f1f1"></v-skeleton-loader>
+                        </v-col>
+                        <!-- Contenedor 30% -->
+                        <v-col cols="12" md="3" class="pt-12">
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                            <v-skeleton-loader type="list-item-two-line" color="#f5f1f1"></v-skeleton-loader>
+                        </v-col>
+                    </v-row>
+                </v-sheet>
+
+                <v-sheet color="#f5f1f1">
+                    <!-- Skeleton de la imagen -->
+                    <v-skeleton-loader type="image" color="#f5f1f1" class="pt-md-12 pb-md-12"></v-skeleton-loader>
+                </v-sheet>
+            </v-sheet>
+
+        </v-sheet>
+
+        <v-sheet class="container" v-else>
 
             <v-sheet class="img-container">
-                <img :src="imgUnfollowersTracker" alt="Imagen About Me" loading="lazy" />
+                <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" />
             </v-sheet>
 
             <v-sheet class="description-container">
                 <v-sheet class="project-data">
                     <v-sheet class="project-description">
                         <v-sheet class="title">
-                            <h1>Unfollowers Tracker</h1>
+                            <h1> {{ project.title }}</h1>
                         </v-sheet>
 
                         <v-sheet class="d-flex flex-wrap justify-start mt-2 mb-2">
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Vue
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Vuetify
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                Laravel
-                            </v-chip>
-                            <v-chip class="mr-2 mb-2" color="#0801ff">
-                                MySQL
+                            <v-chip v-for="technologie in project.technologies" class="mr-2 mb-2" color="#0801ff">
+                                {{ technologie }}
                             </v-chip>
                         </v-sheet>
 
-                        <v-sheet class="description">
-                            <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                                site
-                                features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                                profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                                directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                                general visual language. I also designed the microsite in its entirety, as well produced all
-                                the
-                                various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                            <p>Oyster launched a brand awareness campaign and microsite at the beginning of Q3 2023. The
-                                site
-                                features an interactive quiz asking visitors "What's your workstyle?", and also includes
-                                profiles of Oyster employees highlighting who they are outside of work. I designed and art
-                                directed the sub-brand identity of the campaign including the wordmark, color palette, and
-                                general visual language. I also designed the microsite in its entirety, as well produced all
-                                the
-                                various campaign assets for paid media, organic social, and lifecycle assets.</p>
-                        </v-sheet>
+                        <v-sheet class="project-content" v-html="project.description"></v-sheet>
                     </v-sheet>
-
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
                             <h3>Compañía / Cliente</h3>
-                            <p>Proyecto propio</p>
+                            <p> {{ project.company }}</p>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Rol</h3>
@@ -60,12 +65,15 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Ver código</h3>
-                            <p class="link">codigo.com</p>
-                            <p class="link">codigo2.com</p>
+                            <a>
+                                {{ project.repo_link ? project.repo_link : 'Repositorio privado' }}
+                            </a>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Visitar el sitio</h3>
-                            <p class="link">unfollowerstracker.com</p>
+                            <a>
+                                {{ project.website_link ? project.website_link : 'Despliegue no disponible' }}
+                            </a>
                         </v-sheet>
                     </v-sheet>
                 </v-sheet>
@@ -77,18 +85,21 @@
         <relatedProjects :projectsList="projects"></relatedProjects>
 
         <contactSection></contactSection>
+
     </v-sheet>
 </template>
 
 <script>
+import api from '../api';
+
 import relatedProjects from '../components/RelatedProjects.vue';
 import contactSection from '../components/ContactSection.vue';
 
-import imgUnfollowersTracker from '../assets/UnfollowersTracker.png'
-import imgValidacionExpedientes from '../assets/welldex-logo.jpeg'
-import imgCargaDatastageGral from '../assets/CargaDatastageGeneral.png'
-
 export default {
+
+    name: 'project',
+
+    props: ['slug'],
 
     components: {
         relatedProjects,
@@ -97,36 +108,58 @@ export default {
 
     data: () => ({
 
-        imgUnfollowersTracker,
-    
-        projects: [
-            {
-                name: "Unfollowers Tracker",
-                description: "Aplicación web para conocer quien no te sigue de vuelta en Instagram",
-                type: "Proyecto propio",
-                stack: ["Vue", "Vuetify", "Laravel", "MySQL"],
-                image: imgUnfollowersTracker,
-                icon: "mdi mdi-folder-heart-outline"
-            },
-            {
-                name: "API Validación de Expedientes",
-                description: "API para validar y verificar expedientes de operaciones aduaneras",
-                type: "Welldex Internacional",
-                stack: ["PHP", "Python", "MySQL", "SQLServer", "CloudStorage"],
-                image: imgValidacionExpedientes,
-                icon: "mdi mdi-domain"
-            },
-            {
-                name: "Carga Datastage General",
-                description: "Módulo que permite subir el Datastage nacional a BigQuery",
-                type: "Welldex Internacional",
-                stack: ["Vue", "Vuetify", "PHP", "MySQL", "BigQuery"],
-                image: imgCargaDatastageGral,
-                icon: "mdi mdi-domain"
-            }
-        ]
+        project: [],
+        projects: [],
+        loading: true
     }),
 
+    watch: {
+        slug: 'loadData' // Llama a la función loadData cuando la prop slug cambia
+    },
+
+    methods: {
+        async loadData() {
+            this.loading = true;
+
+            try {
+                const projectResponse = await this.loadProject();
+                if (projectResponse.status === 200) {
+                    this.project = projectResponse.data.data;
+                } else {
+                    // Redirige al índice en caso de respuesta no exitosa
+                    this.$router.push('/'); 
+                }
+            } catch (error) {
+                this.handleError(error);
+            }
+            finally {
+                this.loading = false; 
+            }
+
+            // Realiza la otra petición en segundo plano
+            this.loadRelatedProjects();
+        },
+
+        async loadProject() {
+            return await api.get(`/api/projects/${this.slug}`);
+        },
+
+        async loadRelatedProjects() {
+            try {
+                const relatedProjectResponse = await api.get(`/api/related-projects/${this.slug}`);
+                this.projects = relatedProjectResponse.data.data;
+            } catch (error) {
+                console.error('Error al obtener proyectos relacionados:', error);
+            }
+        },
+
+        handleError(error) {
+            console.error('Error al hacer la solicitud GET:', error);
+        }
+    },
+    created() {
+        this.loadData(); // Carga los datos al crear el componente
+    }
 }
 </script>
 
@@ -136,7 +169,8 @@ export default {
 }
 
 .container {
-    max-width: 90%;
+    width: 90%;
+    max-width: 120rem;
     background: transparent;
     margin: 0 auto;
     display: flex;
@@ -215,16 +249,17 @@ export default {
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
         font-size: 20px;
-
     }
 }
 
 .project-description {
     flex: 70%;
+    /*flex-grow: 7;*/
 }
 
 .project-info {
     flex: 30%;
+    /*flex-grow: 3;*/
     display: flex;
     flex-direction: column;
     text-align: start;

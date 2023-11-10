@@ -4,23 +4,27 @@
 /* @import url('https://fonts.cdnfonts.com/css/basic'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@400;700;900&display=swap'); */
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap');
+
+
 :root {
 
   /* font-family: 'Lato', sans-serif; */
   /* font-family: 'Neue Haas Grotesk Display Pro', sans-serif; */
   /* font-family: 'PP Neue Montreal', sans-serif; */
-  
+
   /* font-family: 'Basic', sans-serif;
   line-height: 1.8; */
 
   /* font-family: 'Inter', sans-serif; */
+  font-family: 'Manrope', sans-serif;
 
   /* --primary-blue: #0052faff; 
   --primary-background: #edf8ffff; */
 
-   /* --primary-blue: #023baf; */
- /* --primary-background: #ece5d0;  */
-  
+  /* --primary-blue: #023baf; */
+  /* --primary-background: #ece5d0;  */
+
   /* --primary-blue: #0f72e6;
   --primary-background: #ddd8ce; */
 
@@ -30,27 +34,67 @@
 
   /* --primary-grey: #dfdede; */
   --primary-grey: #dad9d6;
+  --secondary-grey: #181818;
   --primary-purple: #ac7ce4;
   --primary-black: #232325;
 
 }
 
-h1, h2, h3 {
-  font-size: inherit; /* Tamaño de fuente heredado */
-  font-weight: inherit; /* Peso de fuente heredado */
-  margin: 0; /* Margen predeterminado eliminado */
-  padding: 0; /* Relleno predeterminado eliminado */
-  line-height: inherit; /* Altura de línea heredada */
-  color: inherit; /* Color de texto heredado */
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  /* Tamaño de fuente heredado */
+  font-weight: inherit;
+  /* Peso de fuente heredado */
+  margin: 0;
+  /* Margen predeterminado eliminado */
+  padding: 0;
+  /* Relleno predeterminado eliminado */
+  line-height: inherit;
+  /* Altura de línea heredada */
+  color: inherit;
+  /* Color de texto heredado */
   /* Otras propiedades que desees restablecer */
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 a {
-  text-decoration: none; /* Elimina el subrayado */
+  text-decoration: none;
+  /* Elimina el subrayado */
+}
+
+.skeleton {
+  background-color: var(--primary-background);
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.article-content h2,
+.article-content h3,
+.project-content h2,
+.project-content h3 {
+  color: var(--primary-blue);
+  margin-top: 15px;
+  font-size: 25px;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 35px;
+  }
+}
+
+.article-content h3,
+.project-content h3 {
+  font-size: 20px;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 25px;
+  }
 }
 
 /*

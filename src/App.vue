@@ -10,67 +10,40 @@
 </template>
 
 <script>
+import api from './api';
+
 import myHeader from './components/Header.vue';
 import myFooter from './components/Footer.vue';
 import './style.css?inline';
 
-export default{
-  
-  components : {
+export default {
+
+  components: {
     myHeader,
     myFooter
   },
 
   data: () => ({
-      blogEntry: [
-            {
-                title: "Cómo hacer un portafolio",
-                link: "/blog/como-hacer-un-portafolio",
-                description: "Conoce los puntos clave para crear un excelente portafolio web",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "Construyendo Unfollowers Tracker",
-                link: "/blog/construyendo-unfollowers-tracker",
-                description: "Como es construir una aplicacion web para monetizar",
-                tags: ["Startup", "Adsense", "Web", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "Proyectos para aprender Vue",
-                link: "/blog/proyectos-para-aprender-vue",
-                description: "Conoce 10 proyectos reales para prácticar tus conocimientos en Vue",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "Hablemos sobre ChatGPT",
-                link: "/blog/hablemos-sobre-Chatgpt",
-                description: "Como sacarle el máximo provecho a esta herramienta IA",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            }
-        ]
-    })
+    blogEntry: []
+  }),
+
+  methods: {
+    getArticles() {
+      api.get('/api/articles?limit=6')
+        .then(response => {
+          this.blogEntry = response.data.data;
+        })
+        .catch(error => {
+          console.error('Error al hacer la solicitud GET:', error);
+        });
+    }
+  },
+
+  mounted() {
+    this.getArticles();
+  }
 }
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

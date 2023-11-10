@@ -3,16 +3,29 @@
         <v-sheet class="container">
             <v-sheet class="title">
                 <h1>Blog</h1>
-            </v-sheet>  
+            </v-sheet>
         </v-sheet>
 
-        <articlestList :blogEntry="blogEntry"></articlestList>
+        <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading" color="#f5f1f1">
+            <template v-for="rowIndex in 2">
+              <v-row :class="rowIndex === 1 ? 'pt-md-10' : ''" >
+                <template v-for="colIndex in 3">
+                  <v-col cols="12" md="4">
+                    <v-skeleton-loader :height="rowIndex == 1 ? 500 : 400" type="image, article, chip" color="#f5f1f1"></v-skeleton-loader>
+                  </v-col>
+                </template>
+              </v-row>
+            </template>
+          </v-sheet>
+
+        <articlestList :blogEntry="blogEntry" v-else></articlestList>
 
         <contactSection></contactSection>
     </v-sheet>
 </template>
 
 <script>
+import api from '../api';
 
 import articlestList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
@@ -25,79 +38,28 @@ export default {
     },
 
     data: () => ({
-      blogEntry: [
-            {
-                title: "Cómo hacer un portafolio",
-                link: "/blog/como-hacer-un-portafolio",
-                description: "Conoce los puntos clave para crear un excelente portafolio web",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "Construyendo Unfollowers Tracker",
-                link: "/blog/construyendo-unfollowers-tracker",
-                description: "Como es construir una aplicacion web para monetizar",
-                tags: ["Startup", "Adsense", "Web", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "Proyectos para aprender Vue",
-                link: "/blog/proyectos-para-aprender-vue",
-                description: "Conoce 10 proyectos reales para prácticar tus conocimientos en Vue",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "Hablemos sobre ChatGPT",
-                link: "/blog/hablemos-sobre-Chatgpt",
-                description: "Como sacarle el máximo provecho a esta herramienta IA",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-            {
-                title: "¿Cual framework para frontend debo aprender?",
-                link: "/blog/cual-framework-para-frontend-debo-aprender",
-                description: "Mira esta guía para decidirte por un framework y empieza a aprender ya",
-                tags: ["Germany", "WellAmRhein", "Fulltime", "Other", "MidLevel"],
-                date: "10/10/2023"
-            },
-        ]
-    }) 
+        blogEntry: [],
+        loading: true
+    }),
+
+    methods: {
+        getArticles() {
+            api.get('/api/articles')
+                .then(response => {
+                    this.blogEntry = response.data.data;
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud GET:', error);
+                })
+                .finally(() => {
+                    this.loading = false; // Desactiva el estado de carga después de la solicitud
+                });
+        }
+    },
+
+    mounted() {
+        this.getArticles();
+    }
 }
 
 </script>

@@ -1,20 +1,24 @@
 <template>
     <v-sheet class="articles">
-        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle" :elevated="0" variant="text">
+        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle(article.slug)" :elevated="0"
+            variant="text">
+            <v-img :src="`http://127.0.0.1:8000${article.imageUrl}`" cover :aspect-ratio="16 / 9">
+            </v-img>
+
             <v-sheet class="img-container">
                 <v-img class="img" :src="imgBlog"></v-img>
-                <p>{{ article.date }}</p>
+                <p>{{ article.created_date }}</p>
             </v-sheet>
 
             <v-sheet>
                 <v-sheet class="article-title">
                     <h3>{{ article.title }}</h3>
-                    <p>{{ article.description }}</p>
+                    <p>{{ article.summary }}</p>
                 </v-sheet>
 
                 <v-card-text class="d-flex flex-wrap pa-0">
-                    <v-chip v-for="tag in article.tags" class="mr-2 mb-2">
-                        {{ tag }}
+                    <v-chip v-for="category in article.categories" class="mr-2 mb-2">
+                        {{ category.name }}
                     </v-chip>
                 </v-card-text>
             </v-sheet>
@@ -38,8 +42,8 @@ export default {
     }),
 
     methods: {
-        redirectToArticle() {
-            this.$router.push('/blog/article');
+        redirectToArticle(slug) {
+            this.$router.push({ name: 'articleDetail', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
     }

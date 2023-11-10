@@ -6,29 +6,32 @@
 
         <v-sheet class="work-container">
 
-            <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text"
-                class="custom-card" @click="redirectToProject">
-                <v-img :src="project.image" cover :aspect-ratio="16 / 8">
-                </v-img>
+            <v-card v-for="project in projectsList" :key="project.title" color="#232325" variant="text"
+                class="custom-card" @click="redirectToProject(project.slug)">
+                <v-lazy>
+                    <v-img :src="`http://127.0.0.1:8000${project.imageUrl}`" cover :aspect-ratio="16 / 8">
+                    </v-img>
+                </v-lazy>
+                
                 <v-card-title class="flex-column align-start">
                     <div class="project-name">
-                        {{ project.name }}
+                        {{ project.title }}
                     </div>
                     <div class="text-grey mt-1 mb-1 project-description text-visible">
-                        {{ project.description }}
+                        {{ project.summary }}
                     </div>
                     <div class="d-flex align-center">
-                        <v-icon :class="project.icon" contain></v-icon>
+                        <v-icon class="mdi mdi-domain" contain></v-icon>
 
-                        <span class="text-grey ml-1 project-type">{{ project.type }}</span>
+                        <span class="text-grey ml-1 project-type">{{ project.company }}</span>
                     </div>
                 </v-card-title>
 
                 <v-divider class="mx-4"></v-divider>
 
                 <v-card-text class="d-flex flex-wrap justify-start">
-                    <v-chip v-for="stack in project.stack" class="mr-2 mb-2">
-                        {{ stack }}
+                    <v-chip v-for="technologie in project.technologies" class="mr-2 mb-2">
+                        {{ technologie }}
                     </v-chip>
                 </v-card-text>
             </v-card>
@@ -44,8 +47,8 @@ export default {
     props: ['projectsList'],
 
     methods: {
-        redirectToProject() {
-            this.$router.push('/work/project');
+        redirectToProject(slug) {
+            this.$router.push({ name: 'project', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
     }
