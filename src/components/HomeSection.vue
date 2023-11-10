@@ -22,7 +22,7 @@
                 </v-sheet>
 
                 <v-sheet class="img-container">
-                    <v-lazy><img :src="imgHome" alt="Imagen Home"/></v-lazy>
+                    <img :src="imgHome" alt="Imagen Home"/>
                 </v-sheet>
             </v-sheet>
         </v-sheet>

@@ -68,7 +68,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <v-lazy><img :src="`http://127.0.0.1:8000${article.imageUrl}`" alt="Imagen About Me" /></v-lazy>
+                <img :src="`http://127.0.0.1:8000${article.imageUrl}`" alt="Imagen About Me" />
             </v-sheet>
 
             <v-sheet class="article-content" v-html="article.description"></v-sheet>
