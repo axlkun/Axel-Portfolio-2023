@@ -23,8 +23,8 @@
                     <li><a @click="redirectSection('home')">Inicio</a></li>
                     <li><a @click="redirectSection('aboutme')">Sobre mi</a></li>
                     <li><a @click="redirectSection('services')">Servicios</a></li>
-                    <li><a @click="redirectSection('projects')">Proyectos</a></li>
-                    <li><a @click="redirectSection('blog')">Blog</a></li>
+                    <!-- <li><a @click="redirectSection('projects')">Proyectos</a></li> -->
+                    <!-- <li><a @click="redirectSection('blog')">Blog</a></li> -->
                     <li><a @click="redirectSection('contact')" class="button">Contacto</a></li>
                 </ul>
 

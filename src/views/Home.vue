@@ -3,8 +3,8 @@
         <homeSection></homeSection>
         <aboutMeSection></aboutMeSection>
         <servicesSection></servicesSection>
-        <workSection></workSection>
-        <blogSection :blogEntry="blogEntry"></blogSection>
+        <!-- <workSection></workSection> -->
+        <!-- <blogSection :blogEntry="blogEntry"></blogSection> -->
         <contactSection></contactSection>
     </v-sheet>
 </template>
