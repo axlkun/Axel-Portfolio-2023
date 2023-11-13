@@ -10,19 +10,19 @@
               <li><a @click="scrollToSection('home')">Inicio</a></li>
               <li><a @click="scrollToSection('aboutme')">Sobre mi</a></li>
               <li><a @click="scrollToSection('services')">Servicios</a></li>
-              <!-- <li><a @click="scrollToSection('projects')">Proyectos</a></li> -->
-              <!-- <li><a @click="scrollToSection('blog')">Blog</a></li> -->
+              <li><a @click="scrollToSection('projects')">Proyectos</a></li>
+              <li><a @click="scrollToSection('blog')">Blog</a></li>
               <li><a @click="scrollToSection('contact')">Contacto</a></li>
             </ul>
           </div>
   
-          <!-- <div class="section">
+          <div class="section">
             <p>Últimos artículos</p>
   
             <ul>
                 <li v-for="article in blogEntry"><a :href="article.link">{{article.title}}</a></li>
             </ul>
-          </div> -->
+          </div>
   
           <div class="section">
             <p>Contacto</p>
