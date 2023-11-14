@@ -68,7 +68,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <img :src="`${dominio}${article.imageUrl}`" alt="Imagen About Me" />
+                <img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" />
             </v-sheet>
 
             <v-sheet class="article-content" v-html="article.description"></v-sheet>

@@ -36,7 +36,7 @@
         <v-sheet class="container" v-else>
 
             <v-sheet class="img-container">
-                <img :src="`${dominio}${project.imageUrl}`" alt="Imagen About Me" />
+                <img :src="`${dominio}${project.imageUrl}`" alt="Imagen proyecto" />
             </v-sheet>
 
             <v-sheet class="description-container">
