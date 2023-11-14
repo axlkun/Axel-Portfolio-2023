@@ -65,13 +65,13 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Ver código</h3>
-                            <a :href="project.repo_link ? project.repo_link : '#'">
+                            <a :href="project.repo_link ? project.repo_link : null">
                                 {{ project.repo_link ? project.repo_link : 'Repositorio privado' }}
                             </a>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Visitar el sitio</h3>
-                            <a :href="project.website_link ? project.website_link : '#'">
+                            <a :href="project.website_link ? project.website_link : null">
                                 {{ project.website_link ? project.website_link : 'Despliegue no disponible' }}
                             </a>
                         </v-sheet>
