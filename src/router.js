@@ -6,11 +6,11 @@ import Project from './views/Project.vue';
 import Article from './views/Article.vue';
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', name: 'home', component: Home },
   { path: '/work', component: Work },
   { path: '/blog', component: Blog },
-  { path: '/blog/:slug',name: 'articleDetail', component: Article, props: true, },
-  { path: '/work/:slug',name: 'project', component: Project, props: true, },
+  { path: '/blog/:slug', name: 'articleDetail', component: Article, props: true, },
+  { path: '/work/:slug', name: 'project', component: Project, props: true, },
 ];
 
 const router = createRouter({

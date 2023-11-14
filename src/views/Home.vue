@@ -19,6 +19,8 @@ import contactSection from '../components/ContactSection.vue';
 
 export default {
 
+    name: 'home',
+
     components: {
     homeSection,
     aboutMeSection,
