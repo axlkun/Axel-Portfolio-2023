@@ -4,7 +4,7 @@
         <v-sheet class="work-container">
 
             <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text" class="custom-card"
-                @click="redirectToProject(project.slug)">
+            @click="redirectTo('project', { slug: project.slug })">
                 
                     <v-img :src="`${dominio}${project.imageUrl}`" cover :aspect-ratio="16 / 8">
                     </v-img>
@@ -39,6 +39,8 @@
 
 <script>
 import api from '../api';
+import { redirectTo } from '../utils/utils';
+
 
 export default {
 
@@ -50,10 +52,7 @@ export default {
     }),
 
     methods: {
-        redirectToProject(slug) {
-            this.$router.push({ name: 'project', params: { slug: slug } });
-            window.scrollTo(0, 0);
-        }
+        redirectTo
     }
 }
 

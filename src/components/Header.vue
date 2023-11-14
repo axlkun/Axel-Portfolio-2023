@@ -3,7 +3,7 @@
         <nav>
 
             <div class="container-bar">
-                <div class="logo" @click="redirectToHome">
+                <div class="logo" @click="redirectTo('home')">
                     <div>
                         <img :src="logo" alt="Icono"/>
                     </div>
@@ -39,6 +39,7 @@
   
 <script>
 import { scrollToSection } from '../utils/utils';
+import { redirectTo } from '../utils/utils';
 import logo from '../assets/logo.svg';
 
 export default {
@@ -53,10 +54,7 @@ export default {
 
     methods: {
         scrollToSection, // se declara la función importada
-
-        redirectToHome() { // función que reedirige al home
-            this.$router.push('/');
-        },
+        redirectTo,
 
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
