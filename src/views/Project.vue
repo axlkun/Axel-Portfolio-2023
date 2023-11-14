@@ -65,13 +65,13 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Ver código</h3>
-                            <a>
+                            <a :href="project.repo_link ? project.repo_link : '#'">
                                 {{ project.repo_link ? project.repo_link : 'Repositorio privado' }}
                             </a>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Visitar el sitio</h3>
-                            <a>
+                            <a :href="project.website_link ? project.website_link : '#'">
                                 {{ project.website_link ? project.website_link : 'Despliegue no disponible' }}
                             </a>
                         </v-sheet>
@@ -176,8 +176,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 
     @media only screen and (min-width: 1024px) {
         max-width: 90%;
@@ -231,7 +230,7 @@ export default {
 .description-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     justify-content: center;
     min-height: 70vh;
 
@@ -245,7 +244,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    gap: 30px;
+    gap: 50px;
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
@@ -264,11 +263,14 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: start;
-    gap: 15px;
+    gap: 30px;
+    border-top: 1px solid grey;
+    padding-top: 15px;
 
     @media only screen and (min-width: 1024px) {
 
-        align-items: center;
+        border-top: none;
+        padding-top: 0;
     }
 }
 
@@ -280,7 +282,4 @@ export default {
     color: var(--primary-blue);
 }
 
-.link {
-    text-decoration: underline;
-}
 </style>
