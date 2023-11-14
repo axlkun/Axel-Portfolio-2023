@@ -2,7 +2,7 @@
     <v-sheet class="articles">
         <v-card v-for="article in blogEntry" class="article-entry" @click="redirectToArticle(article.slug)" :elevated="0"
             variant="text">
-            <v-img :src="`http://127.0.0.1:8000${article.imageUrl}`" cover :aspect-ratio="16 / 9">
+            <v-img :src="`${dominio}${article.imageUrl}`" cover :aspect-ratio="16 / 9">
             </v-img>
 
             <v-sheet class="img-container">
@@ -30,6 +30,7 @@
 
 <script>
 import imgBlog from '../assets/logo-axel.svg';
+import api from '../api';
 
 export default {
 
@@ -38,7 +39,8 @@ export default {
     props: ['blogEntry'],
 
     data: () => ({
-        imgBlog
+        imgBlog,
+        dominio: api.defaults.baseURL
     }),
 
     methods: {
@@ -46,7 +48,13 @@ export default {
             this.$router.push({ name: 'articleDetail', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
-    }
+    },
+
+    mounted() {
+    console.log('Artiicles')
+    console.log(api)
+    console.log(api.defaults.baseURL)
+  }
 
 }
 </script>

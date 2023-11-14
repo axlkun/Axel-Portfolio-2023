@@ -36,7 +36,7 @@
         <v-sheet class="container" v-else>
 
             <v-sheet class="img-container">
-                <img :src="`http://127.0.0.1:8000${project.imageUrl}`" alt="Imagen About Me" />
+                <img :src="`${dominio}${project.imageUrl}`" alt="Imagen About Me" />
             </v-sheet>
 
             <v-sheet class="description-container">
@@ -108,6 +108,7 @@ export default {
 
     data: () => ({
 
+        dominio: api.defaults.baseURL,
         project: [],
         projects: [],
         loading: true

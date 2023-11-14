@@ -68,7 +68,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <img :src="`http://127.0.0.1:8000${article.imageUrl}`" alt="Imagen About Me" />
+                <img :src="`${dominio}${article.imageUrl}`" alt="Imagen About Me" />
             </v-sheet>
 
             <v-sheet class="article-content" v-html="article.description"></v-sheet>
@@ -106,6 +106,7 @@ export default {
 
     data: () => ({
 
+        dominio: api.defaults.baseURL,
         article: null,
         articles: null,
         loading: true

@@ -9,7 +9,7 @@
             <v-card v-for="project in projectsList" :key="project.title" color="#232325" variant="text"
                 class="custom-card" @click="redirectToProject(project.slug)">
                 
-                    <v-img :src="`http://127.0.0.1:8000${project.imageUrl}`" cover :aspect-ratio="16 / 8">
+                    <v-img :src="`${dominio}${project.imageUrl}`" cover :aspect-ratio="16 / 8">
                     </v-img>
                 
                 
@@ -41,10 +41,15 @@
 </template>
 
 <script>
+import api from '../api';
 
 export default {
 
     props: ['projectsList'],
+
+    data : () => ({
+        dominio: api.defaults.baseURL
+    }),
 
     methods: {
         redirectToProject(slug) {
