@@ -68,7 +68,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="400" aspect-ratio="16/9" cover></v-img>
+                <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="500" aspect-ratio="16/9" cover></v-img>
             </v-sheet>
 
             <v-sheet class="article-content" v-html="article.description"></v-sheet>
