@@ -4,7 +4,10 @@ export function scrollToSection(targetSection) {
     window.location.href = '/work';
   } else if (targetSection === 'blog') {
     window.location.href = '/blog';
-  } else {
+  }else if(targetSection == 'home'){
+    window.location.href = '/';
+  }
+   else {
     const section = document.getElementById(targetSection);
     const windowWidth = window.innerWidth;
   
