@@ -75,7 +75,6 @@ export default {
 
 .article-entry {
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--primary-black);
     display: flex;
     flex-direction: column;
     margin: 0 auto;
