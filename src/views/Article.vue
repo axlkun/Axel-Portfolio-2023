@@ -53,7 +53,7 @@
                     <v-sheet class="project-info">
                         <v-sheet class="link-container">
                             <h3>Autor</h3>
-                            <p class="link">AxelCruz</p>
+                            <a href="https://twitter.com/Axlkun">Axel Cruz</a>
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Fecha</h3>
@@ -61,7 +61,7 @@
                         </v-sheet>
                         <v-sheet class="link-container">
                             <h3>Tiempo de lectura</h3>
-                            <p>5min</p>
+                            <p>3 min</p>
                         </v-sheet>
                     </v-sheet>
                 </v-sheet>
@@ -71,9 +71,10 @@
                 <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="500" aspect-ratio="16/9" cover></v-img>
             </v-sheet>
 
-            <v-sheet class="html-content" v-html="article.description"></v-sheet>
-
-
+            <v-sheet class="article-content">
+                <v-sheet class="html-content" v-html="article.description"></v-sheet>
+            </v-sheet>
+            
         </v-sheet>
 
         <v-sheet class="title-container">
@@ -212,11 +213,6 @@ export default {
         margin-bottom: 30px;
         width: 70%;
     }
-}
-
-.img-container img {
-    width: 100%;
-    height: 100%;
 }
 
 .description-container {
