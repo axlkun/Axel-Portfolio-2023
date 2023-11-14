@@ -68,7 +68,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" />
+                <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="400" aspect-ratio="16/9" cover></v-img>
             </v-sheet>
 
             <v-sheet class="article-content" v-html="article.description"></v-sheet>
@@ -207,11 +207,7 @@ export default {
 .img-container {
 
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    
     @media only screen and (min-width: 1024px) {
         margin-bottom: 30px;
         width: 70%;
@@ -226,7 +222,6 @@ export default {
 .description-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin-bottom: 15px;
 

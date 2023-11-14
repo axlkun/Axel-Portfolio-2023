@@ -48,13 +48,7 @@ export default {
             this.$router.push({ name: 'articleDetail', params: { slug: slug } });
             window.scrollTo(0, 0);
         }
-    },
-
-    mounted() {
-    console.log('Artiicles')
-    console.log(api)
-    console.log(api.defaults.baseURL)
-  }
+    }
 
 }
 </script>
