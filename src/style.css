@@ -75,12 +75,14 @@ a {
   margin: 0 auto;
 }
 
-.article-content h2,
-.article-content h3,
-.project-content h2,
-.project-content h3 {
-  color: var(--primary-blue);
+.html-content{
   margin-top: 15px;
+}
+
+.html-content h2,
+.html-content h3 {
+  color: var(--primary-blue);
+  margin-bottom: 15px;
   font-size: 25px;
 
   @media only screen and (min-width: 1024px) {
@@ -88,12 +90,21 @@ a {
   }
 }
 
-.article-content h3,
-.project-content h3 {
+.html-content h3,
+.html-content h3 {
   font-size: 20px;
 
   @media only screen and (min-width: 1024px) {
     font-size: 25px;
+  }
+}
+
+.html-content ul{
+  list-style-type: disc;
+  padding-left: 30px;
+
+  @media only screen and (min-width: 1024px) {
+    padding-left: 50px;
   }
 }
 

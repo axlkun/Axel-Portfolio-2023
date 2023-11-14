@@ -71,7 +71,7 @@
                 <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="500" aspect-ratio="16/9" cover></v-img>
             </v-sheet>
 
-            <v-sheet class="article-content" v-html="article.description"></v-sheet>
+            <v-sheet class="html-content" v-html="article.description"></v-sheet>
 
 
         </v-sheet>
