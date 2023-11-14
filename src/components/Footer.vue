@@ -20,7 +20,7 @@
             <p>Últimos artículos</p>
   
             <ul>
-                <li v-for="article in blogEntry"><a :href="article.link">{{article.title}}</a></li>
+                <li v-for="article in blogEntry"><a @click="redirectToArticle(article.slug)">{{article.title}}</a></li>
             </ul>
           </div>
   
@@ -63,6 +63,11 @@ export default {
 
     methods: {
         scrollToSection,
+
+        redirectToArticle(slug) {
+            this.$router.push({ name: 'articleDetail', params: { slug: slug } });
+            window.scrollTo(0, 0);
+        }
     },
 
 }
