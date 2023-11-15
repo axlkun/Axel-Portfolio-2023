@@ -8,7 +8,7 @@ import Article from './views/Article.vue';
 const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/work', component: Work },
-  { path: '/blog', component: Blog },
+  { path: '/blog', name: 'blog', component: Blog },
   { path: '/blog/:slug', name: 'articleDetail', component: Article, props: true, },
   { path: '/work/:slug', name: 'project', component: Project, props: true, },
 ];

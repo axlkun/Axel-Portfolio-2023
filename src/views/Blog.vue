@@ -32,6 +32,8 @@ import contactSection from '../components/ContactSection.vue';
 
 export default {
 
+    name: 'blog',
+
     components: {
         contactSection,
         articlestList
