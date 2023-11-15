@@ -15,18 +15,18 @@
 
         </v-sheet>
        
-        <articlestList :blogEntry="blogEntry"></articlestList>
+        <articlesList :blogEntry="blogEntry"></articlesList>
 
         <v-sheet class="button-container">
-            <a href="/blog" class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
+            <a @click="redirectTo('blog')" class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
         </v-sheet>
 
     </v-sheet>
 </template>
 
 <script>
-import articlestList from './ArticlesList.vue';
-
+import articlesList from './ArticlesList.vue';
+import { redirectTo } from '../utils/utils';
 
 export default {
 
@@ -35,7 +35,11 @@ export default {
     props: ['blogEntry'],
 
     components: {
-        articlestList
+        articlesList
+    },
+
+    methods: {
+        redirectTo
     }
 
 }

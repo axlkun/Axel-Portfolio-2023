@@ -7,15 +7,15 @@
         <projectList :projectsList="projects"></projectList>
 
         <v-sheet class="button-container">
-            <a href="/work" class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
+            <a @click="redirectTo('work')" class="button">Ver mas proyectos <span class="mdi mdi-arrow-right-thin"></span></a>
         </v-sheet>
     </v-sheet>
 </template>
 
 <script>
 import api from '../api';
-
 import projectList from './ProjectsList.vue';
+import { redirectTo } from '../utils/utils';
 
 export default {
 
@@ -31,6 +31,8 @@ export default {
     }),
 
     methods: {
+        redirectTo,
+
         getProjects() {
             api.get('/api/projects?limit=4')
                 .then(response => {
