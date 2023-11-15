@@ -1,7 +1,7 @@
 export function scrollToSection(targetSection) {
 
   if (targetSection === 'projects') {
-    window.location.href = '/work';
+    window.location.href = '/proyectos';
   } else if (targetSection === 'blog') {
     window.location.href = '/blog';
   }else if(targetSection == 'home'){
