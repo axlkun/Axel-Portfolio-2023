@@ -32,6 +32,8 @@ import contactSection from '../components/ContactSection.vue';
 
 export default {
 
+    name: 'work',
+
     components: {
         contactSection,
         projectList
