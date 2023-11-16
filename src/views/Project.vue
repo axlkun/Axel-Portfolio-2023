@@ -101,7 +101,7 @@ export default {
 
     head() {
         return {
-            title: `Axel Cruz | ${this.project.title}`
+            title: `Axel Cruz | ${this.project ? this.project.title : 'Proyecto'}`
         }
     },
 

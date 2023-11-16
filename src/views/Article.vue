@@ -98,6 +98,12 @@ export default {
 
     name: 'articleDetail',
 
+    head() {
+        return {
+            title: `Axel Cruz | ${this.article ? this.article.title : 'Artículo'}`
+        }
+    },
+
     props: ['slug'],
 
     components: {
