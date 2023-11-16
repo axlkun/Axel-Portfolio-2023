@@ -100,7 +100,7 @@ export default {
 
     head() {
         return {
-            title: `Axel Cruz | ${this.article ? this.article.title : 'Artículo'}`
+            title: `Axel Cruz | ${this.article ? this.article.title : ''}`
         }
     },
 
@@ -161,6 +161,7 @@ export default {
 
         handleError(error) {
             console.error('Error al hacer la solicitud GET:', error);
+            this.$router.push('/'); 
         }
     },
     created() {

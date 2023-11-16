@@ -56,10 +56,17 @@ export default {
         getProjects() {
             api.get('/api/projects')
                 .then(response => {
-                    this.projects = response.data.data;
+                    if (response.status === 200) {
+                        this.projects = response.data.data;
+                    } else {
+                        console.error('Respuesta no exitosa:', response);
+                        this.$router.push('/');
+                    }
+
                 })
                 .catch(error => {
                     console.error('Error al hacer la solicitud GET:', error);
+                    this.$router.push('/');
                 })
                 .finally(() => {
                     this.loading = false; // Desactiva el estado de carga después de la solicitud

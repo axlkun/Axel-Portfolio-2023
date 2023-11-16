@@ -101,7 +101,7 @@ export default {
 
     head() {
         return {
-            title: `Axel Cruz | ${this.project ? this.project.title : 'Proyecto'}`
+            title: `Axel Cruz | ${this.project ? this.project.title : ''}`
         }
     },
 
@@ -115,8 +115,8 @@ export default {
     data: () => ({
 
         dominio: api.defaults.baseURL,
-        project: [],
-        projects: [],
+        project: null,
+        projects: null,
         loading: true
     }),
 
@@ -162,6 +162,7 @@ export default {
 
         handleError(error) {
             console.error('Error al hacer la solicitud GET:', error);
+            this.$router.push('/'); 
         }
     },
     created() {
