@@ -21,6 +21,10 @@ export default {
 
     name: 'home',
 
+    head: {
+        title: 'Axel Cruz | Fullstack Developer'
+    },
+
     components: {
     homeSection,
     aboutMeSection,

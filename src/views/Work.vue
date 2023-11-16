@@ -9,13 +9,14 @@
         <v-sheet class="skeleton d-flex flex-column-reverse flex-md-column" v-if="loading" color="#f5f1f1">
             <template v-for="rowIndex in 2">
                 <v-row :class="rowIndex === 1 ? 'pt-md-6' : ''" class="pb-md-6">
-                  <template v-for="colIndex in 2">
-                    <v-col cols="12" md="6">
-                      <v-skeleton-loader :height="rowIndex == 1 ? 510 : 350" type="image, article, chip" color="#f5f1f1"></v-skeleton-loader>
-                    </v-col>
-                  </template>
+                    <template v-for="colIndex in 2">
+                        <v-col cols="12" md="6">
+                            <v-skeleton-loader :height="rowIndex == 1 ? 510 : 350" type="image, article, chip"
+                                color="#f5f1f1"></v-skeleton-loader>
+                        </v-col>
+                    </template>
                 </v-row>
-              </template>
+            </template>
         </v-sheet>
 
         <project-list :projectsList="projects" v-else></project-list>
@@ -33,6 +34,10 @@ import contactSection from '../components/ContactSection.vue';
 export default {
 
     name: 'work',
+
+    head: {
+        title: 'Axel Cruz | Proyectos'
+    },
 
     components: {
         contactSection,
