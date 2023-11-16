@@ -9,48 +9,33 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
-    // meta: {
-    //   title: 'Axel Cruz | Fullstack Developer'
-    // }
+    component: Home
   },
 
   {
     path: '/proyectos',
     name: 'work',
-    component: Work,
-    // meta: {
-    //   title: 'Axel Cruz | Proyectos'
-    // }
+    component: Work
   },
 
   {
     path: '/blog',
     name: 'blog',
-    component: Blog,
-    // meta: {
-    //   title: 'Axel Cruz | Blog'
-    // }
+    component: Blog
   },
 
   { 
     path: '/blog/:slug', 
     name: 'articleDetail', 
     component: Article, 
-    props: true, 
-    // meta: {
-    //   title: 'Axel Cruz | Artículo'
-    // }
+    props: true
   },
 
   { 
     path: '/proyectos/:slug', 
     name: 'project', 
     component: Project, 
-    props: true, 
-    // meta: {
-    //   title: 'Axel Cruz | Proyecto'
-    // }
+    props: true
   },
 ];
 
@@ -58,9 +43,5 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-
-// router.beforeEach((to, from) => {
-//   document.title = to.meta?.title ?? 'Axel Cruz | Fullstack Developer'
-// });
 
 export default router;
