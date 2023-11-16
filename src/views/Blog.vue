@@ -34,6 +34,12 @@ export default {
 
     name: 'blog',
 
+    head() {
+        return {
+            title: 'Axel Cruz | Blog'
+        }
+    },
+
     components: {
         contactSection,
         articlestList

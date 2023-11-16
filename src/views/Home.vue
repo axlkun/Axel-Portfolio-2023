@@ -21,24 +21,24 @@ export default {
 
     name: 'home',
 
-    head: {
-        title: 'Axel Cruz | Fullstack Developer'
+    head() {
+        return {
+            title: 'Axel Cruz | Fullstack Developer'
+        }
     },
 
     components: {
-    homeSection,
-    aboutMeSection,
-    servicesSection,
-    workSection,
-    blogSection,
-    contactSection
-},
+        homeSection,
+        aboutMeSection,
+        servicesSection,
+        workSection,
+        blogSection,
+        contactSection
+    },
 
-props: ['blogEntry'],
+    props: ['blogEntry'],
 
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -35,8 +35,10 @@ export default {
 
     name: 'work',
 
-    head: {
-        title: 'Axel Cruz | Proyectos'
+    head() {
+        return {
+            title: 'Axel Cruz | Proyectos'
+        }
     },
 
     components: {

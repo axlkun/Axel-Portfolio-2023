@@ -99,6 +99,12 @@ export default {
 
     name: 'project',
 
+    head() {
+        return {
+            title: `Axel Cruz | ${this.project.title}`
+        }
+    },
+
     props: ['slug'],
 
     components: {
