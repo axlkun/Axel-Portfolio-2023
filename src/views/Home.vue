@@ -3,8 +3,8 @@
         <homeSection></homeSection>
         <aboutMeSection></aboutMeSection>
         <servicesSection></servicesSection>
-        <workSection></workSection>
-        <blogSection :blogEntry="blogEntry"></blogSection>
+        <workSection v-if="blogEntry && blogEntry.length > 0"></workSection>
+        <blogSection v-if="blogEntry && blogEntry.length > 0" :blogEntry="blogEntry"></blogSection>
         <contactSection></contactSection>
     </v-sheet>
 </template>
