@@ -90,19 +90,12 @@
 
 <script>
 import api from '../api';
-
 import articlesList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
 
 export default {
 
     name: 'articleDetail',
-
-    head() {
-        return {
-            title: `Axel Cruz | ${this.article ? this.article.title : ''}`
-        }
-    },
 
     props: ['slug'],
 
@@ -131,6 +124,7 @@ export default {
                 const articleResponse = await this.loadArticle();
                 if (articleResponse.status === 200) {
                     this.article = articleResponse.data.data;
+
                 } else {
                     // Redirige al índice en caso de respuesta no exitosa
                     this.$router.push('/');
@@ -165,6 +159,7 @@ export default {
         }
     },
     created() {
+       
         this.loadData();
     },
 

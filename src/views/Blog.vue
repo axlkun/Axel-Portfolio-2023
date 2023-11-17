@@ -26,7 +26,6 @@
 
 <script>
 import api from '../api';
-import { useSeoMeta } from '@unhead/vue';
 import articlestList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
 
@@ -67,11 +66,6 @@ export default {
     },
 
     created() {
-        useSeoMeta({
-            title: 'Axel Cruz | Blog',
-            description: 'En este blog encontrarás todo sobre el desarrollo de SideProjects, Startups, noticias de tecnología, guías sobre programación y mucho más, escrito por Axel Cruz, Ingeniero en Sistemas y programador fullstack en México.',
-            keywords: 'startup, solopreneur, sideproject, programador, fullstack developer, laravel, vuejs, php, diseño web, experiencia de usuario'
-        });
         this.getArticles();
     }
 }

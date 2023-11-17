@@ -91,19 +91,12 @@
 
 <script>
 import api from '../api';
-
 import relatedProjects from '../components/RelatedProjects.vue';
 import contactSection from '../components/ContactSection.vue';
 
 export default {
 
     name: 'project',
-
-    head() {
-        return {
-            title: `Axel Cruz | ${this.project ? this.project.title : ''}`
-        }
-    },
 
     props: ['slug'],
 
@@ -132,15 +125,16 @@ export default {
                 const projectResponse = await this.loadProject();
                 if (projectResponse.status === 200) {
                     this.project = projectResponse.data.data;
+
                 } else {
                     // Redirige al índice en caso de respuesta no exitosa
-                    this.$router.push('/'); 
+                    this.$router.push('/');
                 }
             } catch (error) {
                 this.handleError(error);
             }
             finally {
-                this.loading = false; 
+                this.loading = false;
             }
 
             // Realiza la otra petición en segundo plano
@@ -162,13 +156,15 @@ export default {
 
         handleError(error) {
             console.error('Error al hacer la solicitud GET:', error);
-            this.$router.push('/'); 
+            this.$router.push('/');
         }
     },
+
     created() {
-        this.loadData(); // Carga los datos al crear el componente
+        this.loadData();
     }
 }
+
 </script>
 
 <style scoped>
@@ -183,7 +179,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    
+
 
     @media only screen and (min-width: 1024px) {
         max-width: 90%;
@@ -237,7 +233,7 @@ export default {
 .description-container {
     display: flex;
     flex-direction: column;
-    
+
     justify-content: center;
     min-height: 70vh;
 
@@ -288,5 +284,4 @@ export default {
 .project-info h3 {
     color: var(--primary-blue);
 }
-
 </style>
