@@ -1,8 +1,12 @@
+@font-face {
+  font-family: 'Manrope', sans-serif;
+  font-display: swap;
+}
 
 :root {
 
-  font-family: 'Manrope', sans-serif;
-  font-display: swap;
+  /* font-family: 'Manrope', sans-serif;
+  font-display: swap; */
 
   --primary-blue: #0801ff;
   --primary-background: #f5f1f1;
