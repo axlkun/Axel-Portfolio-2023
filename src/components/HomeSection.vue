@@ -1,31 +1,29 @@
 <template>
-    <v-sheet>
-        <v-sheet class="home" id="home">
+    <v-sheet class="home" id="home">
 
-            <v-sheet class="home-container">
-                <v-sheet class="hook-container">
-                    <v-sheet class="home-encabezado">
+        <v-sheet class="home-container">
+            <v-sheet class="hook-container">
+                <v-sheet class="home-encabezado">
 
-                        <v-sheet class="hook">
-                            <p>Desarrollo productos de software <span>sólidos</span> y <span>escalables</span> con una
-                                excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" width="45"
-                                    height="45" alt="Hayppy Face SVG" /></p>
-                        </v-sheet>
-
-                        <v-sheet class="home-description">
-                            <h1>Ingeniero en Sistemas Computacionales ⋅ Programador</h1>
-                        </v-sheet>
-
+                    <v-sheet class="hook">
+                        <p>Desarrollo productos de software <span>sólidos</span> y <span>escalables</span> con una
+                            excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" width="45" height="45"
+                                alt="Hayppy Face SVG" /></p>
                     </v-sheet>
-                    <v-sheet class="buttons-container">
-                        <a class="button" href="mailto:axelcruz.dev@gmail.com">Contacto</a>
-                        <a class="button">Resume / CV</a>
-                    </v-sheet>
-                </v-sheet>
 
-                <v-sheet class="img-container">
-                    <img fetchpriority="high" :src="imgHome" alt="Imagen Home" />
+                    <v-sheet class="home-description">
+                        <h1>Ingeniero en Sistemas Computacionales ⋅ Programador</h1>
+                    </v-sheet>
+
                 </v-sheet>
+                <v-sheet class="buttons-container">
+                    <a class="button" href="mailto:axelcruz.dev@gmail.com">Contacto</a>
+                    <a class="button">Resume / CV</a>
+                </v-sheet>
+            </v-sheet>
+
+            <v-sheet class="img-container">
+                <img fetchpriority="high" :src="imgHome" alt="Imagen Home" />
             </v-sheet>
         </v-sheet>
     </v-sheet>
@@ -51,8 +49,7 @@ export default {
 .home {
     display: flex;
     background-color: var(--primary-background);
-    min-height: 80vh;
-
+    
     @media only screen and (min-width: 1024px) {
         max-height: 80vh;
     }
@@ -61,7 +58,8 @@ export default {
 .home-container {
     display: flex;
     flex-direction: column-reverse;
-    max-width: 90%;
+    width: 90%;
+    max-width: 120rem;
     background: transparent;
     margin: 0 auto;
     text-align: center;
@@ -89,7 +87,7 @@ export default {
     @media only screen and (min-width: 1024px) {
         overflow: hidden;
     }
-    
+
 }
 
 .hook {
@@ -192,4 +190,5 @@ export default {
         max-height: 100%;
         display: inline;
     }
-}</style>
+}
+</style>
