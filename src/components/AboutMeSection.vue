@@ -37,7 +37,7 @@
             <v-sheet class="container-tecnologies">
                 <v-sheet v-for="item in tecnologiesContent" :key="item.id" class="tecnologie">
                     <v-icon class="custom-size">
-                        <img :src="item.icon" :alt="item.alt" class="w-100"/>
+                        <img :src="item.icon" :alt="item.alt" width="59" height="50" class="w-100"/>
                     </v-icon>
                     <p>{{ item.name }}</p>
                 </v-sheet>
