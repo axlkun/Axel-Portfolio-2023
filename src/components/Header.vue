@@ -164,6 +164,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
