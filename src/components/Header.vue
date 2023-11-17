@@ -8,7 +8,7 @@
                         <img :src="logo" alt="Icono"/>
                     </div>
                     <div>
-                        <a><span>Axel</span>Cruz</a>
+                        <p><span>Axel</span>Cruz</p>
                     </div>
 
                 </a>
@@ -123,13 +123,13 @@ nav {
     height: 48px;
 }
 
-.logo a {
+.logo p {
     font-size: 20px;
     font-weight: bold;
     color: var(--primary-blue);
 }
 
-.logo a span {
+.logo p span {
     color: var(--primary-black);
 }
 
