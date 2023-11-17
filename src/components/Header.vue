@@ -16,6 +16,10 @@
                 <button class="hide-icon" @click="toggleMenu" aria-label="Toggle Menu">
                     <v-icon :icon="menuOpen ? 'mdi mdi-close-box' : 'mdi mdi-menu'"></v-icon>
                 </button>
+
+                <!-- <div class="hide-icon">
+                    <v-icon :icon="menuOpen ? 'mdi mdi-close-box' : 'mdi mdi-menu'" @click="toggleMenu"></v-icon>
+                </div> -->
             </div>
 
             <div class="container-menu" :class="{ 'hide': !menuOpen }">
@@ -179,7 +183,6 @@ nav {
 
     &:hover {
         color: var(--primary-blue);
-        text-decoration: underline;
     }
 }
 
