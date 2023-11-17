@@ -3,44 +3,42 @@
 
         <v-sheet class="work-container">
 
-            <v-card v-for="project in projectsList" :key="project.name" color="#232325" variant="text" class="custom-card"
-            @click="redirectTo('project', { slug: project.slug })">
-                
+            <a v-for="project in projectsList" :key="project.name" :href="'/proyectos/' + project.slug">
+                <v-card color="#232325" variant="text" class="custom-card">
+
                     <v-img :src="`${dominio}${project.imageUrl}`" cover :aspect-ratio="16 / 8">
                     </v-img>
-                
-                <v-card-title class="flex-column align-start">
-                    <div class="project-name">
-                        {{ project.title }}
-                    </div>
-                    <div class="mt-1 mb-1 project-description text-visible">
-                        {{ project.summary }}
-                    </div>
-                    <div class="d-flex align-center">
-                        <v-icon class="mdi mdi-domain" contain></v-icon>
 
-                        <span class="ml-1 project-type">{{ project.company }}</span>
-                    </div>
-                </v-card-title>
+                    <v-card-title class="flex-column align-start">
+                        <div class="project-name">
+                            {{ project.title }}
+                        </div>
+                        <div class="mt-1 mb-1 project-description text-visible">
+                            {{ project.summary }}
+                        </div>
+                        <div class="d-flex align-center">
+                            <v-icon class="mdi mdi-domain" contain></v-icon>
 
-                <v-divider class="mx-4"></v-divider>
+                            <span class="ml-1 project-type">{{ project.company }}</span>
+                        </div>
+                    </v-card-title>
 
-                <v-card-text class="d-flex flex-wrap justify-start">
-                    <v-chip v-for="stack in project.technologies" class="mr-2 mb-2">
-                        {{ stack }}
-                    </v-chip>
-                </v-card-text>
+                    <v-divider class="mx-4"></v-divider>
 
-            </v-card>
+                    <v-card-text class="d-flex flex-wrap justify-start">
+                        <v-chip v-for="stack in project.technologies" class="mr-2 mb-2">
+                            {{ stack }}
+                        </v-chip>
+                    </v-card-text>
 
+                </v-card>
+            </a>
         </v-sheet>
     </v-sheet>
 </template>
 
 <script>
 import api from '../api';
-import { redirectTo } from '../utils/utils';
-
 
 export default {
 
@@ -49,11 +47,7 @@ export default {
     data: () => ({
         dominio: api.defaults.baseURL,
         loading: true
-    }),
-
-    methods: {
-        redirectTo
-    }
+    })
 }
 
 </script>
@@ -71,11 +65,9 @@ export default {
     gap: 2rem;
     background: transparent;
     grid-template-columns: 1fr;
-    /* Establece una columna por defecto */
 
     @media only screen and (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
-        /* Cambia a dos columnas en pantallas más grandes */
         grid-row-gap: 4rem;
         grid-column-gap: 2rem;
     }

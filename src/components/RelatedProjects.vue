@@ -6,55 +6,50 @@
 
         <v-sheet class="work-container">
 
-            <v-card v-for="project in projectsList" :key="project.title" color="#232325" variant="text"
-                class="custom-card" @click="redirectTo('project', { slug: project.slug })">
-                
+            <a v-for="project in projectsList" :key="project.title" :href="'/proyectos/' + project.slug">
+                <v-card color="#232325" variant="text" class="custom-card">
+
                     <v-img :src="`${dominio}${project.imageUrl}`" cover :aspect-ratio="16 / 8">
                     </v-img>
-                
-                
-                <v-card-title class="flex-column align-start">
-                    <div class="project-name">
-                        {{ project.title }}
-                    </div>
-                    <div class="text-grey mt-1 mb-1 project-description text-visible">
-                        {{ project.summary }}
-                    </div>
-                    <div class="d-flex align-center">
-                        <v-icon class="mdi mdi-domain" contain></v-icon>
 
-                        <span class="text-grey ml-1 project-type">{{ project.company }}</span>
-                    </div>
-                </v-card-title>
 
-                <v-divider class="mx-4"></v-divider>
+                    <v-card-title class="flex-column align-start">
+                        <div class="project-name">
+                            {{ project.title }}
+                        </div>
+                        <div class="text-grey mt-1 mb-1 project-description text-visible">
+                            {{ project.summary }}
+                        </div>
+                        <div class="d-flex align-center">
+                            <v-icon class="mdi mdi-domain" contain></v-icon>
 
-                <v-card-text class="d-flex flex-wrap justify-start">
-                    <v-chip v-for="technologie in project.technologies" class="mr-2 mb-2">
-                        {{ technologie }}
-                    </v-chip>
-                </v-card-text>
-            </v-card>
+                            <span class="text-grey ml-1 project-type">{{ project.company }}</span>
+                        </div>
+                    </v-card-title>
 
+                    <v-divider class="mx-4"></v-divider>
+
+                    <v-card-text class="d-flex flex-wrap justify-start">
+                        <v-chip v-for="technologie in project.technologies" class="mr-2 mb-2">
+                            {{ technologie }}
+                        </v-chip>
+                    </v-card-text>
+                </v-card>
+            </a>
         </v-sheet>
     </v-sheet>
 </template>
 
 <script>
 import api from '../api';
-import { redirectTo } from '../utils/utils';
 
 export default {
 
     props: ['projectsList'],
 
-    data : () => ({
+    data: () => ({
         dominio: api.defaults.baseURL
     }),
-
-    methods: {
-        redirectTo
-    }
 }
 
 </script>
@@ -64,7 +59,7 @@ export default {
     max-width: 90%;
     background: transparent;
     margin: 0 auto;
-    
+
     @media only screen and (min-width: 1024px) {
         margin-bottom: 60px;
     }
@@ -89,11 +84,9 @@ export default {
     gap: 2rem;
     background: transparent;
     grid-template-columns: 1fr;
-    /* Establece una columna por defecto */
 
     @media only screen and (min-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
-        /* Cambia a dos columnas en pantallas más grandes */
         grid-row-gap: 4rem;
         grid-column-gap: 2rem;
     }
@@ -116,6 +109,11 @@ export default {
     font-size: 16px;
     font-weight: bold;
     color: var(--primary-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
+    line-height: 1.2;
+    margin-bottom: 10px;
 
     @media only screen and (min-width: 1024px) {
         font-size: 20px;

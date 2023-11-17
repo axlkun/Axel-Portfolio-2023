@@ -1,6 +1,7 @@
 <template>
     <v-sheet class="articles">
-        <v-card v-for="article in blogEntry" class="article-entry" @click="redirectTo('articleDetail', { slug: article.slug })" :elevated="0"
+        <a v-for="article in blogEntry" :href="'/blog/' + article.slug">
+        <v-card  class="article-entry" :elevated="0"
             variant="text">
             <v-img :src="`${dominio}${article.imageUrl}`" cover :aspect-ratio="16 / 9">
             </v-img>
@@ -24,14 +25,13 @@
             </v-sheet>
 
         </v-card>
-
+    </a>
     </v-sheet>
 </template>
 
 <script>
 import imgBlog from '../assets/logo-axel.svg';
 import api from '../api';
-import { redirectTo } from '../utils/utils';
 
 export default {
 
@@ -42,11 +42,7 @@ export default {
     data: () => ({
         imgBlog,
         dominio: api.defaults.baseURL
-    }),
-
-    methods: {
-        redirectTo
-    }
+    })
 
 }
 </script>

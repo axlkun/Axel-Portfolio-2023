@@ -18,7 +18,7 @@
         <articlesList :blogEntry="blogEntry"></articlesList>
 
         <v-sheet class="button-container">
-            <a @click="redirectTo('blog')" class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
+            <a href="/blog" class="button">Visitar el blog <span class="mdi mdi-arrow-right-thin"></span></a>
         </v-sheet>
 
     </v-sheet>
@@ -26,7 +26,6 @@
 
 <script>
 import articlesList from './ArticlesList.vue';
-import { redirectTo } from '../utils/utils';
 
 export default {
 
@@ -36,12 +35,7 @@ export default {
 
     components: {
         articlesList
-    },
-
-    methods: {
-        redirectTo
     }
-
 }
 </script>
 
