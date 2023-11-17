@@ -142,7 +142,7 @@ export default {
     flex-direction: column;
     gap: 30px;
     background: transparent;
-    margin: 30px 0;
+    margin: 15px 0 30px;
     align-items: center;
 
     @media only screen and (min-width: 1024px) {
@@ -178,7 +178,7 @@ export default {
     opacity: 0.9;
 }
 
-
+/*
 .img-container img {
     margin: -15px auto;
     max-width: 80%;
@@ -189,6 +189,18 @@ export default {
         max-width: 100%;
         max-height: 100%;
         display: inline;
+    }
+} */
+
+.img-container img {
+    aspect-ratio: 1 / 1;
+    width: 80%;
+    object-fit: contain;
+    margin: -15px auto;
+
+    @media only screen and (min-width: 1024px) {
+        width: 100%;
+        
     }
 }
 </style>
