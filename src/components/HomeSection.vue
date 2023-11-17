@@ -7,7 +7,9 @@
                     <v-sheet class="home-encabezado">
 
                         <v-sheet class="hook">
-                            <p>Desarrollo productos de software <span>sólidos</span> y <span>escalables</span> con una excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" width="45" height="45" alt="Hayppy Face SVG"/></p>
+                            <p>Desarrollo productos de software <span>sólidos</span> y <span>escalables</span> con una
+                                excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" width="45"
+                                    height="45" alt="Hayppy Face SVG" /></p>
                         </v-sheet>
 
                         <v-sheet class="home-description">
@@ -22,7 +24,7 @@
                 </v-sheet>
 
                 <v-sheet class="img-container">
-                    <img fetchpriority="high" :src="imgHome" alt="Imagen Home"/>
+                    <img fetchpriority="high" :src="imgHome" alt="Imagen Home" />
                 </v-sheet>
             </v-sheet>
         </v-sheet>
@@ -83,6 +85,11 @@ export default {
     flex-grow: 1;
     flex-basis: 50%;
     background: transparent;
+
+    @media only screen and (min-width: 1024px) {
+        overflow: hidden;
+    }
+    
 }
 
 .hook {
@@ -105,7 +112,7 @@ export default {
     margin-bottom: -10px;
 }
 
-.hook span{
+.hook span {
     color: var(--primary-blue);
 }
 
@@ -177,13 +184,12 @@ export default {
 .img-container img {
     margin: -15px auto;
     max-width: 80%;
+    height: auto;
     display: block;
 
     @media only screen and (min-width: 1024px) {
-        max-width: none;
-        width: 100%;
-        height: auto;
+        max-width: 100%;
+        max-height: 100%;
         display: inline;
     }
-}
-</style>
+}</style>
