@@ -27,19 +27,13 @@
 
 <script>
 import api from '../api';
-
+import { useSeoMeta } from '@unhead/vue';
 import projectList from '../components/ProjectsList.vue';
 import contactSection from '../components/ContactSection.vue';
 
 export default {
 
     name: 'work',
-
-    head() {
-        return {
-            title: 'Axel Cruz | Proyectos'
-        }
-    },
 
     components: {
         contactSection,
@@ -74,7 +68,12 @@ export default {
         }
     },
 
-    mounted() {
+    created() {
+        useSeoMeta({
+            title: 'Axel Cruz | Proyectos',
+            description: 'Conoce en detalle los proyectos de software desarrollados por Axel Cruz, Ingeniero en Sistemas y programador fullstack en México.',
+            keywords: 'startup, solopreneur, sideproject, programador, fullstack developer, laravel, vuejs, php, diseño web, experiencia de usuario'
+        });
         this.getProjects();
     }
 }
