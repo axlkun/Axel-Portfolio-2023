@@ -22,7 +22,7 @@
                 </v-sheet>
 
                 <v-sheet class="img-container">
-                    <img :src="imgHome" alt="Imagen Home"/>
+                    <img fetchpriority="high" :src="imgHome" alt="Imagen Home"/>
                 </v-sheet>
             </v-sheet>
         </v-sheet>
