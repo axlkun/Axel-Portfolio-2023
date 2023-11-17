@@ -7,11 +7,11 @@
             <p>Navegación</p>
   
             <ul>
-              <li><a @click="scrollToSection('home')">Inicio</a></li>
+              <li><a href="/">Inicio</a></li>
               <li><a @click="scrollToSection('aboutme')">Sobre mi</a></li>
               <li><a @click="scrollToSection('services')">Servicios</a></li>
-              <li><a @click="scrollToSection('projects')">Proyectos</a></li>
-              <li><a @click="scrollToSection('blog')">Blog</a></li>
+              <li><a href="/proyectos">Proyectos</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li><a @click="scrollToSection('contact')">Contacto</a></li>
             </ul>
           </div>
@@ -20,7 +20,8 @@
             <p>Últimos artículos</p>
   
             <ul>
-                <li v-for="article in blogEntry"><a @click="redirectTo('articleDetail', { slug: article.slug })">{{article.title}}</a></li>
+                <!-- <li v-for="article in blogEntry"><a @click="redirectTo('articleDetail', { slug: article.slug })">{{article.title}}</a></li> -->
+                <li v-for="article in blogEntry"><a :href="'/blog/' + article.slug">{{article.title}}</a></li>
             </ul>
           </div>
   

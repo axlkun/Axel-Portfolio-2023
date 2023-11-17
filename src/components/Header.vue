@@ -3,7 +3,7 @@
         <nav>
 
             <div class="container-bar">
-                <div class="logo" @click="redirectTo('home')">
+                <a class="logo" href="/">
                     <div>
                         <img :src="logo" alt="Icono"/>
                     </div>
@@ -11,7 +11,7 @@
                         <a><span>Axel</span>Cruz</a>
                     </div>
 
-                </div>
+                </a>
 
                 <button class="hide-icon" @click="toggleMenu" aria-label="Toggle Menu">
                     <v-icon :icon="menuOpen ? 'mdi mdi-close-box' : 'mdi mdi-menu'"></v-icon>
@@ -24,11 +24,11 @@
 
             <div class="container-menu" :class="{ 'hide': !menuOpen }">
                 <ul class="menu desktop-menu">
-                    <li><a @click="redirectSection('home')">Inicio</a></li>
+                    <li><a href="/">Inicio</a></li>
                     <li><a @click="redirectSection('aboutme')">Sobre mi</a></li>
                     <li><a @click="redirectSection('services')">Servicios</a></li>
-                    <li><a @click="redirectSection('projects')">Proyectos</a></li>
-                    <li><a @click="redirectSection('blog')">Blog</a></li>
+                    <li><a href="/proyectos">Proyectos</a></li>
+                    <li><a href="/blog">Blog</a></li>
                     <li><a @click="redirectSection('contact')" class="button">Contacto</a></li>
                 </ul>
 
