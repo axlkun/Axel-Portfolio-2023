@@ -7,7 +7,7 @@
                     <v-sheet class="home-encabezado">
 
                         <v-sheet class="hook">
-                            <p>Desarrollo productos de software <span>sólidos</span> y <span>escalables</span> con una excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" alt="Hayppy Face SVG"/></p>
+                            <p>Desarrollo productos de software <span>sólidos</span> y <span>escalables</span> con una excepcional <span>experiencia de usuario</span> <img :src="imgHappyFace" width="45" height="45" alt="Hayppy Face SVG"/></p>
                         </v-sheet>
 
                         <v-sheet class="home-description">
@@ -50,6 +50,10 @@ export default {
     display: flex;
     background-color: var(--primary-background);
     min-height: 80vh;
+
+    @media only screen and (min-width: 1024px) {
+        max-height: 80vh;
+    }
 }
 
 .home-container {
@@ -176,8 +180,10 @@ export default {
     display: block;
 
     @media only screen and (min-width: 1024px) {
-        margin: -70px auto;
-
+        max-width: none;
+        width: 100%;
+        height: auto;
+        display: inline;
     }
 }
 </style>
