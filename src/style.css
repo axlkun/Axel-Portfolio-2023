@@ -1,6 +1,8 @@
 
 body{
+  
   font-family: 'Manrope', sans-serif;
+  font-display: swap;
   --primary-blue: #0801ff;
   --primary-background: #f5f1f1;
   --primary-grey: #dad9d6;
