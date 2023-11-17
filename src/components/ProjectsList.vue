@@ -98,6 +98,11 @@ export default {
     font-size: 16px;
     font-weight: bold;
     color: var(--primary-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
+    line-height: 1.2;
+    margin-bottom: 10px;
 
     @media only screen and (min-width: 1024px) {
         font-size: 20px;
