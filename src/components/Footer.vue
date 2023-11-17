@@ -55,7 +55,6 @@
 
 <script>
 import { scrollToSection } from '../utils/utils';
-import { redirectTo } from '../utils/utils';
 
 export default {
 
@@ -65,7 +64,6 @@ export default {
 
     methods: {
         scrollToSection,
-        redirectTo
     },
 
 }

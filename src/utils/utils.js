@@ -35,7 +35,7 @@ export function scrollToSection(targetSection) {
 
 }
 
-export function redirectTo(routeName, params) {
-  this.$router.push({ name: routeName, params: params });
-  window.scrollTo(0, 0);
-}
+// export function redirectTo(routeName, params) {
+//   this.$router.push({ name: routeName, params: params });
+//   window.scrollTo(0, 0);
+// }

@@ -43,7 +43,6 @@
   
 <script>
 import { scrollToSection } from '../utils/utils';
-import { redirectTo } from '../utils/utils';
 import logo from '../assets/logo.svg';
 
 export default {
@@ -58,7 +57,6 @@ export default {
 
     methods: {
         scrollToSection, // se declara la función importada
-        redirectTo,
 
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
