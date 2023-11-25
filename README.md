@@ -1,6 +1,6 @@
-# Axel Portfolio 2023
+# AxelPortfolio Frontend 2023
 
-Frontend of my portfolio with blog section
+The frontend of my portfolio with blog section
 
 # Vue 3 + Vite
 
