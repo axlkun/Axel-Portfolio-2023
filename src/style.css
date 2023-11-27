@@ -70,3 +70,11 @@ a {
     padding-left: 50px;
   }
 }
+
+.html-content img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Esto ayuda a manejar márgenes y alineación dentro del contenedor */
+  margin: 0 auto; /* Esto centra la imagen dentro de su contenedor */
+  max-height: 100%; /* Opcional: si también deseas limitar la altura */
+}
