@@ -1,4 +1,4 @@
-# AxelPortfolio Frontend 2023
+# AxelPortfolio-Frontend
 
 The frontend of my portfolio with blog section
 
