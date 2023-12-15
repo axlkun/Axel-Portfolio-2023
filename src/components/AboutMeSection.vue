@@ -24,7 +24,7 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <img class="myImg" :src="imgAboutMe" alt="Imagen About Me"/>
+                <img class="myImg" :src="imgAboutMe" alt="Imagen About Me" />
             </v-sheet>
 
         </v-sheet>
@@ -37,7 +37,7 @@
             <v-sheet class="container-tecnologies">
                 <v-sheet v-for="item in tecnologiesContent" :key="item.id" class="tecnologie">
                     <v-icon class="custom-size">
-                        <img :src="item.icon" :alt="item.alt" width="59" height="50" class="w-100"/>
+                        <img :src="item.icon" :alt="item.alt" width="59" height="50" class="w-100" />
                     </v-icon>
                     <p>{{ item.name }}</p>
                 </v-sheet>
@@ -68,6 +68,7 @@ import iconGithub from '../assets/github-icon.svg';
 import iconGitlab from '../assets/gitlab-icon.svg';
 import iconRailway from '../assets/railway-icon.svg';
 import iconNetlify from '../assets/netlify-icon.svg';
+import iconNuxt from '../assets/nuxt.svg';
 
 export default {
 
@@ -76,7 +77,7 @@ export default {
 
     data: () => ({
         imgAboutMe,
-
+        iconNuxt,
         iconLaravel,
         iconVue,
         iconVuetify,
@@ -99,99 +100,95 @@ export default {
                 id: 1,
                 icon: iconLaravel,
                 name: "Laravel",
-                alt: "Icono Laravel SVG"
+                alt: "Icono Laravel SVG",
             },
             {
                 id: 2,
-                icon: iconVue,
-                name: "Vue.js",
-                alt: "Icono Vue SVG"
+                icon: iconPhp,
+                name: "PHP",
+                alt: "Icono PHP SVG",
             },
             {
                 id: 3,
-                icon: iconVuetify,
-                name: "Vuetify",
-                alt: "Icono Vuetify SVG"
+                icon: iconVue,
+                name: "Vue.js",
+                alt: "Icono Vue.js SVG",
             },
             {
                 id: 4,
-                icon: iconPhp,
-                name: "PHP",
-                alt: "Icono PHP SVG"
+                icon: iconNuxt,
+                name: "Nuxt",
+                alt: "Icono Nuxt SVG",
             },
             {
                 id: 5,
-                icon: iconMySQL,
-                name: "MySQL",
-                alt: "Icono MySQL SVG"
+                icon: iconVuetify,
+                name: "Vuetify",
+                alt: "Icono Vuetify SVG",
             },
             {
                 id: 6,
-                icon: iconSqlServer,
-                name: "SQLServer",
-                alt: "Icono SQLServer SVG"
+                icon: iconMySQL,
+                name: "MySQL",
+                alt: "Icono MySQL SVG",
             },
             {
                 id: 7,
-                icon: iconBigQuery,
-                name: "BigQuery",
-                alt: "Icono BigQuery SVG"
+                icon: iconSqlServer,
+                name: "SQLServer",
+                alt: "Icono SQLServer SVG",
             },
             {
                 id: 8,
-                icon: iconStorage,
-                name: "CloudStorage",
-                alt: "Icono Cloud Storage SVG"
+                icon: iconBigQuery,
+                name: "BigQuery",
+                alt: "Icono BigQuery SVG",
             },
             {
                 id: 9,
-                icon: iconPython,
-                name: "Python",
-                alt: "Icono Python SVG"
+                icon: iconStorage,
+                name: "CloudStorage",
+                alt: "Icono Cloud Storage SVG",
             },
             {
                 id: 10,
-                icon: iconJs,
-                name: "JavaScript",
-                alt: "Icono JavaScript SVG"
+                icon: iconPython,
+                name: "Python",
+                alt: "Icono Python SVG",
             },
             {
                 id: 11,
-                icon: iconFigma,
-                name: "Figma",
-                alt: "Icono Figma SVG"
+                icon: iconJs,
+                name: "JavaScript",
+                alt: "Icono JavaScript SVG",
             },
             {
                 id: 12,
-                icon: iconGit,
-                name: "Git",
-                alt: "Icono Git SVG"
+                icon: iconFigma,
+                name: "Figma",
+                alt: "Icono Figma SVG",
             },
             {
                 id: 13,
-                icon: iconGithub,
-                name: "Github",
-                alt: "Icono Github SVG"
+                icon: iconGit,
+                name: "Git",
+                alt: "Icono Git SVG",
             },
             {
                 id: 14,
+                icon: iconGithub,
+                name: "Github",
+                alt: "Icono Github SVG",
+            },
+            {
+                id: 15,
                 icon: iconGitlab,
                 name: "GitLab",
-                alt: "Icono GitLab SVG"
+                alt: "Icono GitLab SVG",
             },
-            {
-                id: 15,
-                icon: iconRailway,
-                name: "Railway",
-                alt: "Icono Railway SVG"
-            },
-            {
-                id: 15,
-                icon: iconNetlify,
-                name: "Netlify",
-                alt: "Icono Netlify SVG"
-            }
         ]
+
+
     }),
 
 }
@@ -315,7 +312,7 @@ export default {
     }
 }
 
-.custom-size{
+.custom-size {
     width: 40px;
     height: 40px;
 
@@ -325,22 +322,21 @@ export default {
     }
 }
 
-.img-container{
- 
+.img-container {
+
     background: transparent;
     max-width: 80%;
     margin: 0 auto;
     margin-top: 15px;
-  }
+}
 
-  .img-container .myImg{
-    
+.img-container .myImg {
+
     width: 100%;
     height: 100%;
 
     @media only screen and (min-width: 1024px) {
         min-width: 400px;
     }
-  }
-
+}
 </style>
