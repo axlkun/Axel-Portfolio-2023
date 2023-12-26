@@ -68,13 +68,14 @@
             </v-sheet>
 
             <v-sheet class="img-container">
-                <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="500" aspect-ratio="16/9" cover></v-img>
+                <v-img :src="`${dominio}${article.imageUrl}`" alt="Imagen artículo" max-height="500" aspect-ratio="16/9"
+                    cover></v-img>
             </v-sheet>
 
             <v-sheet class="article-content">
-                <v-sheet class="html-content" v-html="article.description"></v-sheet>
+                <div class="html-content" v-html="article.description"></div>
             </v-sheet>
-            
+
         </v-sheet>
 
         <v-sheet class="title-container">
@@ -92,6 +93,9 @@
 import api from '../api';
 import articlesList from '../components/ArticlesList.vue';
 import contactSection from '../components/ContactSection.vue';
+import Prism from 'prismjs';
+// import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism-okaidia.css';
 
 export default {
 
@@ -117,6 +121,15 @@ export default {
     },
 
     methods: {
+        highlightCode() {
+            this.$nextTick(() => {
+                // Busca elementos <code> dentro del componente y resalta su contenido
+                this.$el.querySelectorAll('code').forEach((codeElement) => {
+                    Prism.highlightElement(codeElement);
+                });
+            });
+        },
+
         async loadData() {
             this.loading = true;
 
@@ -124,7 +137,6 @@ export default {
                 const articleResponse = await this.loadArticle();
                 if (articleResponse.status === 200) {
                     this.article = articleResponse.data.data;
-
                 } else {
                     // Redirige al índice en caso de respuesta no exitosa
                     this.$router.push('/');
@@ -134,6 +146,7 @@ export default {
             }
             finally {
                 this.loading = false;
+                this.highlightCode();
             }
 
             // Realiza la otra petición en segundo plano
@@ -155,14 +168,13 @@ export default {
 
         handleError(error) {
             console.error('Error al hacer la solicitud GET:', error);
-            this.$router.push('/'); 
+            this.$router.push('/');
         }
     },
     created() {
-       
+
         this.loadData();
     },
-
 }
 </script>
 
@@ -210,7 +222,7 @@ export default {
 .img-container {
 
     width: 100%;
-    
+
     @media only screen and (min-width: 1024px) {
         margin-bottom: 30px;
         width: 70%;
